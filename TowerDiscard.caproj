@@ -1,0 +1,529 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2project>
+    <name>TowerDiscard</name>
+    <description></description>
+    <version>1.0.0.0</version>
+    <author></author>
+    <author-email></author-email>
+    <author-website>http://</author-website>
+    <app-id>com.mycompany.myapp</app-id>
+    <unique-id>9nai5p1hduem</unique-id>
+    <saved-with-version>27900</saved-with-version>
+    <used-plugins>
+        <plugin author="Scirra" id="Arr" version="1">Array</plugin>
+        <plugin author="Scirra" id="Mouse" version="1">Mouse</plugin>
+        <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
+        <plugin author="Scirra" id="Text" version="1">Text</plugin>
+        <plugin author="Scirra" id="Tilemap" version="1">Tilemap</plugin>
+    </used-plugins>
+    <used-behaviors>
+        <behavior author="Scirra" id="Bullet" version="1">Bullet</behavior>
+        <behavior author="Scirra" id="Pathfinding" version="1">Pathfinding</behavior>
+        <behavior author="Scirra" id="Turret" version="1">Turret</behavior>
+        <behavior author="Scirra" id="solid" version="1">Solid</behavior>
+    </used-behaviors>
+    <used-effects />
+    <configurations>
+        <configuration exporter-descname="HTML5" exporter-id="html5" name="HTML5" />
+    </configurations>
+    <window-size>
+        <width>854</width>
+        <height>480</height>
+    </window-size>
+    <pixel-rounding>0</pixel-rounding>
+    <preview-effects>1</preview-effects>
+    <first-layout>MainMenu</first-layout>
+    <use-loader-layout>0</use-loader-layout>
+    <configuration-settings>
+        <prop name="Clear background">Yes</prop>
+        <prop name="Downscaling">Medium quality</prop>
+        <prop name="Enable WebGL">On</prop>
+        <prop name="Fullscreen in browser">Letterbox scale</prop>
+        <prop name="Fullscreen scaling">High quality</prop>
+        <prop name="Loader style">Construct 2 splash</prop>
+        <prop name="Orientations">Any</prop>
+        <prop name="Pause on unfocus">No</prop>
+        <prop name="Physics engine">Box2D asm.js</prop>
+        <prop name="Preload sounds">Yes</prop>
+        <prop name="Preview browser">(default)</prop>
+        <prop name="Sampling">Point</prop>
+        <prop name="Use high-DPI display">Yes</prop>
+    </configuration-settings>
+    <object-folder>
+        <object-type name="GrassTile" sid="577679842780867">
+            <plugin id="Tilemap" />
+            <texture original-source="D:\Downloads\GameAssets\Outdoor and Forest Tileset\Tilesets\Tileset-3.png" />
+            <tiles />
+        </object-type>
+        <object-type name="Grass" sid="257222167073072">
+            <plugin id="Tilemap" />
+            <texture original-source="D:\Downloads\GameAssets\Outdoor and Forest Tileset\Tilesets\Tileset-3.png" />
+            <tiles />
+        </object-type>
+        <object-type name="Demon" sid="228039006770961">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="Health" sid="231627204549926" type="number" />
+            </instance-variables>
+            <behaviors>
+                <behavior-type name="Pathfinding" sid="935263257383684">
+                    <behavior id="Pathfinding" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="4" loop="1" name="Idle" pingpong="0" repeatcount="1" repeatto="0" sid="987236529333200" speed="10">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Downloads\GameAssets\0x72_DungeonTilesetII_v1.4\frames\big_demon_idle_anim_f0.png">
+                        <collision-poly>
+                            <point x="0.757813" y="0.875" />
+                            <point x="0.242188" y="0.888889" />
+                            <point x="0.234375" y="0.270833" />
+                            <point x="0.75" y="0.284722" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Downloads\GameAssets\0x72_DungeonTilesetII_v1.4\frames\big_demon_idle_anim_f1.png">
+                        <collision-poly>
+                            <point x="1" y="1" />
+                            <point x="0" y="1" />
+                            <point x="0" y="0" />
+                            <point x="1" y="0" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Downloads\GameAssets\0x72_DungeonTilesetII_v1.4\frames\big_demon_idle_anim_f2.png">
+                        <collision-poly>
+                            <point x="1" y="1" />
+                            <point x="0" y="1" />
+                            <point x="0" y="0" />
+                            <point x="1" y="0" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Downloads\GameAssets\0x72_DungeonTilesetII_v1.4\frames\big_demon_idle_anim_f3.png">
+                        <collision-poly>
+                            <point x="1" y="1" />
+                            <point x="0" y="1" />
+                            <point x="0" y="0" />
+                            <point x="1" y="0" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="4" loop="1" name="Run" pingpong="0" repeatcount="1" repeatto="0" sid="225728508644914" speed="10">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Downloads\GameAssets\0x72_DungeonTilesetII_v1.4\frames\big_demon_run_anim_f0.png">
+                        <collision-poly>
+                            <point x="1" y="1" />
+                            <point x="0" y="1" />
+                            <point x="0" y="0" />
+                            <point x="1" y="0" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Downloads\GameAssets\0x72_DungeonTilesetII_v1.4\frames\big_demon_run_anim_f1.png">
+                        <collision-poly>
+                            <point x="1" y="1" />
+                            <point x="0" y="1" />
+                            <point x="0" y="0" />
+                            <point x="1" y="0" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Downloads\GameAssets\0x72_DungeonTilesetII_v1.4\frames\big_demon_run_anim_f2.png">
+                        <collision-poly>
+                            <point x="1" y="1" />
+                            <point x="0" y="1" />
+                            <point x="0" y="0" />
+                            <point x="1" y="0" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Downloads\GameAssets\0x72_DungeonTilesetII_v1.4\frames\big_demon_run_anim_f3.png">
+                        <collision-poly>
+                            <point x="1" y="1" />
+                            <point x="0" y="1" />
+                            <point x="0" y="0" />
+                            <point x="1" y="0" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Mouse" sid="854864022665422">
+            <plugin id="Mouse" />
+        </object-type>
+        <object-type name="StoneTower" sid="236596539715704">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="567270417277650" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.84375" original-source="D:\Downloads\GameAssets\castle\png\1\Asset 24.png">
+                        <image-point name="FirePoint" x="0.527778" y="0.546875" />
+                        <collision-poly>
+                            <point x="0.121951" y="0.112994" />
+                            <point x="0.5" y="0.576271" />
+                            <point x="0.804878" y="0.180791" />
+                            <point x="0.804878" y="0.497175" />
+                            <point x="0.871951" y="0.881356" />
+                            <point x="0.5" y="0.983051" />
+                            <point x="0.097561" y="0.909605" />
+                            <point x="0.121951" y="0.497175" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Spawner" sid="445649251693124">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="516745938793251" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="FireProjectile" sid="408964828831650">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Bullet" sid="247933781807285">
+                    <behavior id="Bullet" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="316957806124704" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.487805" original-source="D:\Downloads\GameAssets\stonetower\PNG\35.png">
+                        <collision-poly>
+                            <point x="0.555851" y="0.268293" />
+                            <point x="0.789894" y="0.0975613" />
+                            <point x="0.789893" y="0.798781" />
+                            <point x="0.55851" y="0.573171" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="8" loop="0" name="Explode" pingpong="0" repeatcount="1" repeatto="0" sid="338658704499597" speed="5">
+                    <frame duration="1" hotspotX="0.505882" hotspotY="0.5" original-source="D:\Downloads\GameAssets\stonetower\PNG\54.png" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Downloads\GameAssets\stonetower\PNG\55.png" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.504587" original-source="D:\Downloads\GameAssets\stonetower\PNG\56.png" />
+                    <frame duration="1" hotspotX="0.504274" hotspotY="0.5" original-source="D:\Downloads\GameAssets\stonetower\PNG\57.png" />
+                    <frame duration="1" hotspotX="0.504587" hotspotY="0.5" original-source="D:\Downloads\GameAssets\stonetower\PNG\58.png" />
+                    <frame duration="1" hotspotX="0.505747" hotspotY="0.505263" original-source="D:\Downloads\GameAssets\stonetower\PNG\59.png" />
+                    <frame duration="1" hotspotX="0.505618" hotspotY="0.5" original-source="D:\Downloads\GameAssets\stonetower\PNG\60.png" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Downloads\GameAssets\stonetower\PNG\61.png" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="TurrentBody" sid="737892367241573">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Turret" sid="345398926125837">
+                    <behavior id="Turret" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="125808212659865" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                        <image-point name="FirePoint" x="0.8125" y="0.5" />
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type global="1" name="PlatformPlace" sid="248794896369127">
+            <plugin id="Arr" />
+        </object-type>
+        <object-type name="PathWall" sid="872681253591965">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Solid" sid="393329267214121">
+                    <behavior id="solid" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="557610174353251" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Logo" sid="781897039624286">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="397664313787296" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Downloads\GameAssets\TowerDiscard.png">
+                        <collision-poly>
+                            <point x="0.208929" y="0.262332" />
+                            <point x="0.5" y="0.134529" />
+                            <point x="0.794643" y="0.257848" />
+                            <point x="0.7875" y="0.5" />
+                            <point x="0.898214" y="0.872197" />
+                            <point x="0.5" y="0.997758" />
+                            <point x="0.15" y="0.811659" />
+                            <point x="0.221429" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="PlayText" sid="354968426046604">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="Tree1" sid="969703901485211">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="840639490103198" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Downloads\GameAssets\Outdoor and Forest Tileset\Tilesets\Tileset-2.png">
+                        <collision-poly>
+                            <point x="0.25" y="0.25" />
+                            <point x="1" y="0.25" />
+                            <point x="1" y="0.0416667" />
+                            <point x="1" y="1" />
+                            <point x="1" y="1" />
+                            <point x="1" y="1" />
+                            <point x="0.0208333" y="1" />
+                            <point x="0.270833" y="1" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Tree2" sid="493029528259224">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="892445664484076" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Downloads\GameAssets\Outdoor and Forest Tileset\Tilesets\Tileset-2.png">
+                        <collision-poly>
+                            <point x="0" y="0.268041" />
+                            <point x="0.333333" y="0.268041" />
+                            <point x="1" y="0.0618556" />
+                            <point x="1" y="1" />
+                            <point x="1" y="1" />
+                            <point x="0.333333" y="1" />
+                            <point x="0" y="1" />
+                            <point x="0" y="1" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Tree3" sid="591033940161443">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="737160095362903" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Downloads\GameAssets\Outdoor and Forest Tileset\Tilesets\Tileset-2.png">
+                        <collision-poly>
+                            <point x="0.309524" y="0" />
+                            <point x="1" y="0" />
+                            <point x="1" y="0" />
+                            <point x="1" y="0.654321" />
+                            <point x="1" y="1" />
+                            <point x="1" y="1" />
+                            <point x="0.047619" y="1" />
+                            <point x="0.333333" y="0.654321" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Tree4" sid="934722266872043">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="465036767053890" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Downloads\GameAssets\Outdoor and Forest Tileset\Tilesets\Tileset-2.png">
+                        <collision-poly>
+                            <point x="0" y="0" />
+                            <point x="0.326531" y="0" />
+                            <point x="0.979592" y="0" />
+                            <point x="0.979592" y="0.657492" />
+                            <point x="0.979592" y="1" />
+                            <point x="0.326531" y="1" />
+                            <point x="0" y="1" />
+                            <point x="0" y="0.657492" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="TowerPlatform" sid="660183978484527">
+            <plugin id="Tilemap" />
+            <instance-variables>
+                <instance-variable comment="Apakah platform bisa dibangun tower atau tidak" name="Buildable" sid="445066398156609" type="boolean" />
+            </instance-variables>
+            <texture original-source="D:\Downloads\GameAssets\Outdoor and Forest Tileset\Tilesets\Tileset-3.png" />
+            <tiles />
+        </object-type>
+        <object-type name="Wood" sid="662053091382559">
+            <plugin id="Tilemap" />
+            <texture original-source="D:\Downloads\GameAssets\Outdoor and Forest Tileset\Tilesets\Tileset-2.png" />
+            <tiles />
+        </object-type>
+        <object-type name="ChooseLevel" sid="621816684115216">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="LevelSelectBox" sid="745505863351506">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="912354346882763" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\AMIKOM\Teknologi Game\TA\levelSelectBox.png">
+                        <collision-poly>
+                            <point x="0.06" y="0.06" />
+                            <point x="0.5" y="0.03" />
+                            <point x="0.94" y="0.06" />
+                            <point x="0.96" y="0.5" />
+                            <point x="0.94" y="0.94" />
+                            <point x="0.5" y="0.97" />
+                            <point x="0.06" y="0.94" />
+                            <point x="0.02" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Level1" sid="106764093884986">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="LevelSelectBox2" sid="118942863016369">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="297804140350165" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\AMIKOM\Teknologi Game\TA\levelSelectBox.png">
+                        <collision-poly>
+                            <point x="0.06" y="0.06" />
+                            <point x="0.5" y="0.03" />
+                            <point x="0.94" y="0.06" />
+                            <point x="0.96" y="0.5" />
+                            <point x="0.94" y="0.94" />
+                            <point x="0.5" y="0.97" />
+                            <point x="0.06" y="0.94" />
+                            <point x="0.02" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="LevelSelectBox3" sid="974346230074570">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="888140139789227" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\AMIKOM\Teknologi Game\TA\levelSelectBox.png">
+                        <collision-poly>
+                            <point x="0.06" y="0.06" />
+                            <point x="0.5" y="0.03" />
+                            <point x="0.94" y="0.06" />
+                            <point x="0.96" y="0.5" />
+                            <point x="0.94" y="0.94" />
+                            <point x="0.5" y="0.97" />
+                            <point x="0.06" y="0.94" />
+                            <point x="0.02" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="LevelSelectBox4" sid="361961712159815">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="430416256536145" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\AMIKOM\Teknologi Game\TA\levelSelectBox.png">
+                        <collision-poly>
+                            <point x="0.06" y="0.06" />
+                            <point x="0.5" y="0.03" />
+                            <point x="0.94" y="0.06" />
+                            <point x="0.96" y="0.5" />
+                            <point x="0.94" y="0.94" />
+                            <point x="0.5" y="0.97" />
+                            <point x="0.06" y="0.94" />
+                            <point x="0.02" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="LevelSelectBox5" sid="715094626096629">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="490867666157901" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\AMIKOM\Teknologi Game\TA\levelSelectBox.png">
+                        <collision-poly>
+                            <point x="0.06" y="0.06" />
+                            <point x="0.5" y="0.03" />
+                            <point x="0.94" y="0.06" />
+                            <point x="0.96" y="0.5" />
+                            <point x="0.94" y="0.94" />
+                            <point x="0.5" y="0.97" />
+                            <point x="0.06" y="0.94" />
+                            <point x="0.02" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Level6" sid="482973653550336">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="Level7" sid="622090354201805">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="Level8" sid="803425968951976">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="Level9" sid="464365078617801">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="Timer" sid="987078098657064">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="Pause" sid="658491062514255">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="Resume" sid="604382368247432">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="MainMenu" sid="531631421455825">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="MenuBG" sid="671877379389409">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="945950766523240" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="TutorialText" sid="855778316905031">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="Sprite" sid="949794075719378">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="123540238339132" speed="5">
+                    <frame duration="1" hotspotX="0.75" hotspotY="0.979592" original-source="D:\Downloads\GameAssets\arrowtut.png">
+                        <collision-poly>
+                            <point x="0.222222" y="0.5" />
+                            <point x="0.763441" y="0.845433" />
+                            <point x="0.5" y="0.943794" />
+                            <point x="0.412186" y="0.730679" />
+                            <point x="0.132616" y="0.5" />
+                            <point x="0.164875" y="0.107728" />
+                            <point x="0.5" y="0.0128806" />
+                            <point x="0.982079" y="0.0117096" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+    </object-folder>
+    <families />
+    <layout-folder>
+        <layout>Level 1.xml</layout>
+        <layout>MainMenu.xml</layout>
+        <layout>LevelSelect.xml</layout>
+    </layout-folder>
+    <event-folder>
+        <event-sheet>Level 1_Event.xml</event-sheet>
+        <event-sheet>MainMenu_Event.xml</event-sheet>
+        <event-sheet>LevelSelect_Event.xml</event-sheet>
+    </event-folder>
+    <global-instances>
+        <global-instance type="Mouse" uid="6" />
+    </global-instances>
+    <sounds-folder />
+    <music-folder />
+    <files-folder>
+        <file-folder name="Icons">
+            <file name="icon-16.png" />
+            <file name="icon-32.png" />
+            <file name="icon-114.png" />
+            <file name="icon-128.png" />
+            <file name="icon-256.png" />
+            <file name="loading-logo.png" />
+        </file-folder>
+    </files-folder>
+</c2project>

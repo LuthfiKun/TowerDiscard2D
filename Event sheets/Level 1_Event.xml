@@ -1,0 +1,395 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Level 1_Event</name>
+    <events>
+        <variable constant="0" name="Tutorial" sid="610685229138336" static="0" type="number">1</variable>
+        <variable comment="Total waktu penyelesaian level (detik)" constant="0" name="LevelCountdown" sid="815549797291288" static="0" type="number">45</variable>
+        <variable comment="Waktu tunggu sebelum musuh mulai spawn (detik)" constant="0" name="SpawnCountdown" sid="649533743159417" static="0" type="number">5</variable>
+        <event-block sid="808605383446827">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="219587211106282" type="System" />
+            </conditions>
+            <actions>
+                <action id="3" name="Set at XY" sid="647507115505411" type="PlatformPlace">
+                    <param id="0" name="X">0</param>
+                    <param id="1" name="Y">0</param>
+                    <param id="2" name="Value">176</param>
+                </action>
+                <action id="3" name="Set at XY" sid="885190773867718" type="PlatformPlace">
+                    <param id="0" name="X">0</param>
+                    <param id="1" name="Y">1</param>
+                    <param id="2" name="Value">156</param>
+                </action>
+                <action id="3" name="Set at XY" sid="353204101752474" type="PlatformPlace">
+                    <param id="0" name="X">1</param>
+                    <param id="1" name="Y">0</param>
+                    <param id="2" name="Value">288</param>
+                </action>
+                <action id="3" name="Set at XY" sid="746900481922872" type="PlatformPlace">
+                    <param id="0" name="X">1</param>
+                    <param id="1" name="Y">1</param>
+                    <param id="2" name="Value">288</param>
+                </action>
+                <action id="3" name="Set at XY" sid="792051227423814" type="PlatformPlace">
+                    <param id="0" name="X">2</param>
+                    <param id="1" name="Y">0</param>
+                    <param id="2" name="Value">400</param>
+                </action>
+                <action id="3" name="Set at XY" sid="281498314064837" type="PlatformPlace">
+                    <param id="0" name="X">2</param>
+                    <param id="1" name="Y">1</param>
+                    <param id="2" name="Value">188</param>
+                </action>
+                <action id="0" name="Set text" sid="104348128528263" type="Timer">
+                    <param id="0" name="Text">SpawnCountdown</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="908815662900250">
+                    <conditions>
+                        <condition id="-12" name="Repeat" sid="673574352275737" type="System">
+                            <param id="0" name="Count">3</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Create object" sid="356129378930863" type="System">
+                            <param id="0" name="Object to create">TowerPlatform</param>
+                            <param id="1" name="Layer">0</param>
+                            <param id="2" name="X">PlatformPlace.At(loopindex, 0)</param>
+                            <param id="3" name="Y">PlatformPlace.At(loopindex, 1)</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="100859637754805" type="System">
+                            <param id="0" name="Object to create">Wood</param>
+                            <param id="1" name="Layer">0</param>
+                            <param id="2" name="X">TowerPlatform.X+16</param>
+                            <param id="3" name="Y">TowerPlatform.Y+16</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="105641547872302">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="669200841100753" type="System">
+                            <param id="0" name="Variable">Tutorial</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Set position" sid="912496829196324" type="TutorialText">
+                            <param id="0" name="X">PlatformPlace.At(2,0)+24</param>
+                            <param id="1" name="Y">PlatformPlace.At(2,1)</param>
+                        </action>
+                        <action id="-3" name="Set position" sid="485541160636451" type="Sprite">
+                            <param id="0" name="X">PlatformPlace.At(2,0)</param>
+                            <param id="1" name="Y">PlatformPlace.At(2,1)+16</param>
+                        </action>
+                        <action id="-4" name="Set layer visible" sid="807265235488672" type="System">
+                            <param id="0" name="Layer">3</param>
+                            <param id="1" name="Visibility">1</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="263323753220813" type="System">
+                            <param id="0" name="Seconds">1</param>
+                        </action>
+                        <action id="-9" name="Destroy" sid="669889325975137" type="TutorialText" />
+                        <action id="-9" name="Destroy" sid="928880327602760" type="Sprite" />
+                        <action id="-4" name="Set layer visible" sid="542563328711981" type="System">
+                            <param id="0" name="Layer">3</param>
+                            <param id="1" name="Visibility">0</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="929869664377311" type="System">
+                            <param id="0" name="Variable">Tutorial</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="932413904028011">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="743445648999166" type="System" />
+            </conditions>
+            <actions>
+                <action id="-16" name="Wait" sid="218228760026440" type="System">
+                    <param id="0" name="Seconds">SpawnCountdown+1</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="634367472561327">
+                    <conditions>
+                        <condition id="-12" name="Repeat" sid="996107407900145" type="System">
+                            <param id="0" name="Count">5</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-16" name="Wait" sid="724494492569913" type="System">
+                            <param id="0" name="Seconds">3*loopindex</param>
+                        </action>
+                        <action id="0" name="Spawn another object" sid="400860916071339" type="Spawner">
+                            <param id="0" name="Object">Demon</param>
+                            <param id="1" name="Layer">1</param>
+                            <param id="2" name="Image point">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="645010307558435">
+            <conditions>
+                <condition id="6" name="On object clicked" sid="775982156931960" type="Mouse">
+                    <param id="0" name="Mouse button">0</param>
+                    <param id="1" name="Click type">0</param>
+                    <param id="2" name="Object clicked">TowerPlatform</param>
+                </condition>
+                <condition id="-8" name="Is boolean instance variable set" sid="251904720684681" type="TowerPlatform">
+                    <param id="0" name="Instance variable">Buildable</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-3" name="Create object" sid="343960262859397" type="System">
+                    <param id="0" name="Object to create">StoneTower</param>
+                    <param id="1" name="Layer">2</param>
+                    <param id="2" name="X">TowerPlatform.X+24</param>
+                    <param id="3" name="Y">TowerPlatform.Y+12</param>
+                </action>
+                <action id="0" name="Spawn another object" sid="704201859585886" type="StoneTower">
+                    <param id="0" name="Object">TurrentBody</param>
+                    <param id="1" name="Layer">2</param>
+                    <param id="2" name="Image point">1</param>
+                </action>
+                <action id="-13" name="Set boolean" sid="772368065219275" type="TowerPlatform">
+                    <param id="0" name="Instance variable">Buildable</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="824213790350622">
+            <conditions>
+                <condition id="-18" name="On created" sid="365474266744697" type="TurrentBody" />
+            </conditions>
+            <actions>
+                <action behavior="Turret" id="1" name="Add object to target" sid="326377490212853" type="TurrentBody">
+                    <param id="0" name="Target">Demon</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="224798407001996">
+            <conditions>
+                <condition behavior="Turret" id="1" name="On shoot" sid="704101457870372" type="TurrentBody" />
+            </conditions>
+            <actions>
+                <action id="0" name="Spawn another object" sid="273209657334937" type="TurrentBody">
+                    <param id="0" name="Object">FireProjectile</param>
+                    <param id="1" name="Layer">2</param>
+                    <param id="2" name="Image point">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="514858995940161">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="510751406522357" type="FireProjectile">
+                    <param id="0" name="Object">Demon</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Bullet" id="0" name="Set speed" sid="635440983835227" type="FireProjectile">
+                    <param id="0" name="Speed">0</param>
+                </action>
+                <action id="4" name="Set animation" sid="995189184777939" type="FireProjectile">
+                    <param id="0" name="Animation">&quot;Explode&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+                <action id="-12" name="Subtract from" sid="284740968922530" type="Demon">
+                    <param id="0" name="Instance variable">Health</param>
+                    <param id="1" name="Value">10</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="195551719303352">
+            <conditions>
+                <condition behavior="Bullet" id="1" name="Compare distance travelled" sid="943119927558083" type="FireProjectile">
+                    <param id="0" name="Comparison">4</param>
+                    <param id="1" name="Distance">250</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Bullet" id="0" name="Set speed" sid="924058593688054" type="FireProjectile">
+                    <param id="0" name="Speed">0</param>
+                </action>
+                <action id="4" name="Set animation" sid="255844308800445" type="FireProjectile">
+                    <param id="0" name="Animation">&quot;Explode&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="762117330322592">
+            <conditions>
+                <condition id="4" name="On finished" sid="142058493090603" type="FireProjectile">
+                    <param id="0" name="Animation">&quot;Explode&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="361752611718431" type="FireProjectile" />
+            </actions>
+        </event-block>
+        <event-block sid="544333849145586">
+            <conditions>
+                <condition id="-7" name="Compare instance variable" sid="588547109942410" type="Demon">
+                    <param id="0" name="Instance variable">Health</param>
+                    <param id="1" name="Comparison">3</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="474866206201472" type="Demon" />
+            </actions>
+        </event-block>
+        <event-block sid="494001447262238">
+            <conditions>
+                <condition id="-18" name="On created" sid="659708280026610" type="Demon" />
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" sid="192673376321391" type="Demon">
+                    <param id="0" name="Animation">&quot;Run&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+                <action behavior="Pathfinding" id="5" name="Add obstacle" sid="643891277869618" type="Demon">
+                    <param id="0" name="Obstacle">PathWall</param>
+                </action>
+                <action behavior="Pathfinding" id="0" name="Find path" sid="662640982674674" type="Demon">
+                    <param id="0" name="X">50</param>
+                    <param id="1" name="Y">240</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="295916117898859">
+            <conditions>
+                <condition behavior="Pathfinding" id="0" name="On path found" sid="433833517486587" type="Demon" />
+            </conditions>
+            <actions>
+                <action behavior="Pathfinding" id="1" name="Move along path" sid="359639719198118" type="Demon" />
+            </actions>
+        </event-block>
+        <event-block sid="313445197719194">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="641243366899373" type="System">
+                    <param id="0" name="Variable">Tutorial</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+            </conditions>
+            <actions />
+        </event-block>
+        <event-block sid="762616686814764">
+            <conditions>
+                <condition id="-6" name="Every X seconds" sid="429694260323407" type="System">
+                    <param id="0" name="Interval (seconds)">1.0</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="978161893907109" type="System">
+                    <param id="0" name="Variable">SpawnCountdown</param>
+                    <param id="1" name="Comparison">5</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-11" name="Subtract from" sid="702242146954155" type="System">
+                    <param id="0" name="Variable">SpawnCountdown</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="0" name="Set text" sid="529944216020877" type="Timer">
+                    <param id="0" name="Text">SpawnCountdown</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="793170948355284">
+            <conditions>
+                <condition id="-6" name="Every X seconds" sid="244471704256304" type="System">
+                    <param id="0" name="Interval (seconds)">1.0</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="860849470250529" type="System">
+                    <param id="0" name="Variable">LevelCountdown</param>
+                    <param id="1" name="Comparison">5</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="641581974542670" type="System">
+                    <param id="0" name="Variable">SpawnCountdown</param>
+                    <param id="1" name="Comparison">2</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Set text" sid="359633205581479" type="Timer">
+                    <param id="0" name="Text">LevelCountdown</param>
+                </action>
+                <action id="4" name="Set font color" sid="845494257019722" type="Timer">
+                    <param id="0" name="Color">rgb(0, 0, 0)</param>
+                </action>
+                <action id="-11" name="Subtract from" sid="862286097441330" type="System">
+                    <param id="0" name="Variable">LevelCountdown</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="444052276336474">
+            <conditions>
+                <condition id="6" name="On object clicked" sid="750301227332929" type="Mouse">
+                    <param id="0" name="Mouse button">0</param>
+                    <param id="1" name="Click type">0</param>
+                    <param id="2" name="Object clicked">Pause</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-15" name="Set visible" sid="199472147458160" type="MenuBG">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-15" name="Set visible" sid="177850545280456" type="Resume">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-15" name="Set visible" sid="458660103829494" type="MainMenu">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-4" name="Set layer visible" sid="715130412580121" type="System">
+                    <param id="0" name="Layer">3</param>
+                    <param id="1" name="Visibility">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="109724191031362">
+            <conditions>
+                <condition id="6" name="On object clicked" sid="648926351912850" type="Mouse">
+                    <param id="0" name="Mouse button">0</param>
+                    <param id="1" name="Click type">0</param>
+                    <param id="2" name="Object clicked">Resume</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-4" name="Set layer visible" sid="963732718970526" type="System">
+                    <param id="0" name="Layer">3</param>
+                    <param id="1" name="Visibility">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="124351456476727">
+            <conditions>
+                <condition id="-9" name="Layer is visible" sid="292060542591250" type="System">
+                    <param id="0" name="Layer">3</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-13" name="Set time scale" sid="993484526782217" type="System">
+                    <param id="0" name="Time scale">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="920426311884186">
+            <conditions>
+                <condition id="-22" name="Else" sid="187073155016901" type="System" />
+            </conditions>
+            <actions>
+                <action id="-13" name="Set time scale" sid="953485191485686" type="System">
+                    <param id="0" name="Time scale">1</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>
