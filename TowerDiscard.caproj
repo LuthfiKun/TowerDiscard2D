@@ -55,11 +55,6 @@
             <texture original-source="D:\Downloads\GameAssets\Outdoor and Forest Tileset\Tilesets\Tileset-3.png" />
             <tiles />
         </object-type>
-        <object-type name="Grass" sid="257222167073072">
-            <plugin id="Tilemap" />
-            <texture original-source="D:\Downloads\GameAssets\Outdoor and Forest Tileset\Tilesets\Tileset-3.png" />
-            <tiles />
-        </object-type>
         <object-type name="Demon" sid="228039006770961">
             <plugin id="Sprite" />
             <instance-variables>
@@ -164,7 +159,7 @@
                 </animation>
             </animation-folder>
         </object-type>
-        <object-type name="Spawner" sid="445649251693124">
+        <object-type name="EnemySpawner" sid="445649251693124">
             <plugin id="Sprite" />
             <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="516745938793251" speed="5">
@@ -480,11 +475,12 @@
         <object-type name="TutorialText" sid="855778316905031">
             <plugin id="Text" />
         </object-type>
-        <object-type name="Sprite" sid="949794075719378">
+        <object-type name="TutorialArrow" sid="949794075719378">
             <plugin id="Sprite" />
             <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="123540238339132" speed="5">
-                    <frame duration="1" hotspotX="0.75" hotspotY="0.979592" original-source="D:\Downloads\GameAssets\arrowtut.png">
+                    <frame duration="1" hotspotX="0.96875" hotspotY="0.0408163" original-source="D:\Downloads\GameAssets\arrowtut.png">
+                        <image-point name="Point" x="0.78125" y="1" />
                         <collision-poly>
                             <point x="0.222222" y="0.5" />
                             <point x="0.763441" y="0.845433" />
@@ -498,6 +494,9 @@
                     </frame>
                 </animation>
             </animation-folder>
+        </object-type>
+        <object-type name="TutorialConfirm" sid="479702906817492">
+            <plugin id="Text" />
         </object-type>
     </object-folder>
     <families />

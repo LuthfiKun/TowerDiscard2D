@@ -3,7 +3,7 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>Level 1_Event</name>
     <events>
-        <variable constant="0" name="Tutorial" sid="610685229138336" static="0" type="number">1</variable>
+        <variable comment="Mengindikasikan state dari Tutorial. Tanpa tutorial = 0" constant="0" name="Tutorial" sid="610685229138336" static="0" type="number">1</variable>
         <variable comment="Total waktu penyelesaian level (detik)" constant="0" name="LevelCountdown" sid="815549797291288" static="0" type="number">45</variable>
         <variable comment="Waktu tunggu sebelum musuh mulai spawn (detik)" constant="0" name="SpawnCountdown" sid="649533743159417" static="0" type="number">5</variable>
         <event-block sid="808605383446827">
@@ -67,68 +67,104 @@
                         </action>
                     </actions>
                 </event-block>
-                <event-block sid="105641547872302">
+                <event-block sid="795524272307385">
+                    <conditions />
+                    <actions>
+                        <action id="-16" name="Wait" sid="218228760026440" type="System">
+                            <param id="0" name="Seconds">SpawnCountdown+1</param>
+                        </action>
+                        <action id="-13" name="Set time scale" sid="807232841499956" type="System">
+                            <param id="0" name="Time scale">1.0</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="634367472561327">
+                            <conditions>
+                                <condition id="-12" name="Repeat" sid="996107407900145" type="System">
+                                    <param id="0" name="Count">5</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-16" name="Wait" sid="724494492569913" type="System">
+                                    <param id="0" name="Seconds">3*loopindex</param>
+                                </action>
+                                <action id="0" name="Spawn another object" sid="400860916071339" type="EnemySpawner">
+                                    <param id="0" name="Object">Demon</param>
+                                    <param id="1" name="Layer">1</param>
+                                    <param id="2" name="Image point">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="105641547872302">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="669200841100753" type="System">
+                    <param id="0" name="Variable">Tutorial</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-4" name="Set layer visible" sid="960333906784241" type="System">
+                    <param id="0" name="Layer">3</param>
+                    <param id="1" name="Visibility">1</param>
+                </action>
+                <action id="0" name="Set text" sid="117923805743558" type="TutorialText">
+                    <param id="0" name="Text">&quot;Kamu bisa klik pada Tower Platform untuk membangun Tower&quot;</param>
+                </action>
+                <action id="-3" name="Set position" sid="912496829196324" type="TutorialText">
+                    <param id="0" name="X">PlatformPlace.At(2,0)+24</param>
+                    <param id="1" name="Y">PlatformPlace.At(2,1)</param>
+                </action>
+                <action id="-3" name="Set position" sid="485541160636451" type="TutorialArrow">
+                    <param id="0" name="X">PlatformPlace.At(2,0)-48</param>
+                    <param id="1" name="Y">TutorialText.Y</param>
+                </action>
+                <action id="0" name="Set text" sid="597926099239114" type="TutorialConfirm">
+                    <param id="0" name="Text">&quot;Lanjut&quot;</param>
+                </action>
+                <action id="-3" name="Set position" sid="771905218656104" type="TutorialConfirm">
+                    <param id="0" name="X">TutorialText.X</param>
+                    <param id="1" name="Y">TutorialText.Y</param>
+                </action>
+                <action id="-41" name="Wait for signal" sid="485592340464734" type="System">
+                    <param id="0" name="Tag">&quot;TutorialStep-2&quot;</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="201908202064656">
                     <conditions>
-                        <condition id="-14" name="Compare variable" sid="669200841100753" type="System">
+                        <condition id="-14" name="Compare variable" sid="201751530331074" type="System">
                             <param id="0" name="Variable">Tutorial</param>
                             <param id="1" name="Comparison">0</param>
-                            <param id="2" name="Value">1</param>
+                            <param id="2" name="Value">2</param>
                         </condition>
                     </conditions>
                     <actions>
-                        <action id="-3" name="Set position" sid="912496829196324" type="TutorialText">
-                            <param id="0" name="X">PlatformPlace.At(2,0)+24</param>
-                            <param id="1" name="Y">PlatformPlace.At(2,1)</param>
-                        </action>
-                        <action id="-3" name="Set position" sid="485541160636451" type="Sprite">
-                            <param id="0" name="X">PlatformPlace.At(2,0)</param>
-                            <param id="1" name="Y">PlatformPlace.At(2,1)+16</param>
-                        </action>
                         <action id="-4" name="Set layer visible" sid="807265235488672" type="System">
                             <param id="0" name="Layer">3</param>
                             <param id="1" name="Visibility">1</param>
                         </action>
-                        <action id="-16" name="Wait" sid="263323753220813" type="System">
-                            <param id="0" name="Seconds">1</param>
+                        <action id="0" name="Set text" sid="183163353036626" type="TutorialText">
+                            <param id="0" name="Text">&quot;Bagun Tower saat timer masih berwarna merah&quot;</param>
                         </action>
-                        <action id="-9" name="Destroy" sid="669889325975137" type="TutorialText" />
-                        <action id="-9" name="Destroy" sid="928880327602760" type="Sprite" />
-                        <action id="-4" name="Set layer visible" sid="542563328711981" type="System">
-                            <param id="0" name="Layer">3</param>
-                            <param id="1" name="Visibility">0</param>
+                        <action id="-3" name="Set position" sid="788449899258737" type="TutorialText">
+                            <param id="0" name="X">Timer.X</param>
+                            <param id="1" name="Y">Timer.Y+50</param>
                         </action>
-                        <action id="-9" name="Set value" sid="929869664377311" type="System">
-                            <param id="0" name="Variable">Tutorial</param>
-                            <param id="1" name="Value">0</param>
+                        <action id="-3" name="Set position" sid="969984528618363" type="TutorialArrow">
+                            <param id="0" name="X">Timer.X-48</param>
+                            <param id="1" name="Y">TutorialText.Y</param>
                         </action>
-                    </actions>
-                </event-block>
-            </sub-events>
-        </event-block>
-        <event-block sid="932413904028011">
-            <conditions>
-                <condition id="-2" name="On start of layout" sid="743445648999166" type="System" />
-            </conditions>
-            <actions>
-                <action id="-16" name="Wait" sid="218228760026440" type="System">
-                    <param id="0" name="Seconds">SpawnCountdown+1</param>
-                </action>
-            </actions>
-            <sub-events>
-                <event-block sid="634367472561327">
-                    <conditions>
-                        <condition id="-12" name="Repeat" sid="996107407900145" type="System">
-                            <param id="0" name="Count">5</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="-16" name="Wait" sid="724494492569913" type="System">
-                            <param id="0" name="Seconds">3*loopindex</param>
+                        <action id="-3" name="Set position" sid="676801214588824" type="TutorialConfirm">
+                            <param id="0" name="X">TutorialText.X</param>
+                            <param id="1" name="Y">TutorialText.Y</param>
                         </action>
-                        <action id="0" name="Spawn another object" sid="400860916071339" type="Spawner">
-                            <param id="0" name="Object">Demon</param>
-                            <param id="1" name="Layer">1</param>
-                            <param id="2" name="Image point">0</param>
+                        <action id="-41" name="Wait for signal" sid="558744264263323" type="System">
+                            <param id="0" name="Tag">&quot;TutorialStep-3&quot;</param>
                         </action>
                     </actions>
                 </event-block>
@@ -143,6 +179,11 @@
                 </condition>
                 <condition id="-8" name="Is boolean instance variable set" sid="251904720684681" type="TowerPlatform">
                     <param id="0" name="Instance variable">Buildable</param>
+                </condition>
+                <condition id="-8" name="Compare two values" sid="197613976990625" type="System">
+                    <param id="0" name="First value">timescale</param>
+                    <param id="1" name="Comparison">1</param>
+                    <param id="2" name="Second value">0</param>
                 </condition>
             </conditions>
             <actions>
@@ -162,6 +203,22 @@
                     <param id="1" name="Value">0</param>
                 </action>
             </actions>
+            <sub-events>
+                <event-block sid="181196986258903">
+                    <conditions>
+                        <condition id="-15" name="Pick nearest/furthest" sid="932841955747189" type="Wood">
+                            <param id="0" name="Which">0</param>
+                            <param id="1" name="X">TowerPlatform.X</param>
+                            <param id="2" name="Y">TowerPlatform.Y</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-15" name="Set visible" sid="736935075819895" type="Wood">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
         </event-block>
         <event-block sid="824213790350622">
             <conditions>
@@ -270,16 +327,6 @@
                 <action behavior="Pathfinding" id="1" name="Move along path" sid="359639719198118" type="Demon" />
             </actions>
         </event-block>
-        <event-block sid="313445197719194">
-            <conditions>
-                <condition id="-14" name="Compare variable" sid="641243366899373" type="System">
-                    <param id="0" name="Variable">Tutorial</param>
-                    <param id="1" name="Comparison">0</param>
-                    <param id="2" name="Value">1</param>
-                </condition>
-            </conditions>
-            <actions />
-        </event-block>
         <event-block sid="762616686814764">
             <conditions>
                 <condition id="-6" name="Every X seconds" sid="429694260323407" type="System">
@@ -363,6 +410,15 @@
                 </condition>
             </conditions>
             <actions>
+                <action id="-15" name="Set visible" sid="661887595016690" type="MenuBG">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="114481441069221" type="Resume">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="195705076375758" type="MainMenu">
+                    <param id="0" name="Visibility">0</param>
+                </action>
                 <action id="-4" name="Set layer visible" sid="963732718970526" type="System">
                     <param id="0" name="Layer">3</param>
                     <param id="1" name="Visibility">0</param>
@@ -390,6 +446,52 @@
                     <param id="0" name="Time scale">1</param>
                 </action>
             </actions>
+        </event-block>
+        <event-block sid="255341904337435">
+            <conditions>
+                <condition id="6" name="On object clicked" sid="942521931960828" type="Mouse">
+                    <param id="0" name="Mouse button">0</param>
+                    <param id="1" name="Click type">0</param>
+                    <param id="2" name="Object clicked">TutorialConfirm</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-10" name="Add to" sid="448297806647214" type="System">
+                    <param id="0" name="Variable">Tutorial</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="199186008551420">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="733085924525652" type="System">
+                            <param id="0" name="Variable">Tutorial</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">2</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-42" name="Signal" sid="960472966385575" type="System">
+                            <param id="0" name="Tag">&quot;TutorialStep-2&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="306952476250204">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="773180174141018" type="System" />
+                        <condition id="-14" name="Compare variable" sid="211899347500617" type="System">
+                            <param id="0" name="Variable">Tutorial</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">3</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-42" name="Signal" sid="720415070845350" type="System">
+                            <param id="0" name="Tag">&quot;TutorialStep-3&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
         </event-block>
     </events>
 </c2eventsheet>
