@@ -464,7 +464,7 @@
         <object-type name="MainMenu" sid="531631421455825">
             <plugin id="Text" />
         </object-type>
-        <object-type name="MenuBG" sid="671877379389409">
+        <object-type name="TutorialBG" sid="671877379389409">
             <plugin id="Sprite" />
             <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="945950766523240" speed="5">
@@ -498,6 +498,25 @@
             </animation-folder>
         </object-type>
         <object-type name="TutorialConfirm" sid="479702906817492">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="MenuBG" sid="988525948707158">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="585511564568027" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="ScreenOverlay" sid="896727709172791">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="656975144385276" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Congtras" sid="333269952326749">
             <plugin id="Text" />
         </object-type>
     </object-folder>

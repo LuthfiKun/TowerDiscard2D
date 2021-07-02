@@ -114,6 +114,18 @@
                     <param id="0" name="Layer">3</param>
                     <param id="1" name="Visibility">1</param>
                 </action>
+                <action id="-15" name="Set visible" sid="680212198737570" type="TutorialText">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-15" name="Set visible" sid="110869676813505" type="TutorialConfirm">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-15" name="Set visible" sid="178108840269230" type="TutorialArrow">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-15" name="Set visible" sid="947890470282931" type="TutorialBG">
+                    <param id="0" name="Visibility">1</param>
+                </action>
                 <action id="-3" name="Set position" sid="485541160636451" type="TutorialArrow">
                     <param id="0" name="X">PlatformPlace.At(0,0)+32</param>
                     <param id="1" name="Y">PlatformPlace.At(0,1)+40</param>
@@ -127,20 +139,20 @@
                 <action id="0" name="Set text" sid="597926099239114" type="TutorialConfirm">
                     <param id="0" name="Text">&quot;Lanjut&quot;</param>
                 </action>
-                <action id="-6" name="Set height" sid="551431776575962" type="MenuBG">
+                <action id="-6" name="Set height" sid="551431776575962" type="TutorialBG">
                     <param id="0" name="Height">TutorialText.Height+TutorialConfirm.Height</param>
                 </action>
-                <action id="-3" name="Set position" sid="926733161508023" type="MenuBG">
+                <action id="-3" name="Set position" sid="926733161508023" type="TutorialBG">
                     <param id="0" name="X">TutorialArrow.ImagePointX(1)+8</param>
                     <param id="1" name="Y">TutorialArrow.ImagePointY(1)-16</param>
                 </action>
                 <action id="-3" name="Set position" sid="912496829196324" type="TutorialText">
-                    <param id="0" name="X">MenuBG.ImagePointX(0)+8</param>
-                    <param id="1" name="Y">MenuBG.ImagePointY(0)+8</param>
+                    <param id="0" name="X">TutorialBG.ImagePointX(0)+8</param>
+                    <param id="1" name="Y">TutorialBG.ImagePointY(0)+8</param>
                 </action>
                 <action id="-3" name="Set position" sid="245511671488211" type="TutorialConfirm">
-                    <param id="0" name="X">MenuBG.ImagePointX(1)-8</param>
-                    <param id="1" name="Y">MenuBG.ImagePointY(1)</param>
+                    <param id="0" name="X">TutorialBG.ImagePointX(1)-8</param>
+                    <param id="1" name="Y">TutorialBG.ImagePointY(1)</param>
                 </action>
                 <action id="-41" name="Wait for signal" sid="485592340464734" type="System">
                     <param id="0" name="Tag">&quot;TutorialStep-2&quot;</param>
@@ -160,6 +172,18 @@
                             <param id="0" name="Layer">3</param>
                             <param id="1" name="Visibility">1</param>
                         </action>
+                        <action id="-15" name="Set visible" sid="889885866763083" type="TutorialText">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="719577895987695" type="TutorialConfirm">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="687110393922532" type="TutorialArrow">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="941821918588430" type="TutorialBG">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
                         <action id="-3" name="Set position" sid="969984528618363" type="TutorialArrow">
                             <param id="0" name="X">Timer.X</param>
                             <param id="1" name="Y">Timer.Y+16</param>
@@ -173,27 +197,23 @@
                         <action id="0" name="Set text" sid="951379682416416" type="TutorialConfirm">
                             <param id="0" name="Text">&quot;Oke&quot;</param>
                         </action>
-                        <action id="-6" name="Set height" sid="112351387158244" type="MenuBG">
+                        <action id="-6" name="Set height" sid="112351387158244" type="TutorialBG">
                             <param id="0" name="Height">TutorialText.Height+TutorialConfirm.Height</param>
                         </action>
-                        <action id="-3" name="Set position" sid="698299037655052" type="MenuBG">
+                        <action id="-3" name="Set position" sid="698299037655052" type="TutorialBG">
                             <param id="0" name="X">TutorialArrow.ImagePointX(1)+8</param>
                             <param id="1" name="Y">TutorialArrow.ImagePointY(1)-16</param>
                         </action>
                         <action id="-3" name="Set position" sid="555120462922728" type="TutorialText">
-                            <param id="0" name="X">MenuBG.ImagePointX(0)+8</param>
-                            <param id="1" name="Y">MenuBG.ImagePointY(0)+8</param>
+                            <param id="0" name="X">TutorialBG.ImagePointX(0)+8</param>
+                            <param id="1" name="Y">TutorialBG.ImagePointY(0)+8</param>
                         </action>
                         <action id="-3" name="Set position" sid="911074629233945" type="TutorialConfirm">
-                            <param id="0" name="X">MenuBG.ImagePointX(1)-8</param>
-                            <param id="1" name="Y">MenuBG.ImagePointY(1)</param>
+                            <param id="0" name="X">TutorialBG.ImagePointX(1)-8</param>
+                            <param id="1" name="Y">TutorialBG.ImagePointY(1)</param>
                         </action>
                         <action id="-41" name="Wait for signal" sid="558744264263323" type="System">
                             <param id="0" name="Tag">&quot;TutorialStep-3&quot;</param>
-                        </action>
-                        <action id="-4" name="Set layer visible" sid="769682670027975" type="System">
-                            <param id="0" name="Layer">3</param>
-                            <param id="1" name="Visibility">0</param>
                         </action>
                     </actions>
                 </event-block>
@@ -361,6 +381,18 @@
                             <param id="0" name="Layer">3</param>
                             <param id="1" name="Visibility">1</param>
                         </action>
+                        <action id="-15" name="Set visible" sid="101293457489375" type="TutorialText">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="426934717945773" type="TutorialConfirm">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="616942780172253" type="TutorialArrow">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="175309131556428" type="TutorialBG">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
                         <action id="-3" name="Set position" sid="409425780348163" type="TutorialArrow">
                             <param id="0" name="X">Timer.X</param>
                             <param id="1" name="Y">Timer.Y+16</param>
@@ -371,20 +403,20 @@
                         <action id="0" name="Set text" sid="435377091613706" type="TutorialText">
                             <param id="0" name="Text">&quot;Habisi semua musuh sebelum timer habis!&quot;</param>
                         </action>
-                        <action id="-6" name="Set height" sid="295880898301465" type="MenuBG">
+                        <action id="-6" name="Set height" sid="295880898301465" type="TutorialBG">
                             <param id="0" name="Height">TutorialText.Height+TutorialConfirm.Height</param>
                         </action>
-                        <action id="-3" name="Set position" sid="728169741242680" type="MenuBG">
+                        <action id="-3" name="Set position" sid="728169741242680" type="TutorialBG">
                             <param id="0" name="X">TutorialArrow.ImagePointX(1)+8</param>
                             <param id="1" name="Y">TutorialArrow.ImagePointY(1)-16</param>
                         </action>
                         <action id="-3" name="Set position" sid="494119173156802" type="TutorialText">
-                            <param id="0" name="X">MenuBG.ImagePointX(0)+8</param>
-                            <param id="1" name="Y">MenuBG.ImagePointY(0)+8</param>
+                            <param id="0" name="X">TutorialBG.ImagePointX(0)+8</param>
+                            <param id="1" name="Y">TutorialBG.ImagePointY(0)+8</param>
                         </action>
                         <action id="-3" name="Set position" sid="757408107124820" type="TutorialConfirm">
-                            <param id="0" name="X">MenuBG.ImagePointX(1)-8</param>
-                            <param id="1" name="Y">MenuBG.ImagePointY(1)</param>
+                            <param id="0" name="X">TutorialBG.ImagePointX(1)-8</param>
+                            <param id="1" name="Y">TutorialBG.ImagePointY(1)</param>
                         </action>
                         <action id="-41" name="Wait for signal" sid="159725718374737" type="System">
                             <param id="0" name="Tag">&quot;TutorialStep-End&quot;</param>
@@ -423,7 +455,23 @@
                             <param id="2" name="Value">DemonCount</param>
                         </condition>
                     </conditions>
-                    <actions />
+                    <actions>
+                        <action id="-4" name="Set layer visible" sid="411036991936420" type="System">
+                            <param id="0" name="Layer">3</param>
+                            <param id="1" name="Visibility">1</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="131044407619742" type="ScreenOverlay">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="574805101734018" type="Congtras">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                        <action id="-24" name="Move to top" sid="374208445454369" type="Congtras" />
+                        <action id="-15" name="Set visible" sid="603657709033692" type="MainMenu">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                        <action id="-24" name="Move to top" sid="555069113645902" type="MainMenu" />
+                    </actions>
                 </event-block>
             </sub-events>
         </event-block>
@@ -489,12 +537,17 @@
                 <action id="-15" name="Set visible" sid="199472147458160" type="MenuBG">
                     <param id="0" name="Visibility">1</param>
                 </action>
+                <action id="-15" name="Set visible" sid="983345213818130" type="ScreenOverlay">
+                    <param id="0" name="Visibility">1</param>
+                </action>
                 <action id="-15" name="Set visible" sid="177850545280456" type="Resume">
                     <param id="0" name="Visibility">1</param>
                 </action>
+                <action id="-24" name="Move to top" sid="845560407594694" type="Resume" />
                 <action id="-15" name="Set visible" sid="458660103829494" type="MainMenu">
                     <param id="0" name="Visibility">1</param>
                 </action>
+                <action id="-24" name="Move to top" sid="738171355596014" type="MainMenu" />
                 <action id="-4" name="Set layer visible" sid="715130412580121" type="System">
                     <param id="0" name="Layer">3</param>
                     <param id="1" name="Visibility">1</param>
@@ -513,17 +566,31 @@
                 <action id="-15" name="Set visible" sid="661887595016690" type="MenuBG">
                     <param id="0" name="Visibility">0</param>
                 </action>
+                <action id="-15" name="Set visible" sid="291481582859962" type="ScreenOverlay">
+                    <param id="0" name="Visibility">0</param>
+                </action>
                 <action id="-15" name="Set visible" sid="114481441069221" type="Resume">
                     <param id="0" name="Visibility">0</param>
                 </action>
                 <action id="-15" name="Set visible" sid="195705076375758" type="MainMenu">
                     <param id="0" name="Visibility">0</param>
                 </action>
-                <action id="-4" name="Set layer visible" sid="963732718970526" type="System">
-                    <param id="0" name="Layer">3</param>
-                    <param id="1" name="Visibility">0</param>
-                </action>
             </actions>
+            <sub-events>
+                <event-block sid="700336187447947">
+                    <conditions>
+                        <condition id="-9" inverted="1" name="Is visible" sid="666449508423819" type="MenuBG" />
+                        <condition id="-9" inverted="1" name="Is visible" sid="889008248000806" type="TutorialText" />
+                        <condition id="-9" inverted="1" name="Is visible" sid="734206002200126" type="TutorialConfirm" />
+                    </conditions>
+                    <actions>
+                        <action id="-4" name="Set layer visible" sid="963732718970526" type="System">
+                            <param id="0" name="Layer">3</param>
+                            <param id="1" name="Visibility">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
         </event-block>
         <event-block sid="124351456476727">
             <conditions>
@@ -554,6 +621,7 @@
                     <param id="1" name="Click type">0</param>
                     <param id="2" name="Object clicked">TutorialConfirm</param>
                 </condition>
+                <condition id="-9" inverted="1" name="Is visible" sid="114209384598633" type="ScreenOverlay" />
             </conditions>
             <actions>
                 <action id="-10" name="Add to" sid="448297806647214" type="System">
@@ -574,6 +642,18 @@
                         <action id="-42" name="Signal" sid="960472966385575" type="System">
                             <param id="0" name="Tag">&quot;TutorialStep-2&quot;</param>
                         </action>
+                        <action id="-15" name="Set visible" sid="927215647481550" type="TutorialText">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="982467980582451" type="TutorialConfirm">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="282704592283244" type="TutorialArrow">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="919971309355124" type="TutorialBG">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
                     </actions>
                 </event-block>
                 <event-block sid="306952476250204">
@@ -588,6 +668,22 @@
                     <actions>
                         <action id="-42" name="Signal" sid="720415070845350" type="System">
                             <param id="0" name="Tag">&quot;TutorialStep-3&quot;</param>
+                        </action>
+                        <action id="-4" name="Set layer visible" sid="969205518262012" type="System">
+                            <param id="0" name="Layer">3</param>
+                            <param id="1" name="Visibility">0</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="250769537413840" type="TutorialText">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="959437142478021" type="TutorialConfirm">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="928043609452001" type="TutorialArrow">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="145974042675000" type="TutorialBG">
+                            <param id="0" name="Visibility">0</param>
                         </action>
                     </actions>
                 </event-block>
@@ -604,6 +700,10 @@
                         <action id="-42" name="Signal" sid="262294272559862" type="System">
                             <param id="0" name="Tag">&quot;TutorialStep-End&quot;</param>
                         </action>
+                        <action id="-9" name="Set value" sid="366406789033892" type="System">
+                            <param id="0" name="Variable">Tutorial</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
                         <action id="-4" name="Set layer visible" sid="803111069265791" type="System">
                             <param id="0" name="Layer">3</param>
                             <param id="1" name="Visibility">0</param>
@@ -617,7 +717,7 @@
                         <action id="-15" name="Set visible" sid="101011088598465" type="TutorialArrow">
                             <param id="0" name="Visibility">0</param>
                         </action>
-                        <action id="-15" name="Set visible" sid="753689299349191" type="MenuBG">
+                        <action id="-15" name="Set visible" sid="753689299349191" type="TutorialBG">
                             <param id="0" name="Visibility">0</param>
                         </action>
                     </actions>
