@@ -4,7 +4,7 @@
     <sid>913457201006108</sid>
     <event-sheet>MainMenu_Event</event-sheet>
     <size>
-        <width>854</width>
+        <width>864</width>
         <height>480</height>
     </size>
     <margins>
@@ -39,7 +39,7 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>427</x>
+                        <x>432</x>
                         <y>180</y>
                         <z>0</z>
                         <width>280</width>
@@ -85,7 +85,7 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>427</x>
+                        <x>432</x>
                         <y>355</y>
                         <z>0</z>
                         <width>207</width>

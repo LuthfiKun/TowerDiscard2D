@@ -27,7 +27,7 @@
         <configuration exporter-descname="HTML5" exporter-id="html5" name="HTML5" />
     </configurations>
     <window-size>
-        <width>854</width>
+        <width>864</width>
         <height>480</height>
     </window-size>
     <pixel-rounding>0</pixel-rounding>
@@ -185,7 +185,7 @@
                         </collision-poly>
                     </frame>
                 </animation>
-                <animation framecount="8" loop="0" name="Explode" pingpong="0" repeatcount="1" repeatto="0" sid="338658704499597" speed="5">
+                <animation framecount="8" loop="0" name="Explode" pingpong="0" repeatcount="1" repeatto="0" sid="338658704499597" speed="12">
                     <frame duration="1" hotspotX="0.505882" hotspotY="0.5" original-source="D:\Downloads\GameAssets\stonetower\PNG\54.png" />
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Downloads\GameAssets\stonetower\PNG\55.png" />
                     <frame duration="1" hotspotX="0.5" hotspotY="0.504587" original-source="D:\Downloads\GameAssets\stonetower\PNG\56.png" />

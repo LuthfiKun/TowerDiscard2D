@@ -192,7 +192,7 @@
                             <param id="0" name="Height">48</param>
                         </action>
                         <action id="0" name="Set text" sid="183163353036626" type="TutorialText">
-                            <param id="0" name="Text">&quot;Musuh akan muncul setelah timer merah habis&quot;</param>
+                            <param id="0" name="Text">&quot;Musuh akan muncul setelah waktu merah habis&quot;</param>
                         </action>
                         <action id="0" name="Set text" sid="951379682416416" type="TutorialConfirm">
                             <param id="0" name="Text">&quot;Oke&quot;</param>
@@ -401,7 +401,7 @@
                             <param id="0" name="Height">48</param>
                         </action>
                         <action id="0" name="Set text" sid="435377091613706" type="TutorialText">
-                            <param id="0" name="Text">&quot;Habisi semua musuh sebelum timer habis!&quot;</param>
+                            <param id="0" name="Text">&quot;Habisi semua musuh sebelum waktu habis!&quot;</param>
                         </action>
                         <action id="-6" name="Set height" sid="295880898301465" type="TutorialBG">
                             <param id="0" name="Height">TutorialText.Height+TutorialConfirm.Height</param>
