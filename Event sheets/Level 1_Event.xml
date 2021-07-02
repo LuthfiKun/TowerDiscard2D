@@ -3,6 +3,8 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>Level 1_Event</name>
     <events>
+        <variable comment="Jumlah semua musuh yang telah terbunuh" constant="0" name="EnemyKilled" sid="466819067964739" static="0" type="number">0</variable>
+        <variable comment="Jumlah musuh jenis demon yang akan di spawn" constant="0" name="DemonCount" sid="640278798693073" static="0" type="number">5</variable>
         <variable comment="Mengindikasikan state dari Tutorial. Tanpa tutorial = 0" constant="0" name="Tutorial" sid="610685229138336" static="0" type="number">1</variable>
         <variable comment="Total waktu penyelesaian level (detik)" constant="0" name="LevelCountdown" sid="815549797291288" static="0" type="number">45</variable>
         <variable comment="Waktu tunggu sebelum musuh mulai spawn (detik)" constant="0" name="SpawnCountdown" sid="649533743159417" static="0" type="number">5</variable>
@@ -81,7 +83,7 @@
                         <event-block sid="634367472561327">
                             <conditions>
                                 <condition id="-12" name="Repeat" sid="996107407900145" type="System">
-                                    <param id="0" name="Count">5</param>
+                                    <param id="0" name="Count">DemonCount</param>
                                 </condition>
                             </conditions>
                             <actions>
@@ -112,23 +114,33 @@
                     <param id="0" name="Layer">3</param>
                     <param id="1" name="Visibility">1</param>
                 </action>
+                <action id="-3" name="Set position" sid="485541160636451" type="TutorialArrow">
+                    <param id="0" name="X">PlatformPlace.At(0,0)+32</param>
+                    <param id="1" name="Y">PlatformPlace.At(0,1)+40</param>
+                </action>
+                <action id="-6" name="Set height" sid="900723830743855" type="TutorialText">
+                    <param id="0" name="Height">64</param>
+                </action>
                 <action id="0" name="Set text" sid="117923805743558" type="TutorialText">
                     <param id="0" name="Text">&quot;Kamu bisa klik pada Tower Platform untuk membangun Tower&quot;</param>
-                </action>
-                <action id="-3" name="Set position" sid="912496829196324" type="TutorialText">
-                    <param id="0" name="X">PlatformPlace.At(2,0)+24</param>
-                    <param id="1" name="Y">PlatformPlace.At(2,1)</param>
-                </action>
-                <action id="-3" name="Set position" sid="485541160636451" type="TutorialArrow">
-                    <param id="0" name="X">PlatformPlace.At(2,0)-48</param>
-                    <param id="1" name="Y">TutorialText.Y</param>
                 </action>
                 <action id="0" name="Set text" sid="597926099239114" type="TutorialConfirm">
                     <param id="0" name="Text">&quot;Lanjut&quot;</param>
                 </action>
-                <action id="-3" name="Set position" sid="771905218656104" type="TutorialConfirm">
-                    <param id="0" name="X">TutorialText.X</param>
-                    <param id="1" name="Y">TutorialText.Y</param>
+                <action id="-6" name="Set height" sid="551431776575962" type="MenuBG">
+                    <param id="0" name="Height">TutorialText.Height+TutorialConfirm.Height</param>
+                </action>
+                <action id="-3" name="Set position" sid="926733161508023" type="MenuBG">
+                    <param id="0" name="X">TutorialArrow.ImagePointX(1)+8</param>
+                    <param id="1" name="Y">TutorialArrow.ImagePointY(1)-16</param>
+                </action>
+                <action id="-3" name="Set position" sid="912496829196324" type="TutorialText">
+                    <param id="0" name="X">MenuBG.ImagePointX(0)+8</param>
+                    <param id="1" name="Y">MenuBG.ImagePointY(0)+8</param>
+                </action>
+                <action id="-3" name="Set position" sid="245511671488211" type="TutorialConfirm">
+                    <param id="0" name="X">MenuBG.ImagePointX(1)-8</param>
+                    <param id="1" name="Y">MenuBG.ImagePointY(1)</param>
                 </action>
                 <action id="-41" name="Wait for signal" sid="485592340464734" type="System">
                     <param id="0" name="Tag">&quot;TutorialStep-2&quot;</param>
@@ -148,23 +160,40 @@
                             <param id="0" name="Layer">3</param>
                             <param id="1" name="Visibility">1</param>
                         </action>
-                        <action id="0" name="Set text" sid="183163353036626" type="TutorialText">
-                            <param id="0" name="Text">&quot;Bagun Tower saat timer masih berwarna merah&quot;</param>
-                        </action>
-                        <action id="-3" name="Set position" sid="788449899258737" type="TutorialText">
-                            <param id="0" name="X">Timer.X</param>
-                            <param id="1" name="Y">Timer.Y+50</param>
-                        </action>
                         <action id="-3" name="Set position" sid="969984528618363" type="TutorialArrow">
-                            <param id="0" name="X">Timer.X-48</param>
-                            <param id="1" name="Y">TutorialText.Y</param>
+                            <param id="0" name="X">Timer.X</param>
+                            <param id="1" name="Y">Timer.Y+16</param>
                         </action>
-                        <action id="-3" name="Set position" sid="676801214588824" type="TutorialConfirm">
-                            <param id="0" name="X">TutorialText.X</param>
-                            <param id="1" name="Y">TutorialText.Y</param>
+                        <action id="-6" name="Set height" sid="569017640874062" type="TutorialText">
+                            <param id="0" name="Height">48</param>
+                        </action>
+                        <action id="0" name="Set text" sid="183163353036626" type="TutorialText">
+                            <param id="0" name="Text">&quot;Musuh akan muncul setelah timer merah habis&quot;</param>
+                        </action>
+                        <action id="0" name="Set text" sid="951379682416416" type="TutorialConfirm">
+                            <param id="0" name="Text">&quot;Oke&quot;</param>
+                        </action>
+                        <action id="-6" name="Set height" sid="112351387158244" type="MenuBG">
+                            <param id="0" name="Height">TutorialText.Height+TutorialConfirm.Height</param>
+                        </action>
+                        <action id="-3" name="Set position" sid="698299037655052" type="MenuBG">
+                            <param id="0" name="X">TutorialArrow.ImagePointX(1)+8</param>
+                            <param id="1" name="Y">TutorialArrow.ImagePointY(1)-16</param>
+                        </action>
+                        <action id="-3" name="Set position" sid="555120462922728" type="TutorialText">
+                            <param id="0" name="X">MenuBG.ImagePointX(0)+8</param>
+                            <param id="1" name="Y">MenuBG.ImagePointY(0)+8</param>
+                        </action>
+                        <action id="-3" name="Set position" sid="911074629233945" type="TutorialConfirm">
+                            <param id="0" name="X">MenuBG.ImagePointX(1)-8</param>
+                            <param id="1" name="Y">MenuBG.ImagePointY(1)</param>
                         </action>
                         <action id="-41" name="Wait for signal" sid="558744264263323" type="System">
                             <param id="0" name="Tag">&quot;TutorialStep-3&quot;</param>
+                        </action>
+                        <action id="-4" name="Set layer visible" sid="769682670027975" type="System">
+                            <param id="0" name="Layer">3</param>
+                            <param id="1" name="Visibility">0</param>
                         </action>
                     </actions>
                 </event-block>
@@ -318,6 +347,51 @@
                     <param id="1" name="Y">240</param>
                 </action>
             </actions>
+            <sub-events>
+                <event-block sid="664101399951487">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="913732125695897" type="System">
+                            <param id="0" name="Variable">Tutorial</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">3</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-4" name="Set layer visible" sid="246991222294969" type="System">
+                            <param id="0" name="Layer">3</param>
+                            <param id="1" name="Visibility">1</param>
+                        </action>
+                        <action id="-3" name="Set position" sid="409425780348163" type="TutorialArrow">
+                            <param id="0" name="X">Timer.X</param>
+                            <param id="1" name="Y">Timer.Y+16</param>
+                        </action>
+                        <action id="-6" name="Set height" sid="139698471426776" type="TutorialText">
+                            <param id="0" name="Height">48</param>
+                        </action>
+                        <action id="0" name="Set text" sid="435377091613706" type="TutorialText">
+                            <param id="0" name="Text">&quot;Habisi semua musuh sebelum timer habis!&quot;</param>
+                        </action>
+                        <action id="-6" name="Set height" sid="295880898301465" type="MenuBG">
+                            <param id="0" name="Height">TutorialText.Height+TutorialConfirm.Height</param>
+                        </action>
+                        <action id="-3" name="Set position" sid="728169741242680" type="MenuBG">
+                            <param id="0" name="X">TutorialArrow.ImagePointX(1)+8</param>
+                            <param id="1" name="Y">TutorialArrow.ImagePointY(1)-16</param>
+                        </action>
+                        <action id="-3" name="Set position" sid="494119173156802" type="TutorialText">
+                            <param id="0" name="X">MenuBG.ImagePointX(0)+8</param>
+                            <param id="1" name="Y">MenuBG.ImagePointY(0)+8</param>
+                        </action>
+                        <action id="-3" name="Set position" sid="757408107124820" type="TutorialConfirm">
+                            <param id="0" name="X">MenuBG.ImagePointX(1)-8</param>
+                            <param id="1" name="Y">MenuBG.ImagePointY(1)</param>
+                        </action>
+                        <action id="-41" name="Wait for signal" sid="159725718374737" type="System">
+                            <param id="0" name="Tag">&quot;TutorialStep-End&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
         </event-block>
         <event-block sid="295916117898859">
             <conditions>
@@ -326,6 +400,32 @@
             <actions>
                 <action behavior="Pathfinding" id="1" name="Move along path" sid="359639719198118" type="Demon" />
             </actions>
+        </event-block>
+        <event-block sid="532901070899273">
+            <conditions>
+                <condition id="-19" name="On destroyed" sid="786043697635074" type="Demon" />
+            </conditions>
+            <actions>
+                <action id="-10" name="Add to" sid="259323826424930" type="System">
+                    <param id="0" name="Variable">EnemyKilled</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="-16" name="Wait" sid="459853545511040" type="System">
+                    <param id="0" name="Seconds">0.5</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="602011634143662">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="852048112728566" type="System">
+                            <param id="0" name="Variable">EnemyKilled</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">DemonCount</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                </event-block>
+            </sub-events>
         </event-block>
         <event-block sid="762616686814764">
             <conditions>
@@ -488,6 +588,37 @@
                     <actions>
                         <action id="-42" name="Signal" sid="720415070845350" type="System">
                             <param id="0" name="Tag">&quot;TutorialStep-3&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="226522796504251">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="263591898637179" type="System" />
+                        <condition id="-14" name="Compare variable" sid="288274990129740" type="System">
+                            <param id="0" name="Variable">Tutorial</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">4</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-42" name="Signal" sid="262294272559862" type="System">
+                            <param id="0" name="Tag">&quot;TutorialStep-End&quot;</param>
+                        </action>
+                        <action id="-4" name="Set layer visible" sid="803111069265791" type="System">
+                            <param id="0" name="Layer">3</param>
+                            <param id="1" name="Visibility">0</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="426788931581894" type="TutorialText">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="659773193018407" type="TutorialConfirm">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="101011088598465" type="TutorialArrow">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="753689299349191" type="MenuBG">
+                            <param id="0" name="Visibility">0</param>
                         </action>
                     </actions>
                 </event-block>
