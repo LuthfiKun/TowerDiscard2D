@@ -159,7 +159,7 @@
                 </animation>
             </animation-folder>
         </object-type>
-        <object-type name="EnemySpawner" sid="445649251693124">
+        <object-type name="EnemyStart" sid="445649251693124">
             <plugin id="Sprite" />
             <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="516745938793251" speed="5">
@@ -212,7 +212,7 @@
                 </animation>
             </animation-folder>
         </object-type>
-        <object-type global="1" name="PlatformPlace" sid="248794896369127">
+        <object-type name="PlatformPlace" sid="248794896369127">
             <plugin id="Arr" />
         </object-type>
         <object-type name="PathWall" sid="872681253591965">
@@ -516,8 +516,19 @@
                 </animation>
             </animation-folder>
         </object-type>
-        <object-type name="Congtras" sid="333269952326749">
+        <object-type name="MenuText" sid="333269952326749">
             <plugin id="Text" />
+        </object-type>
+        <object-type global="1" name="LevelStar" sid="555529377389931">
+            <plugin id="Arr" />
+        </object-type>
+        <object-type name="EnemyEnd" sid="197738352283172">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="715719471634857" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
         </object-type>
     </object-folder>
     <families />

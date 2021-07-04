@@ -3,11 +3,13 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>Level 1_Event</name>
     <events>
+        <variable comment="Jumlah maksimal enemies yang dapat masuk benteng" constant="0" name="HealthPoint" sid="661820242717193" static="0" type="number">5</variable>
         <variable comment="Jumlah semua musuh yang telah terbunuh" constant="0" name="EnemyKilled" sid="466819067964739" static="0" type="number">0</variable>
         <variable comment="Jumlah musuh jenis demon yang akan di spawn" constant="0" name="DemonCount" sid="640278798693073" static="0" type="number">5</variable>
-        <variable comment="Mengindikasikan state dari Tutorial. Tanpa tutorial = 0" constant="0" name="Tutorial" sid="610685229138336" static="0" type="number">1</variable>
+        <variable comment="Mengindikasikan state dari Tutorial. Tanpa tutorial = 0" constant="0" name="Tutorial" sid="610685229138336" static="0" type="number">0</variable>
         <variable comment="Total waktu penyelesaian level (detik)" constant="0" name="LevelCountdown" sid="815549797291288" static="0" type="number">45</variable>
         <variable comment="Waktu tunggu sebelum musuh mulai spawn (detik)" constant="0" name="SpawnCountdown" sid="649533743159417" static="0" type="number">5</variable>
+        <comment>Saat Layout dimulai, PlatformPlace akan diisi dengan koordinat X dan Y yang nantinya akan jadi lokasi TowerPlatform.</comment>
         <event-block sid="808605383446827">
             <conditions>
                 <condition id="-2" name="On start of layout" sid="219587211106282" type="System" />
@@ -80,6 +82,7 @@
                         </action>
                     </actions>
                     <sub-events>
+                        <comment>Untuk menambah jenis musuh, buat global variabel baru berisi jumlah musuh lalu tambahkan block repeat dibawah ini.</comment>
                         <event-block sid="634367472561327">
                             <conditions>
                                 <condition id="-12" name="Repeat" sid="996107407900145" type="System">
@@ -90,7 +93,7 @@
                                 <action id="-16" name="Wait" sid="724494492569913" type="System">
                                     <param id="0" name="Seconds">3*loopindex</param>
                                 </action>
-                                <action id="0" name="Spawn another object" sid="400860916071339" type="EnemySpawner">
+                                <action id="0" name="Spawn another object" sid="400860916071339" type="EnemyStart">
                                     <param id="0" name="Object">Demon</param>
                                     <param id="1" name="Layer">1</param>
                                     <param id="2" name="Image point">0</param>
@@ -338,18 +341,6 @@
                 <action id="-9" name="Destroy" sid="361752611718431" type="FireProjectile" />
             </actions>
         </event-block>
-        <event-block sid="544333849145586">
-            <conditions>
-                <condition id="-7" name="Compare instance variable" sid="588547109942410" type="Demon">
-                    <param id="0" name="Instance variable">Health</param>
-                    <param id="1" name="Comparison">3</param>
-                    <param id="2" name="Value">0</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="-9" name="Destroy" sid="474866206201472" type="Demon" />
-            </actions>
-        </event-block>
         <event-block sid="494001447262238">
             <conditions>
                 <condition id="-18" name="On created" sid="659708280026610" type="Demon" />
@@ -363,8 +354,8 @@
                     <param id="0" name="Obstacle">PathWall</param>
                 </action>
                 <action behavior="Pathfinding" id="0" name="Find path" sid="662640982674674" type="Demon">
-                    <param id="0" name="X">50</param>
-                    <param id="1" name="Y">240</param>
+                    <param id="0" name="X">EnemyEnd.X</param>
+                    <param id="1" name="Y">EnemyEnd.Y</param>
                 </action>
             </actions>
             <sub-events>
@@ -433,6 +424,18 @@
                 <action behavior="Pathfinding" id="1" name="Move along path" sid="359639719198118" type="Demon" />
             </actions>
         </event-block>
+        <event-block sid="544333849145586">
+            <conditions>
+                <condition id="-7" name="Compare instance variable" sid="588547109942410" type="Demon">
+                    <param id="0" name="Instance variable">Health</param>
+                    <param id="1" name="Comparison">3</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="474866206201472" type="Demon" />
+            </actions>
+        </event-block>
         <event-block sid="532901070899273">
             <conditions>
                 <condition id="-19" name="On destroyed" sid="786043697635074" type="Demon" />
@@ -463,17 +466,34 @@
                         <action id="-15" name="Set visible" sid="131044407619742" type="ScreenOverlay">
                             <param id="0" name="Visibility">1</param>
                         </action>
-                        <action id="-15" name="Set visible" sid="574805101734018" type="Congtras">
+                        <action id="0" name="Set text" sid="986693632854742" type="MenuText">
+                            <param id="0" name="Text">&quot;Selamat, kamu berhasil!&quot;</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="574805101734018" type="MenuText">
                             <param id="0" name="Visibility">1</param>
                         </action>
-                        <action id="-24" name="Move to top" sid="374208445454369" type="Congtras" />
                         <action id="-15" name="Set visible" sid="603657709033692" type="MainMenu">
                             <param id="0" name="Visibility">1</param>
                         </action>
-                        <action id="-24" name="Move to top" sid="555069113645902" type="MainMenu" />
                     </actions>
                 </event-block>
             </sub-events>
+        </event-block>
+        <event-block sid="693891874984445">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="193627642705318" type="Demon">
+                    <param id="0" name="Object">EnemyEnd</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-15" name="Set visible" sid="598355386857128" type="Demon">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-11" name="Subtract from" sid="436175735193122" type="System">
+                    <param id="0" name="Variable">HealthPoint</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
         </event-block>
         <event-block sid="762616686814764">
             <conditions>
@@ -543,11 +563,9 @@
                 <action id="-15" name="Set visible" sid="177850545280456" type="Resume">
                     <param id="0" name="Visibility">1</param>
                 </action>
-                <action id="-24" name="Move to top" sid="845560407594694" type="Resume" />
                 <action id="-15" name="Set visible" sid="458660103829494" type="MainMenu">
                     <param id="0" name="Visibility">1</param>
                 </action>
-                <action id="-24" name="Move to top" sid="738171355596014" type="MainMenu" />
                 <action id="-4" name="Set layer visible" sid="715130412580121" type="System">
                     <param id="0" name="Layer">3</param>
                     <param id="1" name="Visibility">1</param>
@@ -561,6 +579,7 @@
                     <param id="1" name="Click type">0</param>
                     <param id="2" name="Object clicked">Resume</param>
                 </condition>
+                <condition id="-9" name="Is visible" sid="437358002039727" type="Resume" />
             </conditions>
             <actions>
                 <action id="-15" name="Set visible" sid="661887595016690" type="MenuBG">
@@ -723,6 +742,67 @@
                     </actions>
                 </event-block>
             </sub-events>
+        </event-block>
+        <event-block sid="931111269358729">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="178213449793399" type="System">
+                    <param id="0" name="Variable">HealthPoint</param>
+                    <param id="1" name="Comparison">3</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-4" name="Set layer visible" sid="634368581546917" type="System">
+                    <param id="0" name="Layer">3</param>
+                    <param id="1" name="Visibility">1</param>
+                </action>
+                <action id="-15" name="Set visible" sid="730389586815487" type="ScreenOverlay">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="0" name="Set text" sid="839221461373504" type="MenuText">
+                    <param id="0" name="Text">&quot;Musuh berhasil menembus pertahanan!&quot;</param>
+                </action>
+                <action id="-15" name="Set visible" sid="568655003851909" type="MenuText">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-15" name="Set visible" sid="182149987957406" type="MainMenu">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="678083469413233">
+            <conditions>
+                <condition id="6" name="On object clicked" sid="950720745441356" type="Mouse">
+                    <param id="0" name="Mouse button">0</param>
+                    <param id="1" name="Click type">0</param>
+                    <param id="2" name="Object clicked">MainMenu</param>
+                </condition>
+                <condition id="-9" name="Is visible" sid="573863621182461" type="MainMenu" />
+            </conditions>
+            <actions>
+                <action id="0" name="Set text" sid="661377821022902" type="MenuText">
+                    <param id="0" name="Text">&quot;Kembali ke Menu Utama?&quot;</param>
+                </action>
+                <action id="-15" name="Set visible" sid="307498917360371" type="MenuText">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-2" name="Go to layout" sid="186659654738338" type="System">
+                    <param id="0" name="Layout">MainMenu</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="299609143265007">
+            <conditions>
+                <condition id="-3" name="On end of layout" sid="906156692386094" type="System" />
+            </conditions>
+            <actions>
+                <action id="-21" name="Reset global variables" sid="793352515037802" type="System" />
+                <action id="-26" name="Restart layout" sid="236348667548091" type="System" />
+                <action id="-4" name="Set layer visible" sid="962303840395696" type="System">
+                    <param id="0" name="Layer">3</param>
+                    <param id="1" name="Visibility">0</param>
+                </action>
+            </actions>
         </event-block>
     </events>
 </c2eventsheet>
