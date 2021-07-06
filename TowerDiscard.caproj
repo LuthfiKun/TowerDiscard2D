@@ -59,6 +59,7 @@
             <plugin id="Sprite" />
             <instance-variables>
                 <instance-variable name="Health" sid="231627204549926" type="number" />
+                <instance-variable comment="Resource yang didapat setelah kill" name="Drop" sid="154768611102056" type="number" />
             </instance-variables>
             <behaviors>
                 <behavior-type name="Pathfinding" sid="935263257383684">
@@ -141,8 +142,18 @@
         </object-type>
         <object-type name="StoneTower" sid="236596539715704">
             <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable comment="Waktu membangun tower (detik)" name="BuildTime" sid="640393789132018" type="number" />
+                <instance-variable comment="Base damage proyektil" name="Damage" sid="876798848035677" type="number" />
+                <instance-variable comment="Tower health point" name="Health" sid="174263212020640" type="number" />
+                <instance-variable comment="Kecepatan menembak (detik)" name="RateofFire" sid="924200330602831" type="number" />
+                <instance-variable comment="Cakupan menembak" name="Range" sid="625605338306505" type="number" />
+                <instance-variable comment="Kecepatan proyektil (pixel per detik)" name="ProjectileSpeed" sid="934936467002552" type="number" />
+                <instance-variable comment="Jumlah resource yang dibutuhkan" name="Cost" sid="536527600876268" type="number" />
+                <instance-variable comment="State icon untuk build" name="Icon" sid="853597572894250" type="boolean" />
+            </instance-variables>
             <animation-folder>
-                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="567270417277650" speed="5">
+                <animation framecount="1" loop="0" name="Level1" pingpong="0" repeatcount="1" repeatto="0" sid="567270417277650" speed="5">
                     <frame duration="1" hotspotX="0.5" hotspotY="0.84375" original-source="D:\Downloads\GameAssets\castle\png\1\Asset 24.png">
                         <image-point name="FirePoint" x="0.527778" y="0.546875" />
                         <collision-poly>
@@ -157,6 +168,45 @@
                         </collision-poly>
                     </frame>
                 </animation>
+                <animation framecount="1" loop="0" name="Level2" pingpong="0" repeatcount="1" repeatto="0" sid="814549489300699" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Downloads\GameAssets\castle\png\1\Asset 30.png">
+                        <collision-poly>
+                            <point x="0.0860215" y="0.040747" />
+                            <point x="0.917563" y="0.0390492" />
+                            <point x="0.899642" y="0.499151" />
+                            <point x="0.935484" y="0.96944" />
+                            <point x="0.498208" y="0.998302" />
+                            <point x="0.0645161" y="0.96944" />
+                            <point x="0.100358" y="0.499151" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="1" loop="0" name="Level3" pingpong="0" repeatcount="1" repeatto="0" sid="538089265430976" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Downloads\GameAssets\castle\png\1\Asset 27.png">
+                        <collision-poly>
+                            <point x="0.433692" y="0.126702" />
+                            <point x="0.498208" y="0.0984293" />
+                            <point x="0.605735" y="0.115183" />
+                            <point x="0.985663" y="0.499476" />
+                            <point x="0.939068" y="0.982199" />
+                            <point x="0.498208" y="1" />
+                            <point x="0.0609319" y="0.982199" />
+                            <point x="0.0394265" y="0.499476" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="2" loop="1" name="Building" pingpong="1" repeatcount="1" repeatto="0" sid="345806589628636" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+                <animation framecount="6" loop="0" name="Finishing" pingpong="0" repeatcount="1" repeatto="0" sid="280631413729143" speed="10">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
             </animation-folder>
         </object-type>
         <object-type name="EnemyStart" sid="445649251693124">
@@ -169,6 +219,10 @@
         </object-type>
         <object-type name="FireProjectile" sid="408964828831650">
             <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable comment="Damage (didapat dari variabel pada tower)" name="Damage" sid="218213772383012" type="number" />
+                <instance-variable comment="Range (didapat dari variabel pada tower)" name="Range" sid="423306569133505" type="number" />
+            </instance-variables>
             <behaviors>
                 <behavior-type name="Bullet" sid="247933781807285">
                     <behavior id="Bullet" />
@@ -197,8 +251,11 @@
                 </animation>
             </animation-folder>
         </object-type>
-        <object-type name="TurrentBody" sid="737892367241573">
+        <object-type name="TurretBody" sid="737892367241573">
             <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable comment="Damage (didapat dari variabel pada tower)" name="Damage" sid="602084237941803" type="number" />
+            </instance-variables>
             <behaviors>
                 <behavior-type name="Turret" sid="345398926125837">
                     <behavior id="Turret" />
@@ -527,6 +584,21 @@
             <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="715719471634857" speed="5">
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Resource" sid="285340905165918">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="TowerChooser" sid="898121254178699">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="560300654738756" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="1">
+                        <image-point name="TowerSpot" x="0.181818" y="0.875" />
+                        <image-point name="TowerSpot" x="0.5" y="0.875" />
+                        <image-point name="TowerSpot" x="0.818182" y="0.875" />
+                    </frame>
                 </animation>
             </animation-folder>
         </object-type>
