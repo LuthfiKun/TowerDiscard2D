@@ -71,67 +71,67 @@
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Downloads\GameAssets\0x72_DungeonTilesetII_v1.4\frames\big_demon_idle_anim_f0.png">
                         <collision-poly>
                             <point x="0.757813" y="0.875" />
-                            <point x="0.242188" y="0.888889" />
+                            <point x="0.289063" y="0.902778" />
                             <point x="0.234375" y="0.270833" />
-                            <point x="0.75" y="0.284722" />
+                            <point x="0.796875" y="0.305555" />
                         </collision-poly>
                     </frame>
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Downloads\GameAssets\0x72_DungeonTilesetII_v1.4\frames\big_demon_idle_anim_f1.png">
                         <collision-poly>
-                            <point x="1" y="1" />
-                            <point x="0" y="1" />
-                            <point x="0" y="0" />
-                            <point x="1" y="0" />
+                            <point x="0.773438" y="0.951389" />
+                            <point x="0.226563" y="0.965278" />
+                            <point x="0.234375" y="0.256944" />
+                            <point x="0.75" y="0.236111" />
                         </collision-poly>
                     </frame>
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Downloads\GameAssets\0x72_DungeonTilesetII_v1.4\frames\big_demon_idle_anim_f2.png">
                         <collision-poly>
-                            <point x="1" y="1" />
-                            <point x="0" y="1" />
-                            <point x="0" y="0" />
-                            <point x="1" y="0" />
+                            <point x="0.757813" y="0.979167" />
+                            <point x="0.257813" y="0.972222" />
+                            <point x="0.242188" y="0.215278" />
+                            <point x="0.75" y="0.208333" />
                         </collision-poly>
                     </frame>
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Downloads\GameAssets\0x72_DungeonTilesetII_v1.4\frames\big_demon_idle_anim_f3.png">
                         <collision-poly>
-                            <point x="1" y="1" />
-                            <point x="0" y="1" />
-                            <point x="0" y="0" />
-                            <point x="1" y="0" />
+                            <point x="0.84375" y="0.993056" />
+                            <point x="0.171875" y="0.972222" />
+                            <point x="0.273438" y="0.333333" />
+                            <point x="0.664063" y="0.326389" />
                         </collision-poly>
                     </frame>
                 </animation>
                 <animation framecount="4" loop="1" name="Run" pingpong="0" repeatcount="1" repeatto="0" sid="225728508644914" speed="10">
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Downloads\GameAssets\0x72_DungeonTilesetII_v1.4\frames\big_demon_run_anim_f0.png">
                         <collision-poly>
-                            <point x="1" y="1" />
-                            <point x="0" y="1" />
-                            <point x="0" y="0" />
-                            <point x="1" y="0" />
+                            <point x="0.734375" y="0.895834" />
+                            <point x="0.234375" y="0.833334" />
+                            <point x="0.257813" y="0.298611" />
+                            <point x="0.726563" y="0.25" />
                         </collision-poly>
                     </frame>
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Downloads\GameAssets\0x72_DungeonTilesetII_v1.4\frames\big_demon_run_anim_f1.png">
                         <collision-poly>
-                            <point x="1" y="1" />
-                            <point x="0" y="1" />
-                            <point x="0" y="0" />
-                            <point x="1" y="0" />
+                            <point x="0.78125" y="0.840278" />
+                            <point x="0.25" y="0.826389" />
+                            <point x="0.25" y="0.208333" />
+                            <point x="0.757813" y="0.208333" />
                         </collision-poly>
                     </frame>
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Downloads\GameAssets\0x72_DungeonTilesetII_v1.4\frames\big_demon_run_anim_f2.png">
                         <collision-poly>
-                            <point x="1" y="1" />
-                            <point x="0" y="1" />
-                            <point x="0" y="0" />
-                            <point x="1" y="0" />
+                            <point x="0.804688" y="0.909723" />
+                            <point x="0.257813" y="0.951389" />
+                            <point x="0.257813" y="0.131944" />
+                            <point x="0.734375" y="0.118056" />
                         </collision-poly>
                     </frame>
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Downloads\GameAssets\0x72_DungeonTilesetII_v1.4\frames\big_demon_run_anim_f3.png">
                         <collision-poly>
-                            <point x="1" y="1" />
-                            <point x="0" y="1" />
-                            <point x="0" y="0" />
-                            <point x="1" y="0" />
+                            <point x="0.820313" y="0.888889" />
+                            <point x="0.210938" y="0.958333" />
+                            <point x="0.226563" y="0.402778" />
+                            <point x="0.679688" y="0.326389" />
                         </collision-poly>
                     </frame>
                 </animation>
@@ -140,7 +140,7 @@
         <object-type name="Mouse" sid="854864022665422">
             <plugin id="Mouse" />
         </object-type>
-        <object-type name="StoneTower" sid="236596539715704">
+        <object-type name="TowerFire" sid="236596539715704">
             <plugin id="Sprite" />
             <instance-variables>
                 <instance-variable comment="Waktu membangun tower (detik)" name="BuildTime" sid="640393789132018" type="number" />
@@ -154,17 +154,17 @@
             </instance-variables>
             <animation-folder>
                 <animation framecount="1" loop="0" name="Level1" pingpong="0" repeatcount="1" repeatto="0" sid="567270417277650" speed="5">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.84375" original-source="D:\Downloads\GameAssets\castle\png\1\Asset 24.png">
+                    <frame duration="1" hotspotX="0.527778" hotspotY="0.84375" original-source="D:\Downloads\GameAssets\castle\TG tower 3.png">
                         <image-point name="FirePoint" x="0.527778" y="0.546875" />
                         <collision-poly>
-                            <point x="0.121951" y="0.112994" />
-                            <point x="0.5" y="0.576271" />
-                            <point x="0.804878" y="0.180791" />
-                            <point x="0.804878" y="0.497175" />
-                            <point x="0.871951" y="0.881356" />
-                            <point x="0.5" y="0.983051" />
-                            <point x="0.097561" y="0.909605" />
-                            <point x="0.121951" y="0.497175" />
+                            <point x="0.122563" y="0.113386" />
+                            <point x="0.5" y="0.576194" />
+                            <point x="0.804385" y="0.181114" />
+                            <point x="0.804385" y="0.497178" />
+                            <point x="0.871349" y="0.88097" />
+                            <point x="0.5" y="0.982562" />
+                            <point x="0.0982122" y="0.909191" />
+                            <point x="0.122563" y="0.497178" />
                         </collision-poly>
                     </frame>
                 </animation>
@@ -217,7 +217,7 @@
                 </animation>
             </animation-folder>
         </object-type>
-        <object-type name="FireProjectile" sid="408964828831650">
+        <object-type name="ProjectileFire" sid="408964828831650">
             <plugin id="Sprite" />
             <instance-variables>
                 <instance-variable comment="Damage (didapat dari variabel pada tower)" name="Damage" sid="218213772383012" type="number" />
@@ -230,7 +230,7 @@
             </behaviors>
             <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="316957806124704" speed="5">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.487805" original-source="D:\Downloads\GameAssets\stonetower\PNG\35.png">
+                    <frame duration="1" hotspotX="0.191489" hotspotY="0.487805" original-source="D:\Downloads\GameAssets\stonetower\PNG\35.png">
                         <collision-poly>
                             <point x="0.555851" y="0.268293" />
                             <point x="0.789894" y="0.0975613" />
@@ -599,6 +599,175 @@
                         <image-point name="TowerSpot" x="0.5" y="0.875" />
                         <image-point name="TowerSpot" x="0.818182" y="0.875" />
                     </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="TowerArrow" sid="530269997980181">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable comment="Waktu membangun tower (detik)" name="BuildTime" sid="244289536622453" type="number" />
+                <instance-variable comment="Base damage proyektil" name="Damage" sid="316278879813701" type="number" />
+                <instance-variable comment="Tower health point" name="Health" sid="618985106955666" type="number" />
+                <instance-variable comment="Kecepatan menembak (detik)" name="RateofFire" sid="392203999167392" type="number" />
+                <instance-variable comment="Cakupan menembak" name="Range" sid="876677023578951" type="number" />
+                <instance-variable comment="Kecepatan proyektil (pixel per detik)" name="ProjectileSpeed" sid="830310108325619" type="number" />
+                <instance-variable comment="Jumlah resource yang dibutuhkan" name="Cost" sid="874212707321671" type="number" />
+                <instance-variable comment="State icon untuk build" name="Icon" sid="278501982377493" type="boolean" />
+            </instance-variables>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Level1" pingpong="0" repeatcount="1" repeatto="0" sid="484219673944291" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.846774" original-source="D:\Downloads\GameAssets\castle\png\3\Asset 24.png">
+                        <image-point name="FirePoint" x="0.527778" y="0.548387" />
+                        <collision-poly>
+                            <point x="0.121951" y="0.112994" />
+                            <point x="0.5" y="0.576271" />
+                            <point x="0.804878" y="0.180791" />
+                            <point x="0.804878" y="0.497175" />
+                            <point x="0.871951" y="0.881356" />
+                            <point x="0.5" y="0.983051" />
+                            <point x="0.097561" y="0.909605" />
+                            <point x="0.121951" y="0.497175" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="1" loop="0" name="Level2" pingpong="0" repeatcount="1" repeatto="0" sid="664022133324802" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Downloads\GameAssets\castle\png\3\Asset 30.png">
+                        <collision-poly>
+                            <point x="0.0860215" y="0.040747" />
+                            <point x="0.917563" y="0.0390492" />
+                            <point x="0.899642" y="0.499151" />
+                            <point x="0.935484" y="0.96944" />
+                            <point x="0.498208" y="0.998302" />
+                            <point x="0.0645161" y="0.96944" />
+                            <point x="0.100358" y="0.499151" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="2" loop="1" name="Building" pingpong="1" repeatcount="1" repeatto="0" sid="877230911171878" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+                <animation framecount="6" loop="0" name="Finishing" pingpong="0" repeatcount="1" repeatto="0" sid="311305871377159" speed="10">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="TowerStone" sid="276436364349088">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable comment="Waktu membangun tower (detik)" name="BuildTime" sid="842649711757310" type="number" />
+                <instance-variable comment="Base damage proyektil" name="Damage" sid="919701092741523" type="number" />
+                <instance-variable comment="Tower health point" name="Health" sid="653701376480994" type="number" />
+                <instance-variable comment="Kecepatan menembak (detik)" name="RateofFire" sid="574319582362168" type="number" />
+                <instance-variable comment="Cakupan menembak" name="Range" sid="455142134999827" type="number" />
+                <instance-variable comment="Kecepatan proyektil (pixel per detik)" name="ProjectileSpeed" sid="796533100418405" type="number" />
+                <instance-variable comment="Jumlah resource yang dibutuhkan" name="Cost" sid="312089127329255" type="number" />
+                <instance-variable comment="State icon untuk build" name="Icon" sid="329961650148427" type="boolean" />
+            </instance-variables>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Level1" pingpong="0" repeatcount="1" repeatto="0" sid="617348299720635" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.84375" original-source="D:\Downloads\GameAssets\castle\png\1\Asset 24.png">
+                        <image-point name="FirePoint" x="0.527778" y="0.546875" />
+                        <collision-poly>
+                            <point x="0.121951" y="0.112994" />
+                            <point x="0.5" y="0.576271" />
+                            <point x="0.804878" y="0.180791" />
+                            <point x="0.804878" y="0.497175" />
+                            <point x="0.871951" y="0.881356" />
+                            <point x="0.5" y="0.983051" />
+                            <point x="0.097561" y="0.909605" />
+                            <point x="0.121951" y="0.497175" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="1" loop="0" name="Level2" pingpong="0" repeatcount="1" repeatto="0" sid="264602493963707" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Downloads\GameAssets\castle\png\1\Asset 30.png">
+                        <collision-poly>
+                            <point x="0.0860215" y="0.040747" />
+                            <point x="0.917563" y="0.0390492" />
+                            <point x="0.899642" y="0.499151" />
+                            <point x="0.935484" y="0.96944" />
+                            <point x="0.498208" y="0.998302" />
+                            <point x="0.0645161" y="0.96944" />
+                            <point x="0.100358" y="0.499151" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="2" loop="1" name="Building" pingpong="1" repeatcount="1" repeatto="0" sid="990547213870830" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+                <animation framecount="6" loop="0" name="Finishing" pingpong="0" repeatcount="1" repeatto="0" sid="671498930230774" speed="10">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="ProjectileStone" sid="983817634467502">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable comment="Damage (didapat dari variabel pada tower)" name="Damage" sid="994737732924794" type="number" />
+                <instance-variable comment="Range (didapat dari variabel pada tower)" name="Range" sid="695859778453211" type="number" />
+            </instance-variables>
+            <behaviors>
+                <behavior-type name="Bullet" sid="927173574176653">
+                    <behavior id="Bullet" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="439081862788567" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.491228" original-source="D:\Downloads\GameAssets\stonetower\PNG\29.png">
+                        <collision-poly>
+                            <point x="0.249399" y="0.303381" />
+                            <point x="0.660862" y="0.290544" />
+                            <point x="0.693119" y="0.728606" />
+                            <point x="0.235929" y="0.74861" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="5" loop="0" name="Explode" pingpong="0" repeatcount="1" repeatto="0" sid="833069061913407" speed="12">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Downloads\GameAssets\stonetower\PNG\30.png" />
+                    <frame duration="1" hotspotX="0.509434" hotspotY="0.510204" original-source="D:\Downloads\GameAssets\stonetower\PNG\31.png" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Downloads\GameAssets\stonetower\PNG\32.png" />
+                    <frame duration="1" hotspotX="0.505618" hotspotY="0.5" original-source="D:\Downloads\GameAssets\stonetower\PNG\33.png" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Downloads\GameAssets\stonetower\PNG\34.png" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="ProjectileArrow" sid="125212217881560">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable comment="Damage (didapat dari variabel pada tower)" name="Damage" sid="776824873631853" type="number" />
+                <instance-variable comment="Range (didapat dari variabel pada tower)" name="Range" sid="935124077391150" type="number" />
+            </instance-variables>
+            <behaviors>
+                <behavior-type name="Bullet" sid="840368234278742">
+                    <behavior id="Bullet" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="639447181007959" speed="5">
+                    <frame duration="1" hotspotX="0.16129" hotspotY="0.5" original-source="D:\Downloads\GameAssets\bowandarrow\png\_0010_9.png">
+                        <collision-poly>
+                            <point x="0.940836" y="0.15625" />
+                            <point x="0.941532" y="0.845055" />
+                            <point x="0.333856" y="0.532551" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="3" loop="0" name="Explode" pingpong="0" repeatcount="1" repeatto="0" sid="936656395879387" speed="12">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Downloads\GameAssets\stonetower\PNG\46.png" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Downloads\GameAssets\stonetower\PNG\47.png" />
+                    <frame duration="1" hotspotX="0.506667" hotspotY="0.5" original-source="D:\Downloads\GameAssets\stonetower\PNG\48.png" />
                 </animation>
             </animation-folder>
         </object-type>

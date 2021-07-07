@@ -3,12 +3,12 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>Level 1_Event</name>
     <events>
-        <variable comment="Digunakan untuk membangun Tower" constant="0" name="Resources" sid="848721712394318" static="0" type="number">100</variable>
+        <variable comment="Digunakan untuk membangun Tower" constant="0" name="Resources" sid="848721712394318" static="0" type="number">120</variable>
         <variable comment="Jumlah maksimal enemies yang dapat masuk benteng" constant="0" name="LivePoint" sid="661820242717193" static="0" type="number">5</variable>
         <variable comment="Jumlah musuh jenis demon yang akan di spawn" constant="0" name="DemonCount" sid="640278798693073" static="0" type="number">5</variable>
         <variable comment="Mengindikasikan state dari Tutorial. Tanpa tutorial = 0" constant="0" name="Tutorial" sid="610685229138336" static="0" type="number">1</variable>
         <variable comment="Total waktu penyelesaian level (detik)" constant="0" name="LevelCountdown" sid="815549797291288" static="0" type="number">45</variable>
-        <variable comment="Waktu tunggu sebelum musuh mulai spawn (detik)" constant="0" name="SpawnCountdown" sid="649533743159417" static="0" type="number">5</variable>
+        <variable comment="Waktu tunggu sebelum musuh mulai spawn (detik)" constant="0" name="SpawnCountdown" sid="649533743159417" static="0" type="number">10</variable>
         <event-group description="Semua yang berhubungan dengan gameplay dasar (spawn Tower Platform, spawn Enemies, deteksi LivePoint)" sid="156334734176872" title="Gameplay Dasar">
             <sub-events>
                 <comment>Saat Layout dimulai, PlatformPlace akan diisi dengan koordinat X dan Y yang nantinya akan jadi lokasi TowerPlatform.</comment>
@@ -504,17 +504,51 @@
                             <sub-events>
                                 <event-block sid="212945705338370">
                                     <conditions>
-                                        <condition id="-8" name="Is boolean instance variable set" sid="360609640475896" type="StoneTower">
+                                        <condition id="-8" name="Is boolean instance variable set" sid="360609640475896" type="TowerFire">
                                             <param id="0" name="Instance variable">Icon</param>
                                         </condition>
                                     </conditions>
                                     <actions>
-                                        <action id="-4" name="Set position to another object" sid="999837098140193" type="StoneTower">
+                                        <action id="-4" name="Set position to another object" sid="999837098140193" type="TowerFire">
                                             <param id="0" name="Object">TowerChooser</param>
                                             <param id="1" name="Image point (optional)">1</param>
                                         </action>
-                                        <action id="-24" name="Move to top" sid="590083679559381" type="StoneTower" />
-                                        <action id="-15" name="Set visible" sid="582508875611458" type="StoneTower">
+                                        <action id="-24" name="Move to top" sid="590083679559381" type="TowerFire" />
+                                        <action id="-15" name="Set visible" sid="582508875611458" type="TowerFire">
+                                            <param id="0" name="Visibility">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="285504471113399">
+                                    <conditions>
+                                        <condition id="-8" name="Is boolean instance variable set" sid="762216306270142" type="TowerStone">
+                                            <param id="0" name="Instance variable">Icon</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-4" name="Set position to another object" sid="142835584991093" type="TowerStone">
+                                            <param id="0" name="Object">TowerChooser</param>
+                                            <param id="1" name="Image point (optional)">2</param>
+                                        </action>
+                                        <action id="-24" name="Move to top" sid="232147635794568" type="TowerStone" />
+                                        <action id="-15" name="Set visible" sid="493524231353706" type="TowerStone">
+                                            <param id="0" name="Visibility">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="266822322209890">
+                                    <conditions>
+                                        <condition id="-8" name="Is boolean instance variable set" sid="922667183578246" type="TowerArrow">
+                                            <param id="0" name="Instance variable">Icon</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-4" name="Set position to another object" sid="998863973179422" type="TowerArrow">
+                                            <param id="0" name="Object">TowerChooser</param>
+                                            <param id="1" name="Image point (optional)">3</param>
+                                        </action>
+                                        <action id="-24" name="Move to top" sid="857576882034282" type="TowerArrow" />
+                                        <action id="-15" name="Set visible" sid="778643597712957" type="TowerArrow">
                                             <param id="0" name="Visibility">1</param>
                                         </action>
                                     </actions>
@@ -527,9 +561,15 @@
                                 <condition id="6" name="On object clicked" sid="923388481086656" type="Mouse">
                                     <param id="0" name="Mouse button">0</param>
                                     <param id="1" name="Click type">0</param>
-                                    <param id="2" name="Object clicked">StoneTower</param>
+                                    <param id="2" name="Object clicked">TowerFire</param>
                                 </condition>
-                                <condition id="-8" name="Is boolean instance variable set" sid="900277259432574" type="StoneTower">
+                                <condition id="-8" name="Is boolean instance variable set" sid="900277259432574" type="TowerFire">
+                                    <param id="0" name="Instance variable">Icon</param>
+                                </condition>
+                                <condition id="-8" name="Is boolean instance variable set" sid="554457442855265" type="TowerStone">
+                                    <param id="0" name="Instance variable">Icon</param>
+                                </condition>
+                                <condition id="-8" name="Is boolean instance variable set" sid="240144060750439" type="TowerArrow">
                                     <param id="0" name="Instance variable">Icon</param>
                                 </condition>
                                 <condition id="-15" name="Pick nearest/furthest" sid="986992241523039" type="TowerPlatform">
@@ -543,7 +583,7 @@
                                     <param id="2" name="Second value">0</param>
                                 </condition>
                                 <condition id="-8" name="Compare two values" sid="768379683275535" type="System">
-                                    <param id="0" name="First value">Resources-StoneTower.Cost</param>
+                                    <param id="0" name="First value">Resources-TowerFire.Cost</param>
                                     <param id="1" name="Comparison">5</param>
                                     <param id="2" name="Second value">0</param>
                                 </condition>
@@ -552,22 +592,28 @@
                                 <action id="-15" name="Set visible" sid="587216989016050" type="TowerChooser">
                                     <param id="0" name="Visibility">0</param>
                                 </action>
-                                <action id="-15" name="Set visible" sid="995329266545510" type="StoneTower">
+                                <action id="-15" name="Set visible" sid="995329266545510" type="TowerFire">
+                                    <param id="0" name="Visibility">0</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="817903274614962" type="TowerStone">
+                                    <param id="0" name="Visibility">0</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="775485162769424" type="TowerArrow">
                                     <param id="0" name="Visibility">0</param>
                                 </action>
                                 <action id="-3" name="Create object" sid="343960262859397" type="System">
-                                    <param id="0" name="Object to create">StoneTower</param>
+                                    <param id="0" name="Object to create">TowerFire</param>
                                     <param id="1" name="Layer">2</param>
                                     <param id="2" name="X">TowerPlatform.X+24</param>
                                     <param id="3" name="Y">TowerPlatform.Y+12</param>
                                 </action>
-                                <action id="-5" name="Set width" sid="591537673626679" type="StoneTower">
+                                <action id="-5" name="Set width" sid="591537673626679" type="TowerFire">
                                     <param id="0" name="Width">36</param>
                                 </action>
-                                <action id="-6" name="Set height" sid="484742370478807" type="StoneTower">
+                                <action id="-6" name="Set height" sid="484742370478807" type="TowerFire">
                                     <param id="0" name="Height">64</param>
                                 </action>
-                                <action id="-13" name="Set boolean" sid="148015999854997" type="StoneTower">
+                                <action id="-13" name="Set boolean" sid="148015999854997" type="TowerFire">
                                     <param id="0" name="Instance variable">Icon</param>
                                     <param id="1" name="Value">0</param>
                                 </action>
@@ -577,37 +623,243 @@
                                 </action>
                                 <action id="-11" name="Subtract from" sid="242791662406311" type="System">
                                     <param id="0" name="Variable">Resources</param>
-                                    <param id="1" name="Value">StoneTower.Cost</param>
+                                    <param id="1" name="Value">TowerFire.Cost</param>
                                 </action>
                                 <action id="0" name="Set text" sid="455266208821140" type="Resource">
                                     <param id="0" name="Text">Resources</param>
                                 </action>
-                                <action id="0" name="Spawn another object" sid="704201859585886" type="StoneTower">
+                                <action id="0" name="Spawn another object" sid="704201859585886" type="TowerFire">
                                     <param id="0" name="Object">TurretBody</param>
                                     <param id="1" name="Layer">2</param>
                                     <param id="2" name="Image point">1</param>
                                 </action>
                                 <action behavior="Turret" id="6" name="Set range" sid="277021748624541" type="TurretBody">
-                                    <param id="0" name="Range">StoneTower.Range</param>
+                                    <param id="0" name="Range">TowerFire.Range</param>
                                 </action>
                                 <action behavior="Turret" id="12" name="Set projectile speed" sid="292740763410529" type="TurretBody">
-                                    <param id="0" name="Projectile speed">StoneTower.ProjectileSpeed</param>
+                                    <param id="0" name="Projectile speed">TowerFire.ProjectileSpeed</param>
                                 </action>
                                 <action behavior="Turret" id="7" name="Set rate of fire" sid="173811510691623" type="TurretBody">
-                                    <param id="0" name="Rate of fire">StoneTower.RateofFire</param>
+                                    <param id="0" name="Rate of fire">TowerFire.RateofFire</param>
                                 </action>
                                 <action id="-10" name="Set value" sid="191467139303014" type="TurretBody">
                                     <param id="0" name="Instance variable">Damage</param>
-                                    <param id="1" name="Value">StoneTower.Damage</param>
+                                    <param id="1" name="Value">TowerFire.Damage</param>
                                 </action>
-                                <action id="4" name="Set animation" sid="574669296146144" type="StoneTower">
+                                <action id="4" name="Set animation" sid="574669296146144" type="TowerFire">
                                     <param id="0" name="Animation">&quot;Building&quot;</param>
                                     <param id="1" name="From">1</param>
                                 </action>
                                 <action id="-16" name="Wait" sid="847510824240910" type="System">
-                                    <param id="0" name="Seconds">StoneTower.BuildTime</param>
+                                    <param id="0" name="Seconds">TowerFire.BuildTime</param>
                                 </action>
-                                <action id="4" name="Set animation" sid="798932024061305" type="StoneTower">
+                                <action id="4" name="Set animation" sid="798932024061305" type="TowerFire">
+                                    <param id="0" name="Animation">&quot;Finishing&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="851781053205005">
+                            <conditions>
+                                <condition id="6" name="On object clicked" sid="199429755662161" type="Mouse">
+                                    <param id="0" name="Mouse button">0</param>
+                                    <param id="1" name="Click type">0</param>
+                                    <param id="2" name="Object clicked">TowerStone</param>
+                                </condition>
+                                <condition id="-8" name="Is boolean instance variable set" sid="990253933313543" type="TowerFire">
+                                    <param id="0" name="Instance variable">Icon</param>
+                                </condition>
+                                <condition id="-8" name="Is boolean instance variable set" sid="406134417929274" type="TowerStone">
+                                    <param id="0" name="Instance variable">Icon</param>
+                                </condition>
+                                <condition id="-8" name="Is boolean instance variable set" sid="498325294010921" type="TowerArrow">
+                                    <param id="0" name="Instance variable">Icon</param>
+                                </condition>
+                                <condition id="-15" name="Pick nearest/furthest" sid="254856139821023" type="TowerPlatform">
+                                    <param id="0" name="Which">0</param>
+                                    <param id="1" name="X">Mouse.X</param>
+                                    <param id="2" name="Y">Mouse.Y</param>
+                                </condition>
+                                <condition id="-8" name="Compare two values" sid="838779343053119" type="System">
+                                    <param id="0" name="First value">timescale</param>
+                                    <param id="1" name="Comparison">1</param>
+                                    <param id="2" name="Second value">0</param>
+                                </condition>
+                                <condition id="-8" name="Compare two values" sid="361899615751336" type="System">
+                                    <param id="0" name="First value">Resources-TowerStone.Cost</param>
+                                    <param id="1" name="Comparison">5</param>
+                                    <param id="2" name="Second value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-15" name="Set visible" sid="940062910938753" type="TowerChooser">
+                                    <param id="0" name="Visibility">0</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="231086656652111" type="TowerFire">
+                                    <param id="0" name="Visibility">0</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="508914551311072" type="TowerStone">
+                                    <param id="0" name="Visibility">0</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="240684585110560" type="TowerArrow">
+                                    <param id="0" name="Visibility">0</param>
+                                </action>
+                                <action id="-3" name="Create object" sid="628118599980043" type="System">
+                                    <param id="0" name="Object to create">TowerStone</param>
+                                    <param id="1" name="Layer">2</param>
+                                    <param id="2" name="X">TowerPlatform.X+24</param>
+                                    <param id="3" name="Y">TowerPlatform.Y+12</param>
+                                </action>
+                                <action id="-5" name="Set width" sid="798267393281671" type="TowerStone">
+                                    <param id="0" name="Width">36</param>
+                                </action>
+                                <action id="-6" name="Set height" sid="148146152010285" type="TowerStone">
+                                    <param id="0" name="Height">64</param>
+                                </action>
+                                <action id="-13" name="Set boolean" sid="278424816778409" type="TowerStone">
+                                    <param id="0" name="Instance variable">Icon</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="-13" name="Set boolean" sid="808114140124555" type="TowerPlatform">
+                                    <param id="0" name="Instance variable">Buildable</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="-11" name="Subtract from" sid="307200478764735" type="System">
+                                    <param id="0" name="Variable">Resources</param>
+                                    <param id="1" name="Value">TowerStone.Cost</param>
+                                </action>
+                                <action id="0" name="Set text" sid="616897837515657" type="Resource">
+                                    <param id="0" name="Text">Resources</param>
+                                </action>
+                                <action id="0" name="Spawn another object" sid="849118315913189" type="TowerStone">
+                                    <param id="0" name="Object">TurretBody</param>
+                                    <param id="1" name="Layer">2</param>
+                                    <param id="2" name="Image point">1</param>
+                                </action>
+                                <action behavior="Turret" id="6" name="Set range" sid="273054961251629" type="TurretBody">
+                                    <param id="0" name="Range">TowerStone.Range</param>
+                                </action>
+                                <action behavior="Turret" id="12" name="Set projectile speed" sid="815439088519255" type="TurretBody">
+                                    <param id="0" name="Projectile speed">TowerStone.ProjectileSpeed</param>
+                                </action>
+                                <action behavior="Turret" id="7" name="Set rate of fire" sid="516621803555651" type="TurretBody">
+                                    <param id="0" name="Rate of fire">TowerStone.RateofFire</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="800931813611783" type="TurretBody">
+                                    <param id="0" name="Instance variable">Damage</param>
+                                    <param id="1" name="Value">TowerStone.Damage</param>
+                                </action>
+                                <action id="4" name="Set animation" sid="249286027633978" type="TowerStone">
+                                    <param id="0" name="Animation">&quot;Building&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="165508384804336" type="System">
+                                    <param id="0" name="Seconds">TowerStone.BuildTime</param>
+                                </action>
+                                <action id="4" name="Set animation" sid="819464028539030" type="TowerStone">
+                                    <param id="0" name="Animation">&quot;Finishing&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="958431158815397">
+                            <conditions>
+                                <condition id="6" name="On object clicked" sid="106229850466690" type="Mouse">
+                                    <param id="0" name="Mouse button">0</param>
+                                    <param id="1" name="Click type">0</param>
+                                    <param id="2" name="Object clicked">TowerArrow</param>
+                                </condition>
+                                <condition id="-8" name="Compare two values" sid="203711502332239" type="System">
+                                    <param id="0" name="First value">Resources-TowerArrow.Cost</param>
+                                    <param id="1" name="Comparison">5</param>
+                                    <param id="2" name="Second value">0</param>
+                                </condition>
+                                <condition id="-8" name="Is boolean instance variable set" sid="502840567208647" type="TowerFire">
+                                    <param id="0" name="Instance variable">Icon</param>
+                                </condition>
+                                <condition id="-8" name="Is boolean instance variable set" sid="807879621052609" type="TowerStone">
+                                    <param id="0" name="Instance variable">Icon</param>
+                                </condition>
+                                <condition id="-8" name="Is boolean instance variable set" sid="205719969801365" type="TowerArrow">
+                                    <param id="0" name="Instance variable">Icon</param>
+                                </condition>
+                                <condition id="-15" name="Pick nearest/furthest" sid="742535819691408" type="TowerPlatform">
+                                    <param id="0" name="Which">0</param>
+                                    <param id="1" name="X">Mouse.X</param>
+                                    <param id="2" name="Y">Mouse.Y</param>
+                                </condition>
+                                <condition id="-8" name="Compare two values" sid="869578449682168" type="System">
+                                    <param id="0" name="First value">timescale</param>
+                                    <param id="1" name="Comparison">1</param>
+                                    <param id="2" name="Second value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-15" name="Set visible" sid="923816769979160" type="TowerChooser">
+                                    <param id="0" name="Visibility">0</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="628258075779308" type="TowerFire">
+                                    <param id="0" name="Visibility">0</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="887530180278810" type="TowerStone">
+                                    <param id="0" name="Visibility">0</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="134775578331039" type="TowerArrow">
+                                    <param id="0" name="Visibility">0</param>
+                                </action>
+                                <action id="-3" name="Create object" sid="909222463480747" type="System">
+                                    <param id="0" name="Object to create">TowerArrow</param>
+                                    <param id="1" name="Layer">2</param>
+                                    <param id="2" name="X">TowerPlatform.X+24</param>
+                                    <param id="3" name="Y">TowerPlatform.Y+12</param>
+                                </action>
+                                <action id="-5" name="Set width" sid="624341435687352" type="TowerArrow">
+                                    <param id="0" name="Width">36</param>
+                                </action>
+                                <action id="-6" name="Set height" sid="142455771958288" type="TowerArrow">
+                                    <param id="0" name="Height">64</param>
+                                </action>
+                                <action id="-13" name="Set boolean" sid="819845282373633" type="TowerArrow">
+                                    <param id="0" name="Instance variable">Icon</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="-13" name="Set boolean" sid="844233390775744" type="TowerPlatform">
+                                    <param id="0" name="Instance variable">Buildable</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="-11" name="Subtract from" sid="611663658278900" type="System">
+                                    <param id="0" name="Variable">Resources</param>
+                                    <param id="1" name="Value">TowerArrow.Cost</param>
+                                </action>
+                                <action id="0" name="Set text" sid="463802096288514" type="Resource">
+                                    <param id="0" name="Text">Resources</param>
+                                </action>
+                                <action id="0" name="Spawn another object" sid="413422179594818" type="TowerArrow">
+                                    <param id="0" name="Object">TurretBody</param>
+                                    <param id="1" name="Layer">2</param>
+                                    <param id="2" name="Image point">1</param>
+                                </action>
+                                <action behavior="Turret" id="6" name="Set range" sid="524770410636908" type="TurretBody">
+                                    <param id="0" name="Range">TowerArrow.Range</param>
+                                </action>
+                                <action behavior="Turret" id="12" name="Set projectile speed" sid="190336855631545" type="TurretBody">
+                                    <param id="0" name="Projectile speed">TowerArrow.ProjectileSpeed</param>
+                                </action>
+                                <action behavior="Turret" id="7" name="Set rate of fire" sid="723106496023754" type="TurretBody">
+                                    <param id="0" name="Rate of fire">TowerArrow.RateofFire</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="351998051390225" type="TurretBody">
+                                    <param id="0" name="Instance variable">Damage</param>
+                                    <param id="1" name="Value">TowerArrow.Damage</param>
+                                </action>
+                                <action id="4" name="Set animation" sid="897437261882505" type="TowerArrow">
+                                    <param id="0" name="Animation">&quot;Building&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="169964160427337" type="System">
+                                    <param id="0" name="Seconds">TowerArrow.BuildTime</param>
+                                </action>
+                                <action id="4" name="Set animation" sid="154210689174405" type="TowerArrow">
                                     <param id="0" name="Animation">&quot;Finishing&quot;</param>
                                     <param id="1" name="From">1</param>
                                 </action>
@@ -618,9 +870,9 @@
                                 <condition id="6" name="On object clicked" sid="238179241979009" type="Mouse">
                                     <param id="0" name="Mouse button">0</param>
                                     <param id="1" name="Click type">0</param>
-                                    <param id="2" name="Object clicked">StoneTower</param>
+                                    <param id="2" name="Object clicked">TowerFire</param>
                                 </condition>
-                                <condition id="-8" name="Is boolean instance variable set" sid="687197908711892" type="StoneTower">
+                                <condition id="-8" name="Is boolean instance variable set" sid="687197908711892" type="TowerFire">
                                     <param id="0" name="Instance variable">Icon</param>
                                 </condition>
                                 <condition id="-8" name="Compare two values" sid="927685233039484" type="System">
@@ -629,7 +881,7 @@
                                     <param id="2" name="Second value">0</param>
                                 </condition>
                                 <condition id="-8" inverted="1" name="Compare two values" sid="139242677103154" type="System">
-                                    <param id="0" name="First value">Resources-StoneTower.Cost</param>
+                                    <param id="0" name="First value">Resources-TowerFire.Cost</param>
                                     <param id="1" name="Comparison">5</param>
                                     <param id="2" name="Second value">0</param>
                                 </condition>
@@ -658,14 +910,104 @@
                                 </action>
                             </actions>
                         </event-block>
+                        <event-block sid="837125098803372">
+                            <conditions>
+                                <condition id="6" name="On object clicked" sid="514395558530192" type="Mouse">
+                                    <param id="0" name="Mouse button">0</param>
+                                    <param id="1" name="Click type">0</param>
+                                    <param id="2" name="Object clicked">TowerStone</param>
+                                </condition>
+                                <condition id="-8" name="Is boolean instance variable set" sid="199651912749247" type="TowerStone">
+                                    <param id="0" name="Instance variable">Icon</param>
+                                </condition>
+                                <condition id="-8" name="Compare two values" sid="855323201841208" type="System">
+                                    <param id="0" name="First value">timescale</param>
+                                    <param id="1" name="Comparison">1</param>
+                                    <param id="2" name="Second value">0</param>
+                                </condition>
+                                <condition id="-8" inverted="1" name="Compare two values" sid="546056248705974" type="System">
+                                    <param id="0" name="First value">Resources-TowerStone.Cost</param>
+                                    <param id="1" name="Comparison">5</param>
+                                    <param id="2" name="Second value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set font color" sid="393498081092468" type="Resource">
+                                    <param id="0" name="Color">rgb(255, 0, 0)</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="726267015952920" type="System">
+                                    <param id="0" name="Seconds">0.2</param>
+                                </action>
+                                <action id="4" name="Set font color" sid="205428624525977" type="Resource">
+                                    <param id="0" name="Color">rgb(0, 0, 0)</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="123738925301340" type="System">
+                                    <param id="0" name="Seconds">0.2</param>
+                                </action>
+                                <action id="4" name="Set font color" sid="525365370860299" type="Resource">
+                                    <param id="0" name="Color">rgb(255, 0, 0)</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="724072254508083" type="System">
+                                    <param id="0" name="Seconds">0.2</param>
+                                </action>
+                                <action id="4" name="Set font color" sid="353631246700744" type="Resource">
+                                    <param id="0" name="Color">rgb(0, 0, 0)</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="490855977493399">
+                            <conditions>
+                                <condition id="6" name="On object clicked" sid="438196690558008" type="Mouse">
+                                    <param id="0" name="Mouse button">0</param>
+                                    <param id="1" name="Click type">0</param>
+                                    <param id="2" name="Object clicked">TowerArrow</param>
+                                </condition>
+                                <condition id="-8" name="Is boolean instance variable set" sid="911219683402005" type="TowerArrow">
+                                    <param id="0" name="Instance variable">Icon</param>
+                                </condition>
+                                <condition id="-8" name="Compare two values" sid="190914009957514" type="System">
+                                    <param id="0" name="First value">timescale</param>
+                                    <param id="1" name="Comparison">1</param>
+                                    <param id="2" name="Second value">0</param>
+                                </condition>
+                                <condition id="-8" inverted="1" name="Compare two values" sid="361692785362971" type="System">
+                                    <param id="0" name="First value">Resources-TowerArrow.Cost</param>
+                                    <param id="1" name="Comparison">5</param>
+                                    <param id="2" name="Second value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set font color" sid="903345517487079" type="Resource">
+                                    <param id="0" name="Color">rgb(255, 0, 0)</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="284900539038632" type="System">
+                                    <param id="0" name="Seconds">0.2</param>
+                                </action>
+                                <action id="4" name="Set font color" sid="849797631472000" type="Resource">
+                                    <param id="0" name="Color">rgb(0, 0, 0)</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="552248095842836" type="System">
+                                    <param id="0" name="Seconds">0.2</param>
+                                </action>
+                                <action id="4" name="Set font color" sid="666677207708964" type="Resource">
+                                    <param id="0" name="Color">rgb(255, 0, 0)</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="818378315005288" type="System">
+                                    <param id="0" name="Seconds">0.2</param>
+                                </action>
+                                <action id="4" name="Set font color" sid="567582012822813" type="Resource">
+                                    <param id="0" name="Color">rgb(0, 0, 0)</param>
+                                </action>
+                            </actions>
+                        </event-block>
                         <event-block sid="664730627958597">
                             <conditions>
-                                <condition id="4" name="On finished" sid="241208318281268" type="StoneTower">
+                                <condition id="4" name="On finished" sid="241208318281268" type="TowerFire">
                                     <param id="0" name="Animation">&quot;Finishing&quot;</param>
                                 </condition>
                             </conditions>
                             <actions>
-                                <action id="4" name="Set animation" sid="656809767549159" type="StoneTower">
+                                <action id="4" name="Set animation" sid="656809767549159" type="TowerFire">
                                     <param id="0" name="Animation">&quot;Level1&quot;</param>
                                     <param id="1" name="From">1</param>
                                 </action>
@@ -676,14 +1018,78 @@
                             <sub-events>
                                 <event-block sid="181196986258903">
                                     <conditions>
-                                        <condition id="-15" name="Pick nearest/furthest" sid="932841955747189" type="Wood">
+                                        <condition id="-15" name="Pick nearest/furthest" sid="577907886569329" type="Wood">
                                             <param id="0" name="Which">0</param>
-                                            <param id="1" name="X">StoneTower.X</param>
-                                            <param id="2" name="Y">StoneTower.Y</param>
+                                            <param id="1" name="X">TowerFire.X</param>
+                                            <param id="2" name="Y">TowerFire.Y</param>
                                         </condition>
                                     </conditions>
                                     <actions>
                                         <action id="-15" name="Set visible" sid="736935075819895" type="Wood">
+                                            <param id="0" name="Visibility">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="860350649251722">
+                            <conditions>
+                                <condition id="4" name="On finished" sid="580739914847253" type="TowerStone">
+                                    <param id="0" name="Animation">&quot;Finishing&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="491098217157121" type="TowerStone">
+                                    <param id="0" name="Animation">&quot;Level1&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                                <action behavior="Turret" id="5" name="Set enabled" sid="437308352159054" type="TurretBody">
+                                    <param id="0" name="State">1</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="134783843043567">
+                                    <conditions>
+                                        <condition id="-15" name="Pick nearest/furthest" sid="932841955747189" type="Wood">
+                                            <param id="0" name="Which">0</param>
+                                            <param id="1" name="X">TowerStone.X</param>
+                                            <param id="2" name="Y">TowerStone.Y</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-15" name="Set visible" sid="586579825815798" type="Wood">
+                                            <param id="0" name="Visibility">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="905063418408467">
+                            <conditions>
+                                <condition id="4" name="On finished" sid="494464108852242" type="TowerArrow">
+                                    <param id="0" name="Animation">&quot;Finishing&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="297580855455037" type="TowerArrow">
+                                    <param id="0" name="Animation">&quot;Level1&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                                <action behavior="Turret" id="5" name="Set enabled" sid="988391489666475" type="TurretBody">
+                                    <param id="0" name="State">1</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="660881860880055">
+                                    <conditions>
+                                        <condition id="-15" name="Pick nearest/furthest" sid="847850592048888" type="Wood">
+                                            <param id="0" name="Which">0</param>
+                                            <param id="1" name="X">TowerArrow.X</param>
+                                            <param id="2" name="Y">TowerArrow.Y</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-15" name="Set visible" sid="727199211036995" type="Wood">
                                             <param id="0" name="Visibility">0</param>
                                         </action>
                                     </actions>
@@ -697,7 +1103,13 @@
                                     <param id="0" name="Mouse button">2</param>
                                     <param id="1" name="Click type">0</param>
                                 </condition>
-                                <condition id="-8" name="Is boolean instance variable set" sid="699395370897626" type="StoneTower">
+                                <condition id="-8" name="Is boolean instance variable set" sid="699395370897626" type="TowerFire">
+                                    <param id="0" name="Instance variable">Icon</param>
+                                </condition>
+                                <condition id="-8" name="Is boolean instance variable set" sid="760212323717028" type="TowerStone">
+                                    <param id="0" name="Instance variable">Icon</param>
+                                </condition>
+                                <condition id="-8" name="Is boolean instance variable set" sid="488961748806072" type="TowerArrow">
                                     <param id="0" name="Instance variable">Icon</param>
                                 </condition>
                             </conditions>
@@ -705,7 +1117,13 @@
                                 <action id="-15" name="Set visible" sid="613966738631430" type="TowerChooser">
                                     <param id="0" name="Visibility">0</param>
                                 </action>
-                                <action id="-15" name="Set visible" sid="245593496218961" type="StoneTower">
+                                <action id="-15" name="Set visible" sid="245593496218961" type="TowerFire">
+                                    <param id="0" name="Visibility">0</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="602862480533326" type="TowerStone">
+                                    <param id="0" name="Visibility">0</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="577857624905329" type="TowerArrow">
                                     <param id="0" name="Visibility">0</param>
                                 </action>
                             </actions>
@@ -716,42 +1134,42 @@
                     <sub-events>
                         <event-block sid="514858995940161">
                             <conditions>
-                                <condition id="0" name="On collision with another object" sid="510751406522357" type="FireProjectile">
+                                <condition id="0" name="On collision with another object" sid="510751406522357" type="ProjectileFire">
                                     <param id="0" name="Object">Demon</param>
                                 </condition>
                             </conditions>
                             <actions>
-                                <action id="11" name="Set collisions enabled" sid="807380408064285" type="FireProjectile">
+                                <action id="11" name="Set collisions enabled" sid="807380408064285" type="ProjectileFire">
                                     <param id="0" name="Collisions">0</param>
                                 </action>
-                                <action behavior="Bullet" id="0" name="Set speed" sid="635440983835227" type="FireProjectile">
+                                <action behavior="Bullet" id="0" name="Set speed" sid="635440983835227" type="ProjectileFire">
                                     <param id="0" name="Speed">0</param>
                                 </action>
-                                <action id="4" name="Set animation" sid="995189184777939" type="FireProjectile">
+                                <action id="4" name="Set animation" sid="995189184777939" type="ProjectileFire">
                                     <param id="0" name="Animation">&quot;Explode&quot;</param>
                                     <param id="1" name="From">1</param>
                                 </action>
                                 <action id="-12" name="Subtract from" sid="284740968922530" type="Demon">
                                     <param id="0" name="Instance variable">Health</param>
-                                    <param id="1" name="Value">FireProjectile.Damage</param>
+                                    <param id="1" name="Value">ProjectileFire.Damage</param>
                                 </action>
                             </actions>
                         </event-block>
                         <event-block sid="195551719303352">
                             <conditions>
-                                <condition behavior="Bullet" id="1" name="Compare distance travelled" sid="943119927558083" type="FireProjectile">
+                                <condition behavior="Bullet" id="1" name="Compare distance travelled" sid="943119927558083" type="ProjectileFire">
                                     <param id="0" name="Comparison">4</param>
-                                    <param id="1" name="Distance">FireProjectile.Range</param>
+                                    <param id="1" name="Distance">ProjectileFire.Range</param>
                                 </condition>
                             </conditions>
                             <actions>
-                                <action id="11" name="Set collisions enabled" sid="175933710305077" type="FireProjectile">
+                                <action id="11" name="Set collisions enabled" sid="175933710305077" type="ProjectileFire">
                                     <param id="0" name="Collisions">0</param>
                                 </action>
-                                <action behavior="Bullet" id="0" name="Set speed" sid="924058593688054" type="FireProjectile">
+                                <action behavior="Bullet" id="0" name="Set speed" sid="924058593688054" type="ProjectileFire">
                                     <param id="0" name="Speed">0</param>
                                 </action>
-                                <action id="4" name="Set animation" sid="255844308800445" type="FireProjectile">
+                                <action id="4" name="Set animation" sid="255844308800445" type="ProjectileFire">
                                     <param id="0" name="Animation">&quot;Explode&quot;</param>
                                     <param id="1" name="From">1</param>
                                 </action>
@@ -759,12 +1177,118 @@
                         </event-block>
                         <event-block sid="762117330322592">
                             <conditions>
-                                <condition id="4" name="On finished" sid="142058493090603" type="FireProjectile">
+                                <condition id="4" name="On finished" sid="142058493090603" type="ProjectileFire">
                                     <param id="0" name="Animation">&quot;Explode&quot;</param>
                                 </condition>
                             </conditions>
                             <actions>
-                                <action id="-9" name="Destroy" sid="361752611718431" type="FireProjectile" />
+                                <action id="-9" name="Destroy" sid="361752611718431" type="ProjectileFire" />
+                            </actions>
+                        </event-block>
+                        <event-block sid="374965993813683">
+                            <conditions>
+                                <condition id="0" name="On collision with another object" sid="467060625659038" type="ProjectileStone">
+                                    <param id="0" name="Object">Demon</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="11" name="Set collisions enabled" sid="701740943436042" type="ProjectileStone">
+                                    <param id="0" name="Collisions">0</param>
+                                </action>
+                                <action behavior="Bullet" id="0" name="Set speed" sid="278770356588821" type="ProjectileStone">
+                                    <param id="0" name="Speed">0</param>
+                                </action>
+                                <action id="4" name="Set animation" sid="329406714832111" type="ProjectileStone">
+                                    <param id="0" name="Animation">&quot;Explode&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                                <action id="-12" name="Subtract from" sid="970754103615478" type="Demon">
+                                    <param id="0" name="Instance variable">Health</param>
+                                    <param id="1" name="Value">ProjectileStone.Damage</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="596677560137538">
+                            <conditions>
+                                <condition behavior="Bullet" id="1" name="Compare distance travelled" sid="763191758530581" type="ProjectileStone">
+                                    <param id="0" name="Comparison">4</param>
+                                    <param id="1" name="Distance">ProjectileStone.Range</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="11" name="Set collisions enabled" sid="680640935817766" type="ProjectileStone">
+                                    <param id="0" name="Collisions">0</param>
+                                </action>
+                                <action behavior="Bullet" id="0" name="Set speed" sid="623830694372076" type="ProjectileStone">
+                                    <param id="0" name="Speed">0</param>
+                                </action>
+                                <action id="4" name="Set animation" sid="778705149869385" type="ProjectileStone">
+                                    <param id="0" name="Animation">&quot;Explode&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="115471217375686">
+                            <conditions>
+                                <condition id="4" name="On finished" sid="341747514920208" type="ProjectileStone">
+                                    <param id="0" name="Animation">&quot;Explode&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Destroy" sid="820599828834734" type="ProjectileStone" />
+                            </actions>
+                        </event-block>
+                        <event-block sid="760998927612181">
+                            <conditions>
+                                <condition id="0" name="On collision with another object" sid="193869878209500" type="ProjectileArrow">
+                                    <param id="0" name="Object">Demon</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="11" name="Set collisions enabled" sid="436975210640134" type="ProjectileArrow">
+                                    <param id="0" name="Collisions">0</param>
+                                </action>
+                                <action behavior="Bullet" id="0" name="Set speed" sid="163459261927037" type="ProjectileArrow">
+                                    <param id="0" name="Speed">0</param>
+                                </action>
+                                <action id="4" name="Set animation" sid="210961802430974" type="ProjectileArrow">
+                                    <param id="0" name="Animation">&quot;Explode&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                                <action id="-12" name="Subtract from" sid="278795938332549" type="Demon">
+                                    <param id="0" name="Instance variable">Health</param>
+                                    <param id="1" name="Value">ProjectileArrow.Damage</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="993870030894753">
+                            <conditions>
+                                <condition behavior="Bullet" id="1" name="Compare distance travelled" sid="744632035764095" type="ProjectileArrow">
+                                    <param id="0" name="Comparison">4</param>
+                                    <param id="1" name="Distance">ProjectileArrow.Range</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="11" name="Set collisions enabled" sid="829279366971028" type="ProjectileArrow">
+                                    <param id="0" name="Collisions">0</param>
+                                </action>
+                                <action behavior="Bullet" id="0" name="Set speed" sid="488967182410361" type="ProjectileArrow">
+                                    <param id="0" name="Speed">0</param>
+                                </action>
+                                <action id="4" name="Set animation" sid="357386360222344" type="ProjectileArrow">
+                                    <param id="0" name="Animation">&quot;Explode&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="441829712742284">
+                            <conditions>
+                                <condition id="4" name="On finished" sid="916327240833990" type="ProjectileArrow">
+                                    <param id="0" name="Animation">&quot;Explode&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Destroy" sid="249467186250379" type="ProjectileArrow" />
                             </actions>
                         </event-block>
                     </sub-events>
@@ -785,23 +1309,93 @@
                             <conditions>
                                 <condition behavior="Turret" id="1" name="On shoot" sid="704101457870372" type="TurretBody" />
                                 <condition id="1" name="Is overlapping another object" sid="469555607439904" type="TurretBody">
-                                    <param id="0" name="Object">StoneTower</param>
+                                    <param id="0" name="Object">TowerFire</param>
+                                </condition>
+                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="161503513781781" type="TowerFire">
+                                    <param id="0" name="Instance variable">Icon</param>
                                 </condition>
                             </conditions>
                             <actions>
                                 <action id="0" name="Spawn another object" sid="273209657334937" type="TurretBody">
-                                    <param id="0" name="Object">FireProjectile</param>
+                                    <param id="0" name="Object">ProjectileFire</param>
                                     <param id="1" name="Layer">2</param>
                                     <param id="2" name="Image point">1</param>
                                 </action>
-                                <action behavior="Bullet" id="0" name="Set speed" sid="522527297646409" type="FireProjectile">
-                                    <param id="0" name="Speed">StoneTower.ProjectileSpeed</param>
+                                <action behavior="Bullet" id="5" name="Set enabled" sid="341989724260937" type="ProjectileFire">
+                                    <param id="0" name="State">1</param>
                                 </action>
-                                <action id="-10" name="Set value" sid="141006737068347" type="FireProjectile">
+                                <action behavior="Bullet" id="0" name="Set speed" sid="522527297646409" type="ProjectileFire">
+                                    <param id="0" name="Speed">TowerFire.ProjectileSpeed</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="141006737068347" type="ProjectileFire">
                                     <param id="0" name="Instance variable">Damage</param>
                                     <param id="1" name="Value">TurretBody.Damage</param>
                                 </action>
-                                <action id="-10" name="Set value" sid="298359873713989" type="FireProjectile">
+                                <action id="-10" name="Set value" sid="298359873713989" type="ProjectileFire">
+                                    <param id="0" name="Instance variable">Range</param>
+                                    <param id="1" name="Value">TurretBody.Turret.Range</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="808750908857683">
+                            <conditions>
+                                <condition behavior="Turret" id="1" name="On shoot" sid="716589533294100" type="TurretBody" />
+                                <condition id="1" name="Is overlapping another object" sid="398765377342626" type="TurretBody">
+                                    <param id="0" name="Object">TowerStone</param>
+                                </condition>
+                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="654813186966067" type="TowerStone">
+                                    <param id="0" name="Instance variable">Icon</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Spawn another object" sid="160535822961466" type="TurretBody">
+                                    <param id="0" name="Object">ProjectileStone</param>
+                                    <param id="1" name="Layer">2</param>
+                                    <param id="2" name="Image point">1</param>
+                                </action>
+                                <action behavior="Bullet" id="5" name="Set enabled" sid="398122339969454" type="ProjectileStone">
+                                    <param id="0" name="State">1</param>
+                                </action>
+                                <action behavior="Bullet" id="0" name="Set speed" sid="320403871893190" type="ProjectileStone">
+                                    <param id="0" name="Speed">TowerStone.ProjectileSpeed</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="681041136366690" type="ProjectileStone">
+                                    <param id="0" name="Instance variable">Damage</param>
+                                    <param id="1" name="Value">TurretBody.Damage</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="200273207659132" type="ProjectileStone">
+                                    <param id="0" name="Instance variable">Range</param>
+                                    <param id="1" name="Value">TurretBody.Turret.Range</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="467133949533371">
+                            <conditions>
+                                <condition behavior="Turret" id="1" name="On shoot" sid="235136997175649" type="TurretBody" />
+                                <condition id="1" name="Is overlapping another object" sid="339878523510333" type="TurretBody">
+                                    <param id="0" name="Object">TowerArrow</param>
+                                </condition>
+                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="591450034020662" type="TowerArrow">
+                                    <param id="0" name="Instance variable">Icon</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Spawn another object" sid="597645042378286" type="TurretBody">
+                                    <param id="0" name="Object">ProjectileArrow</param>
+                                    <param id="1" name="Layer">2</param>
+                                    <param id="2" name="Image point">1</param>
+                                </action>
+                                <action behavior="Bullet" id="5" name="Set enabled" sid="581953136569201" type="ProjectileArrow">
+                                    <param id="0" name="State">1</param>
+                                </action>
+                                <action behavior="Bullet" id="0" name="Set speed" sid="995441017845697" type="ProjectileArrow">
+                                    <param id="0" name="Speed">TowerArrow.ProjectileSpeed</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="391583233144638" type="ProjectileArrow">
+                                    <param id="0" name="Instance variable">Damage</param>
+                                    <param id="1" name="Value">TurretBody.Damage</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="846126431003503" type="ProjectileArrow">
                                     <param id="0" name="Instance variable">Range</param>
                                     <param id="1" name="Value">TurretBody.Turret.Range</param>
                                 </action>

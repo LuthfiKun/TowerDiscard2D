@@ -6457,7 +6457,7 @@
             <blend-mode>0</blend-mode>
             <effect-fallback>0</effect-fallback>
             <instances>
-                <instance type="StoneTower" uid="5">
+                <instance type="TowerFire" uid="5">
                     <properties>
                         <initial-visibility>Visible</initial-visibility>
                         <initial-animation>Default</initial-animation>
@@ -6465,10 +6465,10 @@
                         <collisions>Enabled</collisions>
                     </properties>
                     <instance-variables>
-                        <BuildTime>3</BuildTime>
+                        <BuildTime>4</BuildTime>
                         <Damage>50</Damage>
                         <Health>100</Health>
-                        <RateofFire>2</RateofFire>
+                        <RateofFire>2.3</RateofFire>
                         <Range>200</Range>
                         <ProjectileSpeed>150</ProjectileSpeed>
                         <Cost>75</Cost>
@@ -6483,13 +6483,13 @@
                         <width>24</width>
                         <height>43</height>
                         <depth>0</depth>
-                        <hotspotX>0.5</hotspotX>
+                        <hotspotX>0.527777791</hotspotX>
                         <hotspotY>0.84375</hotspotY>
                         <angle>0</angle>
                         <opacity>1</opacity>
                     </world>
                 </instance>
-                <instance type="FireProjectile" uid="10">
+                <instance type="ProjectileFire" uid="10">
                     <properties>
                         <initial-visibility>Visible</initial-visibility>
                         <initial-animation>Default</initial-animation>
@@ -6508,7 +6508,7 @@
                                 <gravity>0</gravity>
                                 <bounce-off-solids>No</bounce-off-solids>
                                 <set-angle>Yes</set-angle>
-                                <initial-state>Enabled</initial-state>
+                                <initial-state>Disabled</initial-state>
                             </properties>
                         </behavior-instance>
                     </behavior-instances>
@@ -6518,10 +6518,10 @@
                         <x>-192</x>
                         <y>-48</y>
                         <z>0</z>
-                        <width>36.682926178</width>
-                        <height>13.957447052</height>
+                        <width>36</width>
+                        <height>12</height>
                         <depth>0</depth>
-                        <hotspotX>0.5</hotspotX>
+                        <hotspotX>0.191489369</hotspotX>
                         <hotspotY>0.48780489</hotspotY>
                         <angle>0</angle>
                         <opacity>1</opacity>
@@ -6587,6 +6587,146 @@
                         <hotspotY>1</hotspotY>
                         <angle>0</angle>
                         <opacity>0.600000024</opacity>
+                    </world>
+                </instance>
+                <instance type="TowerArrow" uid="274">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <instance-variables>
+                        <BuildTime>2</BuildTime>
+                        <Damage>20</Damage>
+                        <Health>100</Health>
+                        <RateofFire>1</RateofFire>
+                        <Range>225</Range>
+                        <ProjectileSpeed>200</ProjectileSpeed>
+                        <Cost>40</Cost>
+                        <Icon>true</Icon>
+                    </instance-variables>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>-112</x>
+                        <y>-48</y>
+                        <z>0</z>
+                        <width>24</width>
+                        <height>43</height>
+                        <depth>0</depth>
+                        <hotspotX>0.5</hotspotX>
+                        <hotspotY>0.84677422</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="TowerStone" uid="276">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <instance-variables>
+                        <BuildTime>3</BuildTime>
+                        <Damage>35</Damage>
+                        <Health>100</Health>
+                        <RateofFire>1.6</RateofFire>
+                        <Range>210</Range>
+                        <ProjectileSpeed>170</ProjectileSpeed>
+                        <Cost>55</Cost>
+                        <Icon>true</Icon>
+                    </instance-variables>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>-80</x>
+                        <y>-48</y>
+                        <z>0</z>
+                        <width>24</width>
+                        <height>43</height>
+                        <depth>0</depth>
+                        <hotspotX>0.5</hotspotX>
+                        <hotspotY>0.84375</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="ProjectileStone" uid="277">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <instance-variables>
+                        <Damage>0</Damage>
+                        <Range>0</Range>
+                    </instance-variables>
+                    <behavior-instances>
+                        <behavior-instance type="Bullet">
+                            <properties>
+                                <speed>400</speed>
+                                <acceleration>0</acceleration>
+                                <gravity>0</gravity>
+                                <bounce-off-solids>No</bounce-off-solids>
+                                <set-angle>Yes</set-angle>
+                                <initial-state>Disabled</initial-state>
+                            </properties>
+                        </behavior-instance>
+                    </behavior-instances>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>-192</x>
+                        <y>8</y>
+                        <z>0</z>
+                        <width>12</width>
+                        <height>13</height>
+                        <depth>0</depth>
+                        <hotspotX>0.5</hotspotX>
+                        <hotspotY>0.491228074</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="ProjectileArrow" uid="278">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <instance-variables>
+                        <Damage>0</Damage>
+                        <Range>0</Range>
+                    </instance-variables>
+                    <behavior-instances>
+                        <behavior-instance type="Bullet">
+                            <properties>
+                                <speed>400</speed>
+                                <acceleration>0</acceleration>
+                                <gravity>0</gravity>
+                                <bounce-off-solids>No</bounce-off-solids>
+                                <set-angle>Yes</set-angle>
+                                <initial-state>Enabled</initial-state>
+                            </properties>
+                        </behavior-instance>
+                    </behavior-instances>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>-208</x>
+                        <y>24</y>
+                        <z>0</z>
+                        <width>31</width>
+                        <height>6</height>
+                        <depth>0</depth>
+                        <hotspotX>0.161290318</hotspotX>
+                        <hotspotY>0.5</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
                     </world>
                 </instance>
             </instances>
