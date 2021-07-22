@@ -74,7 +74,7 @@
                         <opacity>1</opacity>
                     </world>
                 </instance>
-                <instance type="LevelSelectBox" uid="250">
+                <instance type="LevelSelectBox1" uid="250">
                     <properties>
                         <initial-visibility>Visible</initial-visibility>
                         <initial-animation>Default</initial-animation>
@@ -211,7 +211,7 @@
                         <opacity>1</opacity>
                     </world>
                 </instance>
-                <instance type="Level6" uid="254">
+                <instance type="Level2" uid="254">
                     <properties>
                         <text>2</text>
                         <initial-visibility>Visible</initial-visibility>
@@ -238,7 +238,7 @@
                         <opacity>1</opacity>
                     </world>
                 </instance>
-                <instance type="Level7" uid="257">
+                <instance type="Level3" uid="257">
                     <properties>
                         <text>3</text>
                         <initial-visibility>Visible</initial-visibility>
@@ -265,7 +265,7 @@
                         <opacity>1</opacity>
                     </world>
                 </instance>
-                <instance type="Level8" uid="258">
+                <instance type="Level4" uid="258">
                     <properties>
                         <text>4</text>
                         <initial-visibility>Visible</initial-visibility>
@@ -292,7 +292,7 @@
                         <opacity>1</opacity>
                     </world>
                 </instance>
-                <instance type="Level9" uid="259">
+                <instance type="Level5" uid="259">
                     <properties>
                         <text>5</text>
                         <initial-visibility>Visible</initial-visibility>

@@ -399,7 +399,7 @@
         <object-type name="ChooseLevel" sid="621816684115216">
             <plugin id="Text" />
         </object-type>
-        <object-type name="LevelSelectBox" sid="745505863351506">
+        <object-type name="LevelSelectBox1" sid="745505863351506">
             <plugin id="Sprite" />
             <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="912354346882763" speed="5">
@@ -497,16 +497,16 @@
                 </animation>
             </animation-folder>
         </object-type>
-        <object-type name="Level6" sid="482973653550336">
+        <object-type name="Level2" sid="482973653550336">
             <plugin id="Text" />
         </object-type>
-        <object-type name="Level7" sid="622090354201805">
+        <object-type name="Level3" sid="622090354201805">
             <plugin id="Text" />
         </object-type>
-        <object-type name="Level8" sid="803425968951976">
+        <object-type name="Level4" sid="803425968951976">
             <plugin id="Text" />
         </object-type>
-        <object-type name="Level9" sid="464365078617801">
+        <object-type name="Level5" sid="464365078617801">
             <plugin id="Text" />
         </object-type>
         <object-type name="Timer" sid="987078098657064">
@@ -771,17 +771,30 @@
                 </animation>
             </animation-folder>
         </object-type>
+        <object-type name="ToBattle" sid="288864000226360">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="Sprite" sid="467845475527759">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="670664909151541" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\AMIKOM\Teknologi Game\TA\Yugioh_Card_Back.jpg" />
+                </animation>
+            </animation-folder>
+        </object-type>
     </object-folder>
     <families />
     <layout-folder>
         <layout>Level 1.xml</layout>
         <layout>MainMenu.xml</layout>
         <layout>LevelSelect.xml</layout>
+        <layout>GUSelect.xml</layout>
     </layout-folder>
     <event-folder>
         <event-sheet>Level 1_Event.xml</event-sheet>
         <event-sheet>MainMenu_Event.xml</event-sheet>
         <event-sheet>LevelSelect_Event.xml</event-sheet>
+        <event-sheet>GUSelect_Event.xml</event-sheet>
     </event-folder>
     <global-instances>
         <global-instance type="Mouse" uid="6" />
