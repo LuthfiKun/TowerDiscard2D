@@ -1448,6 +1448,9 @@
                             <param id="0" name="Variable">LivePoint</param>
                             <param id="1" name="Value">1</param>
                         </action>
+                        <action id="0" name="Set text" sid="640714548567080" type="HeartCount">
+                            <param id="0" name="Text">LivePoint</param>
+                        </action>
                     </actions>
                 </event-block>
                 <comment>Jika enemies kehabisan Health, hapus dan tambah resource</comment>

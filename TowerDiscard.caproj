@@ -782,6 +782,28 @@
                 </animation>
             </animation-folder>
         </object-type>
+        <object-type name="HeartSprite" sid="900498449841950">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="539007306784795" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\AMIKOM\Teknologi Game\TA\heart sprite.png">
+                        <collision-poly>
+                            <point x="0.0826772" y="0.0826772" />
+                            <point x="0.5" y="0.165354" />
+                            <point x="0.917323" y="0.0826772" />
+                            <point x="0.925197" y="0.5" />
+                            <point x="0.751969" y="0.751969" />
+                            <point x="0.5" y="1" />
+                            <point x="0.248031" y="0.751969" />
+                            <point x="0.0748032" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="HeartCount" sid="857255711293875">
+            <plugin id="Text" />
+        </object-type>
     </object-folder>
     <families />
     <layout-folder>
