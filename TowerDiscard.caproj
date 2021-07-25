@@ -804,6 +804,31 @@
         <object-type name="HeartCount" sid="857255711293875">
             <plugin id="Text" />
         </object-type>
+        <object-type name="Star" sid="839191949878570">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="700971613839725" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\AMIKOM\Teknologi Game\TA\star2.png">
+                        <collision-poly>
+                            <point x="0.276817" y="0.276817" />
+                            <point x="0.5" y="0.0553633" />
+                            <point x="0.723183" y="0.276817" />
+                            <point x="0.775087" y="0.5" />
+                            <point x="0.941176" y="0.941176" />
+                            <point x="0.5" y="0.775087" />
+                            <point x="0.0588235" y="0.941176" />
+                            <point x="0.221453" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type global="1" name="StarPos" sid="733643855292997">
+            <plugin id="Arr" />
+        </object-type>
+        <object-type name="test" sid="938309188463076">
+            <plugin id="Text" />
+        </object-type>
     </object-folder>
     <families />
     <layout-folder>

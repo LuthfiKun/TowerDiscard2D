@@ -154,6 +154,10 @@
                         <action id="-16" name="Wait" sid="960838932832543" type="System">
                             <param id="0" name="Seconds">0.5</param>
                         </action>
+                        <action id="2" name="Set at X" sid="421839124271625" type="LevelStar">
+                            <param id="0" name="X">0</param>
+                            <param id="1" name="Value">ceil(LivePoint/2)</param>
+                        </action>
                         <action id="-4" name="Set layer visible" sid="809816932166348" type="System">
                             <param id="0" name="Layer">3</param>
                             <param id="1" name="Visibility">1</param>

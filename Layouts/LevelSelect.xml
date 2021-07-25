@@ -319,6 +319,28 @@
                         <opacity>1</opacity>
                     </world>
                 </instance>
+                <instance type="Star" uid="286">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>29</x>
+                        <y>-32</y>
+                        <z>0</z>
+                        <width>24</width>
+                        <height>24</height>
+                        <depth>0</depth>
+                        <hotspotX>0.5</hotspotX>
+                        <hotspotY>0.5</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
             </instances>
             <effects />
         </layer>
@@ -329,6 +351,13 @@
                 <width>5</width>
                 <height>1</height>
                 <depth>1</depth>
+            </properties>
+        </instance>
+        <instance type="StarPos" uid="289">
+            <properties>
+                <width>1</width>
+                <height>2</height>
+                <depth>5</depth>
             </properties>
         </instance>
     </nonworld-instances>
