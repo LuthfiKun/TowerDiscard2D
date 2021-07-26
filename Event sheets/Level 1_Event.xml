@@ -3,10 +3,10 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>Level 1_Event</name>
     <events>
-        <variable comment="Digunakan untuk membangun Tower" constant="0" name="Resources" sid="848721712394318" static="0" type="number">120</variable>
+        <variable comment="Digunakan untuk membangun Tower" constant="0" name="Resources" sid="848721712394318" static="0" type="number">80</variable>
         <variable comment="Jumlah maksimal enemies yang dapat masuk benteng" constant="0" name="LivePoint" sid="661820242717193" static="0" type="number">5</variable>
         <variable comment="Jumlah musuh jenis demon yang akan di spawn" constant="0" name="DemonCount" sid="640278798693073" static="0" type="number">5</variable>
-        <variable comment="Mengindikasikan state dari Tutorial. Tanpa tutorial = 0" constant="0" name="Tutorial" sid="610685229138336" static="0" type="number">1</variable>
+        <variable comment="Mengindikasikan state dari Tutorial. Tanpa tutorial = 0" constant="0" name="Tutorial" sid="610685229138336" static="0" type="number">0</variable>
         <variable comment="Total waktu penyelesaian level (detik)" constant="0" name="LevelCountdown" sid="815549797291288" static="0" type="number">45</variable>
         <variable comment="Waktu tunggu sebelum musuh mulai spawn (detik)" constant="0" name="SpawnCountdown" sid="649533743159417" static="0" type="number">10</variable>
         <event-group description="Semua yang berhubungan dengan gameplay dasar (spawn Tower Platform, spawn Enemies, deteksi LivePoint)" sid="156334734176872" title="Gameplay Dasar">
@@ -114,10 +114,15 @@
                     </sub-events>
                 </event-block>
                 <comment>Gameover setelah LivePoint habis</comment>
-                <event-block sid="931111269358729">
+                <event-block any="1" sid="931111269358729">
                     <conditions>
                         <condition id="-14" name="Compare variable" sid="178213449793399" type="System">
                             <param id="0" name="Variable">LivePoint</param>
+                            <param id="1" name="Comparison">3</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="810769789135201" type="System">
+                            <param id="0" name="Variable">LevelCountdown</param>
                             <param id="1" name="Comparison">3</param>
                             <param id="2" name="Value">0</param>
                         </condition>
@@ -1417,10 +1422,6 @@
                         <condition id="-18" name="On created" sid="659708280026610" type="Demon" />
                     </conditions>
                     <actions>
-                        <action id="4" name="Set animation" sid="192673376321391" type="Demon">
-                            <param id="0" name="Animation">&quot;Run&quot;</param>
-                            <param id="1" name="From">1</param>
-                        </action>
                         <action behavior="Pathfinding" id="5" name="Add obstacle" sid="643891277869618" type="Demon">
                             <param id="0" name="Obstacle">PathWall</param>
                         </action>
@@ -1436,6 +1437,10 @@
                         <condition behavior="Pathfinding" id="0" name="On path found" sid="433833517486587" type="Demon" />
                     </conditions>
                     <actions>
+                        <action id="4" name="Set animation" sid="192673376321391" type="Demon">
+                            <param id="0" name="Animation">&quot;Run&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
                         <action behavior="Pathfinding" id="1" name="Move along path" sid="359639719198118" type="Demon" />
                     </actions>
                 </event-block>
@@ -1671,6 +1676,205 @@
                         </action>
                     </actions>
                 </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="Semua yang berhubungan dengan ground unit" sid="706854668857135" title="Ground Unit">
+            <sub-events>
+                <event-group description="Semua logic untuk Ground Unit Warrior" sid="184084540747851" title="GUWarrior">
+                    <sub-events>
+                        <event-block sid="977805386040268">
+                            <conditions>
+                                <condition id="-6" name="Every X seconds" sid="940103721179365" type="System">
+                                    <param id="0" name="Interval (seconds)">GUWarrior.SpawnTime</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="598870042021801">
+                                    <conditions>
+                                        <condition id="-8" name="Compare two values" sid="720627799666065" type="System">
+                                            <param id="0" name="First value">GUWarrior.Count - 1</param>
+                                            <param id="1" name="Comparison">2</param>
+                                            <param id="2" name="Second value">GUMark.MaxUnit</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Spawn another object" sid="889702242606850" type="EnemyEnd">
+                                            <param id="0" name="Object">GUWarrior</param>
+                                            <param id="1" name="Layer">1</param>
+                                            <param id="2" name="Image point">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="902915776400130">
+                            <conditions>
+                                <condition id="-18" name="On created" sid="477597989778278" type="GUWarrior" />
+                            </conditions>
+                            <actions>
+                                <action behavior="Turret" id="1" name="Add object to target" sid="860313087097934" type="GUWarrior">
+                                    <param id="0" name="Target">Demon</param>
+                                </action>
+                                <action behavior="Pathfinding" id="3" name="Set enabled" sid="607842326032335" type="GUWarrior">
+                                    <param id="0" name="Set">1</param>
+                                </action>
+                                <action behavior="Pathfinding" id="5" name="Add obstacle" sid="297428123631471" type="GUWarrior">
+                                    <param id="0" name="Obstacle">PathWall</param>
+                                </action>
+                                <action behavior="Pathfinding" id="0" name="Find path" sid="468987670063683" type="GUWarrior">
+                                    <param id="0" name="X">GUMark.X</param>
+                                    <param id="1" name="Y">GUMark.Y</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="608650385429113">
+                            <conditions>
+                                <condition behavior="Turret" id="2" name="On target acquired" sid="788426998106009" type="GUWarrior" />
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Set value" sid="316665692816082" type="GUWarrior">
+                                    <param id="0" name="Instance variable">TargetUID</param>
+                                    <param id="1" name="Value">GUWarrior.Turret.TargetUID</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="710676662034370">
+                                    <conditions>
+                                        <condition id="-14" name="Pick by unique ID" sid="532793618273216" type="Demon">
+                                            <param id="0" name="Unique ID">GUWarrior.TargetUID</param>
+                                        </condition>
+                                        <condition id="-7" name="Compare instance variable" sid="897224944537290" type="Demon">
+                                            <param id="0" name="Instance variable">OnBattleWith</param>
+                                            <param id="1" name="Comparison">1</param>
+                                            <param id="2" name="Value">-1</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action behavior="Turret" id="3" name="Unacquire target" sid="224664007399257" type="GUWarrior" />
+                                    </actions>
+                                </event-block>
+                                <event-block sid="311460792363893">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="414028767581756" type="System" />
+                                        <condition id="-14" name="Pick by unique ID" sid="826660067664977" type="Demon">
+                                            <param id="0" name="Unique ID">GUWarrior.TargetUID</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action behavior="Turret" id="5" name="Set enabled" sid="413532863960848" type="GUWarrior">
+                                            <param id="0" name="State">0</param>
+                                        </action>
+                                        <action behavior="Pathfinding" id="0" name="Find path" sid="970027727786350" type="GUWarrior">
+                                            <param id="0" name="X">Demon.X</param>
+                                            <param id="1" name="Y">Demon.Y</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="501744445745599">
+                            <conditions>
+                                <condition behavior="Pathfinding" id="0" name="On path found" sid="567206932295268" type="GUWarrior" />
+                            </conditions>
+                            <actions>
+                                <action behavior="Pathfinding" id="1" name="Move along path" sid="655957243606718" type="GUWarrior" />
+                                <action id="4" name="Set animation" sid="777502730524906" type="GUWarrior">
+                                    <param id="0" name="Animation">&quot;Walk&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="344955601647024">
+                            <conditions>
+                                <condition id="0" name="On collision with another object" sid="439616796988679" type="GUWarrior">
+                                    <param id="0" name="Object">Demon</param>
+                                </condition>
+                                <condition id="-8" name="Compare two values" sid="159663420699144" type="System">
+                                    <param id="0" name="First value">GUWarrior.TargetUID</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">Demon.UID</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="Pathfinding" id="2" name="Stop" sid="437818247443926" type="GUWarrior" />
+                                <action behavior="Pathfinding" id="2" name="Stop" sid="392006384762841" type="Demon" />
+                                <action id="4" name="Set animation" sid="447820819029902" type="GUWarrior">
+                                    <param id="0" name="Animation">&quot;Attack&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="551418187209907" type="GUWarrior">
+                                    <param id="0" name="Instance variable">OnBattleWith</param>
+                                    <param id="1" name="Value">Demon.UID</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="562224966475712" type="Demon">
+                                    <param id="0" name="Instance variable">OnBattleWith</param>
+                                    <param id="1" name="Value">GUWarrior.UID</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="452727057828922">
+                            <conditions>
+                                <condition id="4" name="On finished" sid="240894225592261" type="GUWarrior">
+                                    <param id="0" name="Animation">&quot;Attack&quot;</param>
+                                </condition>
+                                <condition id="-14" name="Pick by unique ID" sid="922371960448477" type="Demon">
+                                    <param id="0" name="Unique ID">GUWarrior.OnBattleWith</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-12" name="Subtract from" sid="130668120998239" type="Demon">
+                                    <param id="0" name="Instance variable">Health</param>
+                                    <param id="1" name="Value">GUWarrior.Attack</param>
+                                </action>
+                                <action id="3" name="Start" sid="274327433797760" type="GUWarrior">
+                                    <param id="0" name="From">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="836943336714923">
+                            <conditions>
+                                <condition id="-19" name="On destroyed" sid="771849548240053" type="Demon" />
+                                <condition id="-14" name="Pick by unique ID" sid="679085620892748" type="GUWarrior">
+                                    <param id="0" name="Unique ID">Demon.OnBattleWith</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Set value" sid="731623566338852" type="GUWarrior">
+                                    <param id="0" name="Instance variable">OnBattleWith</param>
+                                    <param id="1" name="Value">-1</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="578015678515459" type="GUWarrior">
+                                    <param id="0" name="Instance variable">TargetUID</param>
+                                    <param id="1" name="Value">-1</param>
+                                </action>
+                                <action behavior="Pathfinding" id="0" name="Find path" sid="281928450457261" type="GUWarrior">
+                                    <param id="0" name="X">GUMark.X</param>
+                                    <param id="1" name="Y">GUMark.Y</param>
+                                </action>
+                                <action behavior="Turret" id="5" name="Set enabled" sid="889345901576354" type="GUWarrior">
+                                    <param id="0" name="State">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="580743376147331">
+                            <conditions>
+                                <condition behavior="Pathfinding" id="5" name="On arrived" sid="145548346387829" type="GUWarrior" />
+                                <condition id="-7" name="Compare instance variable" sid="161474677420963" type="GUWarrior">
+                                    <param id="0" name="Instance variable">OnBattleWith</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">-1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="402720531945739" type="GUWarrior">
+                                    <param id="0" name="Animation">&quot;Idle&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-group>
             </sub-events>
         </event-group>
     </events>
