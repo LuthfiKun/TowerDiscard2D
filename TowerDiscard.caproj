@@ -14,6 +14,7 @@
         <plugin author="Scirra" id="Mouse" version="1">Mouse</plugin>
         <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
         <plugin author="Scirra" id="Text" version="1">Text</plugin>
+        <plugin author="Scirra" id="TiledBg" version="1">Tiled Background</plugin>
         <plugin author="Scirra" id="Tilemap" version="1">Tilemap</plugin>
     </used-plugins>
     <used-behaviors>
@@ -1015,6 +1016,93 @@
                 </animation>
             </animation-folder>
         </object-type>
+        <object-type name="UpgradeSelectBox" sid="810580572622139">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="515750507484275" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\AMIKOM\Teknologi Game\TA\levelSelectBox.png">
+                        <collision-poly>
+                            <point x="0.06" y="0.06" />
+                            <point x="0.5" y="0.03" />
+                            <point x="0.94" y="0.06" />
+                            <point x="0.96" y="0.5" />
+                            <point x="0.94" y="0.94" />
+                            <point x="0.5" y="0.97" />
+                            <point x="0.06" y="0.94" />
+                            <point x="0.02" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="TiledBackground" sid="682752590091437">
+            <plugin id="TiledBg" />
+            <texture original-source="D:\AMIKOM\Teknologi Game\TA\Castle_Wall.png" />
+        </object-type>
+        <object-type name="BGKastilBatu" sid="975958288746353">
+            <plugin id="TiledBg" />
+            <texture original-source="D:\AMIKOM\Teknologi Game\TA\Castle_Wall.png" />
+        </object-type>
+        <object-type name="BGStoneWall" sid="524578733870669">
+            <plugin id="TiledBg" />
+            <texture original-source="D:\AMIKOM\Teknologi Game\TA\StoneWall_TXR.png" />
+        </object-type>
+        <object-type name="WoodBoard" sid="498915020630156">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="423039084347096" speed="5">
+                    <frame duration="1" hotspotX="0.06" hotspotY="1.22955" original-source="D:\AMIKOM\Teknologi Game\TA\GoldenWoodUI2.png">
+                        <collision-poly>
+                            <point x="0" y="0.0235294" />
+                            <point x="0.942529" y="0.0254902" />
+                            <point x="0.992816" y="1" />
+                            <point x="0.951149" y="1" />
+                            <point x="0" y="1" />
+                            <point x="0" y="1" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="TheBox" sid="591918311104530">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="457669885220518" speed="5">
+                    <frame duration="1" hotspotX="-2.87805" hotspotY="-1.02353" original-source="D:\AMIKOM\Teknologi Game\TA\GoldenWoodUI2.png">
+                        <collision-poly>
+                            <point x="0.0121951" y="0.0117647" />
+                            <point x="0.987805" y="0.0117647" />
+                            <point x="0.987805" y="0.0117647" />
+                            <point x="0.987805" y="0.988235" />
+                            <point x="0.0121951" y="0.988235" />
+                            <point x="0.0121951" y="0.0117647" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Tilemap" sid="283495813866285">
+            <plugin id="Tilemap" />
+            <texture original-source="D:\AMIKOM\Teknologi Game\TA\GoldenWoodUI2.png" />
+            <tiles />
+        </object-type>
+        <object-type name="GoBack" sid="463590137469083">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="938305824364784" speed="5">
+                    <frame duration="1" hotspotX="2.71667" hotspotY="-3.69444" original-source="D:\AMIKOM\Teknologi Game\TA\GoldenWoodUI2.png">
+                        <collision-poly>
+                            <point x="0" y="0" />
+                            <point x="1" y="0" />
+                            <point x="1" y="0" />
+                            <point x="1" y="0.867647" />
+                            <point x="0" y="0.794118" />
+                            <point x="0" y="0" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
     </object-folder>
     <families />
     <layout-folder>
@@ -1022,12 +1110,14 @@
         <layout>MainMenu.xml</layout>
         <layout>LevelSelect.xml</layout>
         <layout>GUSelect.xml</layout>
+        <layout>ResearchUpgrade.xml</layout>
     </layout-folder>
     <event-folder>
         <event-sheet>Level 1_Event.xml</event-sheet>
         <event-sheet>MainMenu_Event.xml</event-sheet>
         <event-sheet>LevelSelect_Event.xml</event-sheet>
         <event-sheet>GUSelect_Event.xml</event-sheet>
+        <event-sheet>ResearchUpgrade_Event.xml</event-sheet>
     </event-folder>
     <global-instances>
         <global-instance type="Mouse" uid="6" />
