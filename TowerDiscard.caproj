@@ -426,8 +426,20 @@
         <object-type name="LevelSelectBox2" sid="118942863016369">
             <plugin id="Sprite" />
             <animation-folder>
-                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="297804140350165" speed="5">
+                <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="297804140350165" speed="5">
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\AMIKOM\Teknologi Game\TA\levelSelectBox.png">
+                        <collision-poly>
+                            <point x="0.06" y="0.06" />
+                            <point x="0.5" y="0.03" />
+                            <point x="0.94" y="0.06" />
+                            <point x="0.96" y="0.5" />
+                            <point x="0.94" y="0.94" />
+                            <point x="0.5" y="0.97" />
+                            <point x="0.06" y="0.94" />
+                            <point x="0.02" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
                         <collision-poly>
                             <point x="0.06" y="0.06" />
                             <point x="0.5" y="0.03" />
@@ -445,8 +457,20 @@
         <object-type name="LevelSelectBox3" sid="974346230074570">
             <plugin id="Sprite" />
             <animation-folder>
-                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="888140139789227" speed="5">
+                <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="888140139789227" speed="5">
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\AMIKOM\Teknologi Game\TA\levelSelectBox.png">
+                        <collision-poly>
+                            <point x="0.06" y="0.06" />
+                            <point x="0.5" y="0.03" />
+                            <point x="0.94" y="0.06" />
+                            <point x="0.96" y="0.5" />
+                            <point x="0.94" y="0.94" />
+                            <point x="0.5" y="0.97" />
+                            <point x="0.06" y="0.94" />
+                            <point x="0.02" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
                         <collision-poly>
                             <point x="0.06" y="0.06" />
                             <point x="0.5" y="0.03" />
@@ -464,8 +488,20 @@
         <object-type name="LevelSelectBox4" sid="361961712159815">
             <plugin id="Sprite" />
             <animation-folder>
-                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="430416256536145" speed="5">
+                <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="430416256536145" speed="5">
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\AMIKOM\Teknologi Game\TA\levelSelectBox.png">
+                        <collision-poly>
+                            <point x="0.06" y="0.06" />
+                            <point x="0.5" y="0.03" />
+                            <point x="0.94" y="0.06" />
+                            <point x="0.96" y="0.5" />
+                            <point x="0.94" y="0.94" />
+                            <point x="0.5" y="0.97" />
+                            <point x="0.06" y="0.94" />
+                            <point x="0.02" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
                         <collision-poly>
                             <point x="0.06" y="0.06" />
                             <point x="0.5" y="0.03" />
@@ -483,8 +519,20 @@
         <object-type name="LevelSelectBox5" sid="715094626096629">
             <plugin id="Sprite" />
             <animation-folder>
-                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="490867666157901" speed="5">
+                <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="490867666157901" speed="5">
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\AMIKOM\Teknologi Game\TA\levelSelectBox.png">
+                        <collision-poly>
+                            <point x="0.06" y="0.06" />
+                            <point x="0.5" y="0.03" />
+                            <point x="0.94" y="0.06" />
+                            <point x="0.96" y="0.5" />
+                            <point x="0.94" y="0.94" />
+                            <point x="0.5" y="0.97" />
+                            <point x="0.06" y="0.94" />
+                            <point x="0.02" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
                         <collision-poly>
                             <point x="0.06" y="0.06" />
                             <point x="0.5" y="0.03" />
@@ -737,11 +785,11 @@
         <object-type name="ToBattle" sid="288864000226360">
             <plugin id="Text" />
         </object-type>
-        <object-type name="Sprite" sid="467845475527759">
+        <object-type name="AssassinCard" sid="467845475527759">
             <plugin id="Sprite" />
             <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="670664909151541" speed="5">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\AMIKOM\Teknologi Game\TA\Yugioh_Card_Back.jpg" />
+                    <frame duration="1" hotspotX="0.513126" hotspotY="0.5088" original-source="D:\AMIKOM\Teknologi Game\TA\CardBack1.png" />
                 </animation>
             </animation-folder>
         </object-type>
@@ -954,7 +1002,7 @@
             <plugin id="Sprite" />
             <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="423039084347096" speed="5">
-                    <frame duration="1" hotspotX="0.06" hotspotY="1.22955" original-source="D:\AMIKOM\Teknologi Game\TA\GoldenWoodUI2.png">
+                    <frame duration="1" hotspotX="0.511667" hotspotY="0.490909" original-source="D:\AMIKOM\Teknologi Game\TA\GoldenWoodUI2.png">
                         <collision-poly>
                             <point x="0" y="0.0235294" />
                             <point x="0.942529" y="0.0254902" />
@@ -971,7 +1019,7 @@
             <plugin id="Sprite" />
             <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="457669885220518" speed="5">
-                    <frame duration="1" hotspotX="-2.87805" hotspotY="-1.02353" original-source="D:\AMIKOM\Teknologi Game\TA\GoldenWoodUI2.png">
+                    <frame duration="1" hotspotX="0.573171" hotspotY="0.470588" original-source="D:\AMIKOM\Teknologi Game\TA\GoldenWoodUI2.png">
                         <collision-poly>
                             <point x="0.0121951" y="0.0117647" />
                             <point x="0.987805" y="0.0117647" />
@@ -988,7 +1036,7 @@
             <plugin id="Sprite" />
             <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="938305824364784" speed="5">
-                    <frame duration="1" hotspotX="2.71667" hotspotY="-3.69444" original-source="D:\AMIKOM\Teknologi Game\TA\GoldenWoodUI2.png">
+                    <frame duration="1" hotspotX="0.583333" hotspotY="0.472222" original-source="D:\AMIKOM\Teknologi Game\TA\GoldenWoodUI2.png">
                         <collision-poly>
                             <point x="0" y="0" />
                             <point x="1" y="0" />
@@ -1343,6 +1391,48 @@
                     </frame>
                 </animation>
             </animation-folder>
+        </object-type>
+        <object-type name="WarriorCard" sid="992883232263931">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="159073399657186" speed="5">
+                    <frame duration="1" hotspotX="0.497041" hotspotY="0.498998" original-source="D:\AMIKOM\Teknologi Game\TA\BCardBack1.png">
+                        <collision-poly>
+                            <point x="0.0177515" y="0.174349" />
+                            <point x="0.497041" y="0.00801603" />
+                            <point x="0.991124" y="0.164329" />
+                            <point x="0.985207" y="0.829659" />
+                            <point x="0.497041" y="0.991984" />
+                            <point x="0.00591716" y="0.831663" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Sprite" sid="662945995243805">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="593462134360122" speed="5">
+                    <frame duration="1" hotspotX="0.494983" hotspotY="0.498856" original-source="D:\AMIKOM\Teknologi Game\TA\CCardBack1.png">
+                        <collision-poly>
+                            <point x="0.0167224" y="0.171625" />
+                            <point x="0.494983" y="0.00457666" />
+                            <point x="0.979933" y="0.167048" />
+                            <point x="0.979933" y="0.830664" />
+                            <point x="0.494983" y="0.993135" />
+                            <point x="0.0167224" y="0.826087" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="TiledBackground" sid="471946615727064">
+            <plugin id="TiledBg" />
+            <texture original-source="D:\AMIKOM\Teknologi Game\TA\StoneWall_TXR.png" />
+        </object-type>
+        <object-type name="TiledBackground2" sid="747101464657813">
+            <plugin id="TiledBg" />
+            <texture original-source="D:\AMIKOM\Teknologi Game\TA\StoneWall_TXR.png" />
         </object-type>
     </object-folder>
     <families />

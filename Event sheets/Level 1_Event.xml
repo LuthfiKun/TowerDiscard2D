@@ -3,7 +3,6 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>Level 1_Event</name>
     <events>
-        <variable comment="Ground unit yang akan digunakan" constant="0" name="GUToActivate" sid="799069240212598" static="0" type="text">GUAssassin</variable>
         <variable comment="Pointer UID untuk TowerPlatform " constant="0" name="ClickedPlatform" sid="178994877447450" static="0" type="number">0</variable>
         <variable comment="Digunakan untuk membangun Tower" constant="0" name="Resources" sid="848721712394318" static="0" type="number">80</variable>
         <variable comment="Jumlah maksimal enemies yang dapat masuk benteng" constant="0" name="LivePoint" sid="661820242717193" static="0" type="number">5</variable>
@@ -200,6 +199,9 @@
                 </action>
                 <action id="-15" name="Set visible" sid="334330243969998" type="MainMenu">
                     <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="5" name="Set frame" sid="278274644767931" type="LevelSelectBox2">
+                    <param id="0" name="Frame number">0</param>
                 </action>
                 <action id="0" name="Play" sid="361870968289552" type="Audio">
                     <param id="0" name="Audio file">Victory</param>

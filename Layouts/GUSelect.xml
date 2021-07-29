@@ -28,7 +28,28 @@
             <use-render-cells>0</use-render-cells>
             <blend-mode>0</blend-mode>
             <effect-fallback>0</effect-fallback>
-            <instances />
+            <instances>
+                <instance type="TiledBackground" uid="312">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <hotspot>Top-left</hotspot>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>0</x>
+                        <y>0</y>
+                        <z>0</z>
+                        <width>864</width>
+                        <height>480</height>
+                        <depth>0</depth>
+                        <hotspotX>0</hotspotX>
+                        <hotspotY>0</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+            </instances>
             <effects />
         </layer>
         <layer name="Layer 1" sid="514159123889414">
@@ -52,7 +73,7 @@
                         <text>Select Ground Unit</text>
                         <initial-visibility>Visible</initial-visibility>
                         <font>Arial Black,-35,900,0</font>
-                        <color>0,0,0</color>
+                        <color>255,255,255</color>
                         <horizontal-alignment>Center</horizontal-alignment>
                         <vertical-alignment>Center</vertical-alignment>
                         <hotspot>Top</hotspot>
@@ -79,7 +100,7 @@
                         <text>To Battle</text>
                         <initial-visibility>Invisible</initial-visibility>
                         <font>Arial,-29,700,0</font>
-                        <color>0,0,0</color>
+                        <color>255,255,255</color>
                         <horizontal-alignment>Left</horizontal-alignment>
                         <vertical-alignment>Top</vertical-alignment>
                         <hotspot>Top-left</hotspot>
@@ -101,7 +122,7 @@
                         <opacity>1</opacity>
                     </world>
                 </instance>
-                <instance type="Sprite" uid="281">
+                <instance type="AssassinCard" uid="281">
                     <properties>
                         <initial-visibility>Visible</initial-visibility>
                         <initial-animation>Default</initial-animation>
@@ -114,16 +135,16 @@
                         <x>192</x>
                         <y>256</y>
                         <z>0</z>
-                        <width>163.478668213</width>
-                        <height>238.024932861</height>
+                        <width>180</width>
+                        <height>270</height>
                         <depth>0</depth>
-                        <hotspotX>0.5</hotspotX>
-                        <hotspotY>0.5</hotspotY>
+                        <hotspotX>0.513126493</hotspotX>
+                        <hotspotY>0.50880003</hotspotY>
                         <angle>0</angle>
                         <opacity>1</opacity>
                     </world>
                 </instance>
-                <instance type="Sprite" uid="282">
+                <instance type="WarriorCard" uid="282">
                     <properties>
                         <initial-visibility>Visible</initial-visibility>
                         <initial-animation>Default</initial-animation>
@@ -136,11 +157,11 @@
                         <x>448</x>
                         <y>256</y>
                         <z>0</z>
-                        <width>163.478668213</width>
-                        <height>238.024932861</height>
+                        <width>180</width>
+                        <height>270</height>
                         <depth>0</depth>
-                        <hotspotX>0.5</hotspotX>
-                        <hotspotY>0.5</hotspotY>
+                        <hotspotX>0.497041434</hotspotX>
+                        <hotspotY>0.498997986</hotspotY>
                         <angle>0</angle>
                         <opacity>1</opacity>
                     </world>
@@ -158,11 +179,11 @@
                         <x>704</x>
                         <y>256</y>
                         <z>0</z>
-                        <width>163.478668213</width>
-                        <height>238.024932861</height>
+                        <width>180</width>
+                        <height>270</height>
                         <depth>0</depth>
-                        <hotspotX>0.5</hotspotX>
-                        <hotspotY>0.5</hotspotY>
+                        <hotspotX>0.494983286</hotspotX>
+                        <hotspotY>0.498855829</hotspotY>
                         <angle>0</angle>
                         <opacity>1</opacity>
                     </world>
