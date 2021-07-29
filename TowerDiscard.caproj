@@ -22,7 +22,6 @@
         <behavior author="Scirra" id="Bullet" version="1">Bullet</behavior>
         <behavior author="Scirra" id="Flash" version="1">Flash</behavior>
         <behavior author="Scirra" id="Pathfinding" version="1">Pathfinding</behavior>
-        <behavior author="Scirra" id="Pin" version="1">Pin</behavior>
         <behavior author="Scirra" id="Turret" version="1">Turret</behavior>
         <behavior author="Scirra" id="solid" version="1">Solid</behavior>
     </used-behaviors>
@@ -65,6 +64,7 @@
                 <instance-variable name="Health" sid="231627204549926" type="number" />
                 <instance-variable comment="Resource yang didapat setelah kill" name="Drop" sid="154768611102056" type="number" />
                 <instance-variable name="OnBattleWith" sid="162359601810187" type="number" />
+                <instance-variable name="SpawnTime" sid="980275408756668" type="number" />
             </instance-variables>
             <behaviors>
                 <behavior-type name="Pathfinding" sid="935263257383684">
@@ -273,9 +273,6 @@
                     </frame>
                 </animation>
             </animation-folder>
-        </object-type>
-        <object-type name="PlatformPlace" sid="248794896369127">
-            <plugin id="Arr" />
         </object-type>
         <object-type name="PathWall" sid="872681253591965">
             <plugin id="Sprite" />
@@ -517,58 +514,14 @@
         <object-type name="Timer" sid="987078098657064">
             <plugin id="Text" />
         </object-type>
-        <object-type name="Pause" sid="658491062514255">
-            <plugin id="Text" />
-        </object-type>
         <object-type name="Resume" sid="604382368247432">
             <plugin id="Text" />
         </object-type>
         <object-type name="MainMenu" sid="531631421455825">
             <plugin id="Text" />
         </object-type>
-        <object-type name="TutorialBG" sid="671877379389409">
-            <plugin id="Sprite" />
-            <animation-folder>
-                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="945950766523240" speed="5">
-                    <frame duration="1" hotspotX="0" hotspotY="0">
-                        <image-point name="Confirm" x="1" y="1" />
-                    </frame>
-                </animation>
-            </animation-folder>
-        </object-type>
         <object-type name="TutorialText" sid="855778316905031">
             <plugin id="Text" />
-        </object-type>
-        <object-type name="TutorialArrow" sid="949794075719378">
-            <plugin id="Sprite" />
-            <animation-folder>
-                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="123540238339132" speed="5">
-                    <frame duration="1" hotspotX="0.96875" hotspotY="0.0408163" original-source="D:\Downloads\GameAssets\arrowtut.png">
-                        <image-point name="Point" x="0.78125" y="1" />
-                        <collision-poly>
-                            <point x="0.222222" y="0.5" />
-                            <point x="0.763441" y="0.845433" />
-                            <point x="0.5" y="0.943794" />
-                            <point x="0.412186" y="0.730679" />
-                            <point x="0.132616" y="0.5" />
-                            <point x="0.164875" y="0.107728" />
-                            <point x="0.5" y="0.0128806" />
-                            <point x="0.982079" y="0.0117096" />
-                        </collision-poly>
-                    </frame>
-                </animation>
-            </animation-folder>
-        </object-type>
-        <object-type name="TutorialConfirm" sid="479702906817492">
-            <plugin id="Text" />
-        </object-type>
-        <object-type name="MenuBG" sid="988525948707158">
-            <plugin id="Sprite" />
-            <animation-folder>
-                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="585511564568027" speed="5">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
-                </animation>
-            </animation-folder>
         </object-type>
         <object-type name="ScreenOverlay" sid="896727709172791">
             <plugin id="Sprite" />
@@ -792,28 +745,6 @@
                 </animation>
             </animation-folder>
         </object-type>
-        <object-type name="HeartSprite" sid="900498449841950">
-            <plugin id="Sprite" />
-            <animation-folder>
-                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="539007306784795" speed="5">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\AMIKOM\Teknologi Game\TA\heart sprite.png">
-                        <collision-poly>
-                            <point x="0.0826772" y="0.0826772" />
-                            <point x="0.5" y="0.165354" />
-                            <point x="0.917323" y="0.0826772" />
-                            <point x="0.925197" y="0.5" />
-                            <point x="0.751969" y="0.751969" />
-                            <point x="0.5" y="1" />
-                            <point x="0.248031" y="0.751969" />
-                            <point x="0.0748032" y="0.5" />
-                        </collision-poly>
-                    </frame>
-                </animation>
-            </animation-folder>
-        </object-type>
-        <object-type name="HeartCount" sid="857255711293875">
-            <plugin id="Text" />
-        </object-type>
         <object-type name="Star" sid="839191949878570">
             <plugin id="Sprite" />
             <animation-folder>
@@ -874,6 +805,7 @@
                 <instance-variable name="SpawnTime" sid="204277410157408" type="number" />
                 <instance-variable name="OnBattleWith" sid="454393537258222" type="number" />
                 <instance-variable name="TargetUID" sid="883324569637536" type="number" />
+                <instance-variable name="MoveSpeed" sid="593653548207626" type="number" />
             </instance-variables>
             <behaviors>
                 <behavior-type name="Pathfinding" sid="100695207557576">
@@ -881,9 +813,6 @@
                 </behavior-type>
                 <behavior-type name="Turret" sid="243793421705801">
                     <behavior id="Turret" />
-                </behavior-type>
-                <behavior-type name="Pin" sid="561799961173881">
-                    <behavior id="Pin" />
                 </behavior-type>
             </behaviors>
             <animation-folder>
@@ -925,7 +854,7 @@
                         </collision-poly>
                     </frame>
                 </animation>
-                <animation framecount="4" loop="1" name="Walk" pingpong="0" repeatcount="1" repeatto="0" sid="565941557536961" speed="5">
+                <animation framecount="4" loop="1" name="Walk" pingpong="0" repeatcount="1" repeatto="0" sid="565941557536961" speed="3">
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Downloads\GameAssets\mediavalcharpack\WARRIOR\WALK 1.png">
                         <collision-poly>
                             <point x="0.223958" y="0.3125" />
@@ -963,36 +892,7 @@
                         </collision-poly>
                     </frame>
                 </animation>
-                <animation framecount="3" loop="1" name="Death" pingpong="0" repeatcount="1" repeatto="0" sid="805558970097984" speed="5">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Downloads\GameAssets\mediavalcharpack\WARRIOR\DEFEAT 1.png">
-                        <collision-poly>
-                            <point x="0.223958" y="0.3125" />
-                            <point x="0.640625" y="0.286458" />
-                            <point x="0.885417" y="0.677083" />
-                            <point x="0.588542" y="0.773438" />
-                            <point x="0.114583" y="0.619792" />
-                        </collision-poly>
-                    </frame>
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Downloads\GameAssets\mediavalcharpack\WARRIOR\DEFEAT 2.png">
-                        <collision-poly>
-                            <point x="0.223958" y="0.3125" />
-                            <point x="0.640625" y="0.286458" />
-                            <point x="0.885417" y="0.677083" />
-                            <point x="0.588542" y="0.773438" />
-                            <point x="0.114583" y="0.619792" />
-                        </collision-poly>
-                    </frame>
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Downloads\GameAssets\mediavalcharpack\WARRIOR\DEFEAT 3.png">
-                        <collision-poly>
-                            <point x="0.223958" y="0.3125" />
-                            <point x="0.640625" y="0.286458" />
-                            <point x="0.885417" y="0.677083" />
-                            <point x="0.588542" y="0.773438" />
-                            <point x="0.114583" y="0.619792" />
-                        </collision-poly>
-                    </frame>
-                </animation>
-                <animation framecount="3" loop="0" name="Attack" pingpong="0" repeatcount="1" repeatto="0" sid="777306122505013" speed="5">
+                <animation framecount="3" loop="0" name="Attack" pingpong="0" repeatcount="1" repeatto="0" sid="777306122505013" speed="0">
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Downloads\GameAssets\mediavalcharpack\WARRIOR\ATTACK 1.png">
                         <collision-poly>
                             <point x="0.223958" y="0.3125" />
@@ -1042,10 +942,6 @@
                 </animation>
             </animation-folder>
         </object-type>
-        <object-type name="TiledBackground" sid="682752590091437">
-            <plugin id="TiledBg" />
-            <texture original-source="D:\AMIKOM\Teknologi Game\TA\Castle_Wall.png" />
-        </object-type>
         <object-type name="BGKastilBatu" sid="975958288746353">
             <plugin id="TiledBg" />
             <texture original-source="D:\AMIKOM\Teknologi Game\TA\Castle_Wall.png" />
@@ -1088,11 +984,6 @@
                 </animation>
             </animation-folder>
         </object-type>
-        <object-type name="Tilemap" sid="283495813866285">
-            <plugin id="Tilemap" />
-            <texture original-source="D:\AMIKOM\Teknologi Game\TA\GoldenWoodUI2.png" />
-            <tiles />
-        </object-type>
         <object-type name="GoBack" sid="463590137469083">
             <plugin id="Sprite" />
             <animation-folder>
@@ -1112,6 +1003,346 @@
         </object-type>
         <object-type name="Audio" sid="809128029220802">
             <plugin id="Audio" />
+        </object-type>
+        <object-type name="BtnMenu" sid="512871851401069">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="884498268996796" speed="5">
+                    <frame duration="1" hotspotX="0.504065" hotspotY="0.5" original-source="D:\Downloads\GameAssets\GoldenWoodUI.png">
+                        <collision-poly>
+                            <point x="0" y="0" />
+                            <point x="1" y="0" />
+                            <point x="1" y="0" />
+                            <point x="1" y="1" />
+                            <point x="0" y="1" />
+                            <point x="0" y="0" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="UITextBG" sid="726112557557819">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="726539152218303" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Downloads\GameAssets\GoldenWoodUI.png">
+                        <collision-poly>
+                            <point x="0" y="0" />
+                            <point x="1" y="0" />
+                            <point x="1" y="0.455224" />
+                            <point x="1" y="1" />
+                            <point x="0" y="1" />
+                            <point x="0" y="0.455224" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="LivePointCounter" sid="697211206724727">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="6" loop="0" name="Default" pingpong="0" repeatcount="0" repeatto="0" sid="648522107409251" speed="0">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.504762" original-source="D:\Downloads\GameAssets\GoldenWoodUI.png">
+                        <collision-poly>
+                            <point x="0.0425" y="0.0380952" />
+                            <point x="1" y="0.047619" />
+                            <point x="1" y="0.990476" />
+                            <point x="1" y="0.990476" />
+                            <point x="0.05125" y="0.990476" />
+                            <point x="0" y="0.990476" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.500625" hotspotY="0.5" original-source="D:\Downloads\GameAssets\GoldenWoodUI.png">
+                        <collision-poly>
+                            <point x="0.044375" y="0.00952381" />
+                            <point x="1" y="0.00952381" />
+                            <point x="1" y="0.990476" />
+                            <point x="1" y="0.990476" />
+                            <point x="0.053125" y="0.990476" />
+                            <point x="0" y="0.990476" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.504762" original-source="D:\Downloads\GameAssets\GoldenWoodUI.png">
+                        <collision-poly>
+                            <point x="0.04375" y="0.0142857" />
+                            <point x="1" y="0.0142857" />
+                            <point x="1" y="0.985714" />
+                            <point x="1" y="0.985714" />
+                            <point x="0.0525" y="0.985714" />
+                            <point x="0" y="0.985714" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.500625" hotspotY="0.509524" original-source="D:\Downloads\GameAssets\GoldenWoodUI.png">
+                        <collision-poly>
+                            <point x="0.262535" y="0.0190476" />
+                            <point x="1" y="0.0190476" />
+                            <point x="1" y="0.985714" />
+                            <point x="1" y="0.985714" />
+                            <point x="0.281403" y="0.985714" />
+                            <point x="0.137198" y="0.985714" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Downloads\GameAssets\GoldenWoodUI.png">
+                        <collision-poly>
+                            <point x="0.043125" y="0.0047619" />
+                            <point x="1" y="0.0047619" />
+                            <point x="1" y="1" />
+                            <point x="1" y="1" />
+                            <point x="0.051875" y="1" />
+                            <point x="0.000625" y="1" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Downloads\GameAssets\GoldenWoodUI.png">
+                        <collision-poly>
+                            <point x="0.260035" y="0.990476" />
+                            <point x="1" y="0.990476" />
+                            <point x="1" y="0.990476" />
+                            <point x="1" y="0.990476" />
+                            <point x="0.278903" y="0.990476" />
+                            <point x="0.134699" y="0.990476" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="ToutorialArrow" sid="835960465827957">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="214726995005425" speed="5">
+                    <frame duration="1" hotspotX="0" hotspotY="0.434783" original-source="D:\Downloads\GameAssets\GoldenWoodUI.png">
+                        <image-point name="Imagepoint 1" x="1" y="0.434783" />
+                        <collision-poly>
+                            <point x="1" y="0" />
+                            <point x="1" y="0.798913" />
+                            <point x="0" y="0.872282" />
+                            <point x="0" y="0" />
+                            <point x="0" y="0" />
+                            <point x="1" y="0" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="TutorialBG" sid="818465295489209">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="840146274824705" speed="5">
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="D:\AMIKOM\Teknologi Game\TA\GoldenWoodUI2.png">
+                        <image-point name="Imagepoint 1" x="0.87" y="0.795455" />
+                        <collision-poly>
+                            <point x="0" y="0.0235294" />
+                            <point x="0.942529" y="0.0254902" />
+                            <point x="0.992816" y="1" />
+                            <point x="0.951149" y="1" />
+                            <point x="0" y="1" />
+                            <point x="0" y="1" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="TutorialConfirm" sid="543165259950459">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="854239845779860" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Downloads\GameAssets\GoldenWoodUI.png">
+                        <collision-poly>
+                            <point x="0" y="0" />
+                            <point x="1" y="0" />
+                            <point x="1" y="0" />
+                            <point x="1" y="0.950581" />
+                            <point x="0" y="0.872093" />
+                            <point x="0" y="0" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="MenuTextBG" sid="236131583580116">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="324538379605935" speed="5">
+                    <frame duration="1" hotspotX="0.500405" hotspotY="0.5" original-source="D:\Downloads\GameAssets\GoldenWoodUI.png">
+                        <collision-poly>
+                            <point x="0.0842105" y="0" />
+                            <point x="1" y="0" />
+                            <point x="1" y="0" />
+                            <point x="1" y="1" />
+                            <point x="0.0955465" y="1" />
+                            <point x="0.00890688" y="0" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="TowerPickerBG" sid="723842442575017">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="549138919233153" speed="5">
+                    <frame duration="1" hotspotX="0.501466" hotspotY="0.501416" original-source="D:\Downloads\GameAssets\GoldenWoodUI.png">
+                        <collision-poly>
+                            <point x="0" y="0" />
+                            <point x="1" y="0" />
+                            <point x="1" y="0" />
+                            <point x="1" y="1" />
+                            <point x="0" y="1" />
+                            <point x="0" y="0" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="BoxPos" sid="150993798116402">
+            <plugin id="Arr" />
+        </object-type>
+        <object-type name="TowerPickerClose" sid="851997532183347">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="208748819403069" speed="5">
+                    <frame duration="1" hotspotX="0.501597" hotspotY="0.501529" original-source="D:\Downloads\GameAssets\GoldenWoodUI.png">
+                        <collision-poly>
+                            <point x="0" y="0" />
+                            <point x="1" y="0" />
+                            <point x="1" y="0" />
+                            <point x="1" y="0.926606" />
+                            <point x="0" y="0.844037" />
+                            <point x="0" y="0" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="TowerPickerBGBar" sid="396141265273980">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="729618886715049" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Downloads\GameAssets\GoldenWoodUI.png">
+                        <collision-poly>
+                            <point x="0" y="0" />
+                            <point x="0.952055" y="0" />
+                            <point x="1" y="0" />
+                            <point x="0.964897" y="0.904624" />
+                            <point x="0" y="0.826589" />
+                            <point x="0" y="0" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="GUAssassin" sid="226889349623225">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="Heatlh" sid="868654128137048" type="number" />
+                <instance-variable name="SpawnTime" sid="287967760222390" type="number" />
+                <instance-variable name="Attack" sid="890944859419451" type="number" />
+                <instance-variable name="OnBattleWith" sid="772323093265677" type="number" />
+                <instance-variable name="TargetUID" sid="794313914144436" type="number" />
+                <instance-variable name="MoveSpeed" sid="927593729716106" type="number" />
+            </instance-variables>
+            <behaviors>
+                <behavior-type name="Pathfinding" sid="695951809167126">
+                    <behavior id="Pathfinding" />
+                </behavior-type>
+                <behavior-type name="Turret" sid="553622658757881">
+                    <behavior id="Turret" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="4" loop="1" name="Idle" pingpong="0" repeatcount="1" repeatto="0" sid="761934157358818" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Downloads\GameAssets\mediavalcharpack\ASSASIN\IDLE 1.png">
+                        <collision-poly>
+                            <point x="0.2875" y="0.3125" />
+                            <point x="0.656249" y="0.30625" />
+                            <point x="0.75625" y="0.79375" />
+                            <point x="0.209375" y="0.790625" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Downloads\GameAssets\mediavalcharpack\ASSASIN\IDLE 2.png">
+                        <collision-poly>
+                            <point x="0.2875" y="0.3125" />
+                            <point x="0.656249" y="0.30625" />
+                            <point x="0.75625" y="0.79375" />
+                            <point x="0.209375" y="0.790625" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Downloads\GameAssets\mediavalcharpack\ASSASIN\IDLE 3.png">
+                        <collision-poly>
+                            <point x="0.2875" y="0.3125" />
+                            <point x="0.656249" y="0.30625" />
+                            <point x="0.75625" y="0.79375" />
+                            <point x="0.209375" y="0.790625" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Downloads\GameAssets\mediavalcharpack\ASSASIN\IDLE 4.png">
+                        <collision-poly>
+                            <point x="0.2875" y="0.3125" />
+                            <point x="0.656249" y="0.30625" />
+                            <point x="0.75625" y="0.79375" />
+                            <point x="0.209375" y="0.790625" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="4" loop="1" name="Walk" pingpong="0" repeatcount="1" repeatto="0" sid="649518909132642" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Downloads\GameAssets\mediavalcharpack\ASSASIN\WALK 1.png">
+                        <collision-poly>
+                            <point x="0.2875" y="0.3125" />
+                            <point x="0.656249" y="0.30625" />
+                            <point x="0.75625" y="0.79375" />
+                            <point x="0.209375" y="0.790625" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Downloads\GameAssets\mediavalcharpack\ASSASIN\WALK 2.png">
+                        <collision-poly>
+                            <point x="0.2875" y="0.3125" />
+                            <point x="0.656249" y="0.30625" />
+                            <point x="0.75625" y="0.79375" />
+                            <point x="0.209375" y="0.790625" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Downloads\GameAssets\mediavalcharpack\ASSASIN\WALK 3.png">
+                        <collision-poly>
+                            <point x="0.2875" y="0.3125" />
+                            <point x="0.656249" y="0.30625" />
+                            <point x="0.75625" y="0.79375" />
+                            <point x="0.209375" y="0.790625" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Downloads\GameAssets\mediavalcharpack\ASSASIN\WALK 4.png">
+                        <collision-poly>
+                            <point x="0.2875" y="0.3125" />
+                            <point x="0.656249" y="0.30625" />
+                            <point x="0.75625" y="0.79375" />
+                            <point x="0.209375" y="0.790625" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="3" loop="0" name="Attack" pingpong="0" repeatcount="1" repeatto="0" sid="229041750086212" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Downloads\GameAssets\mediavalcharpack\ASSASIN\ATTACK 1.png">
+                        <collision-poly>
+                            <point x="0.2875" y="0.3125" />
+                            <point x="0.656249" y="0.30625" />
+                            <point x="0.75625" y="0.79375" />
+                            <point x="0.209375" y="0.790625" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Downloads\GameAssets\mediavalcharpack\ASSASIN\ATTACK 2.png">
+                        <collision-poly>
+                            <point x="0.2875" y="0.3125" />
+                            <point x="0.656249" y="0.30625" />
+                            <point x="0.75625" y="0.79375" />
+                            <point x="0.209375" y="0.790625" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Downloads\GameAssets\mediavalcharpack\ASSASIN\ATTACK 3.png">
+                        <collision-poly>
+                            <point x="0.2875" y="0.3125" />
+                            <point x="0.656249" y="0.30625" />
+                            <point x="0.75625" y="0.79375" />
+                            <point x="0.209375" y="0.790625" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
         </object-type>
     </object-folder>
     <families />
