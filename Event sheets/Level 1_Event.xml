@@ -103,6 +103,9 @@
                         <action id="-15" name="Set visible" sid="730389586815487" type="ScreenOverlay">
                             <param id="0" name="Visibility">1</param>
                         </action>
+                        <action id="-13" name="Set time scale" sid="930290362361803" type="System">
+                            <param id="0" name="Time scale">0</param>
+                        </action>
                         <action id="0" name="Set text" sid="839221461373504" type="MenuText">
                             <param id="0" name="Text">&quot;Musuh berhasil menembus pertahanan!&quot;</param>
                         </action>
@@ -112,22 +115,13 @@
                         <action id="-15" name="Set visible" sid="182149987957406" type="MainMenu">
                             <param id="0" name="Visibility">1</param>
                         </action>
+                        <action id="0" name="Play" sid="715040285248473" type="Audio">
+                            <param id="0" name="Audio file">GameOver</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">0</param>
+                            <param id="1" name="Tag (optional)">&quot;GameOverScreenMusic&quot;</param>
+                        </action>
                     </actions>
-                    <sub-events>
-                        <event-block sid="299053181090335">
-                            <conditions>
-                                <condition id="-4" name="Trigger once while true" sid="793156566017235" type="System" />
-                            </conditions>
-                            <actions>
-                                <action id="0" name="Play" sid="715040285248473" type="Audio">
-                                    <param id="0" name="Audio file">GameOver</param>
-                                    <param id="2" name="Loop">0</param>
-                                    <param id="3" name="Volume">0</param>
-                                    <param id="1" name="Tag (optional)">&quot;GameOverScreenMusic&quot;</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                    </sub-events>
                 </event-block>
                 <comment>Jika EnemyKilled sama dengan semua enemies yang spawn di level, permainan selesai</comment>
                 <event-block sid="682133713522493">
@@ -137,6 +131,7 @@
                             <param id="1" name="Comparison">0</param>
                             <param id="2" name="Value">0</param>
                         </condition>
+                        <condition id="-4" name="Trigger once while true" sid="111348023650232" type="System" />
                     </conditions>
                     <actions>
                         <action id="-16" name="Wait" sid="960838932832543" type="System">
@@ -156,6 +151,9 @@
                         <action id="-15" name="Set visible" sid="840637433872856" type="ScreenOverlay">
                             <param id="0" name="Visibility">1</param>
                         </action>
+                        <action id="-13" name="Set time scale" sid="337680383497536" type="System">
+                            <param id="0" name="Time scale">0</param>
+                        </action>
                         <action id="0" name="Set text" sid="268621711780473" type="MenuText">
                             <param id="0" name="Text">&quot;Selamat, kamu berhasil!&quot;</param>
                         </action>
@@ -165,22 +163,13 @@
                         <action id="-15" name="Set visible" sid="334330243969998" type="MainMenu">
                             <param id="0" name="Visibility">1</param>
                         </action>
+                        <action id="0" name="Play" sid="361870968289552" type="Audio">
+                            <param id="0" name="Audio file">Victory</param>
+                            <param id="2" name="Loop">1</param>
+                            <param id="3" name="Volume">0</param>
+                            <param id="1" name="Tag (optional)">&quot;VictoryScreenMusic&quot;</param>
+                        </action>
                     </actions>
-                    <sub-events>
-                        <event-block sid="839073438402582">
-                            <conditions>
-                                <condition id="-4" name="Trigger once while true" sid="111348023650232" type="System" />
-                            </conditions>
-                            <actions>
-                                <action id="0" name="Play" sid="361870968289552" type="Audio">
-                                    <param id="0" name="Audio file">Victory</param>
-                                    <param id="2" name="Loop">1</param>
-                                    <param id="3" name="Volume">0</param>
-                                    <param id="1" name="Tag (optional)">&quot;VictoryScreenMusic&quot;</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                    </sub-events>
                 </event-block>
             </sub-events>
         </event-group>
@@ -1784,7 +1773,7 @@
                                 <action id="0" name="Play" sid="170351538836758" type="Audio">
                                     <param id="0" name="Audio file">GUWarriorAttack</param>
                                     <param id="2" name="Loop">0</param>
-                                    <param id="3" name="Volume">0</param>
+                                    <param id="3" name="Volume">-10</param>
                                     <param id="1" name="Tag (optional)">&quot;GUWarriorAttack&quot;</param>
                                 </action>
                                 <action id="-12" name="Subtract from" sid="130668120998239" type="Demon">
