@@ -11,6 +11,7 @@
     <saved-with-version>27900</saved-with-version>
     <used-plugins>
         <plugin author="Scirra" id="Arr" version="1">Array</plugin>
+        <plugin author="Scirra" id="Audio" version="1">Audio</plugin>
         <plugin author="Scirra" id="Mouse" version="1">Mouse</plugin>
         <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
         <plugin author="Scirra" id="Text" version="1">Text</plugin>
@@ -19,6 +20,7 @@
     </used-plugins>
     <used-behaviors>
         <behavior author="Scirra" id="Bullet" version="1">Bullet</behavior>
+        <behavior author="Scirra" id="Flash" version="1">Flash</behavior>
         <behavior author="Scirra" id="Pathfinding" version="1">Pathfinding</behavior>
         <behavior author="Scirra" id="Pin" version="1">Pin</behavior>
         <behavior author="Scirra" id="Turret" version="1">Turret</behavior>
@@ -73,68 +75,68 @@
                 <animation framecount="4" loop="1" name="Idle" pingpong="0" repeatcount="1" repeatto="0" sid="987236529333200" speed="10">
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Downloads\GameAssets\0x72_DungeonTilesetII_v1.4\frames\big_demon_idle_anim_f0.png">
                         <collision-poly>
-                            <point x="0.757813" y="0.875" />
-                            <point x="0.289063" y="0.902778" />
-                            <point x="0.234375" y="0.270833" />
-                            <point x="0.796875" y="0.305555" />
+                            <point x="0.847657" y="1" />
+                            <point x="0.152344" y="1" />
+                            <point x="0.148438" y="0.166666" />
+                            <point x="0.847656" y="0.166666" />
                         </collision-poly>
                     </frame>
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Downloads\GameAssets\0x72_DungeonTilesetII_v1.4\frames\big_demon_idle_anim_f1.png">
                         <collision-poly>
-                            <point x="0.773438" y="0.951389" />
-                            <point x="0.226563" y="0.965278" />
-                            <point x="0.234375" y="0.256944" />
-                            <point x="0.75" y="0.236111" />
+                            <point x="0.847657" y="1" />
+                            <point x="0.152344" y="1" />
+                            <point x="0.148438" y="0.166666" />
+                            <point x="0.847656" y="0.166666" />
                         </collision-poly>
                     </frame>
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Downloads\GameAssets\0x72_DungeonTilesetII_v1.4\frames\big_demon_idle_anim_f2.png">
                         <collision-poly>
-                            <point x="0.757813" y="0.979167" />
-                            <point x="0.257813" y="0.972222" />
-                            <point x="0.242188" y="0.215278" />
-                            <point x="0.75" y="0.208333" />
+                            <point x="0.847657" y="1" />
+                            <point x="0.152344" y="1" />
+                            <point x="0.148438" y="0.166666" />
+                            <point x="0.847656" y="0.166666" />
                         </collision-poly>
                     </frame>
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Downloads\GameAssets\0x72_DungeonTilesetII_v1.4\frames\big_demon_idle_anim_f3.png">
                         <collision-poly>
-                            <point x="0.84375" y="0.993056" />
-                            <point x="0.171875" y="0.972222" />
-                            <point x="0.273438" y="0.333333" />
-                            <point x="0.664063" y="0.326389" />
+                            <point x="0.847657" y="1" />
+                            <point x="0.152344" y="1" />
+                            <point x="0.148438" y="0.166666" />
+                            <point x="0.847656" y="0.166666" />
                         </collision-poly>
                     </frame>
                 </animation>
                 <animation framecount="4" loop="1" name="Run" pingpong="0" repeatcount="1" repeatto="0" sid="225728508644914" speed="10">
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Downloads\GameAssets\0x72_DungeonTilesetII_v1.4\frames\big_demon_run_anim_f0.png">
                         <collision-poly>
-                            <point x="0.734375" y="0.895834" />
-                            <point x="0.234375" y="0.833334" />
-                            <point x="0.257813" y="0.298611" />
-                            <point x="0.726563" y="0.25" />
+                            <point x="0.847657" y="1" />
+                            <point x="0.152344" y="1" />
+                            <point x="0.148438" y="0.166666" />
+                            <point x="0.847656" y="0.166666" />
                         </collision-poly>
                     </frame>
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Downloads\GameAssets\0x72_DungeonTilesetII_v1.4\frames\big_demon_run_anim_f1.png">
                         <collision-poly>
-                            <point x="0.78125" y="0.840278" />
-                            <point x="0.25" y="0.826389" />
-                            <point x="0.25" y="0.208333" />
-                            <point x="0.757813" y="0.208333" />
+                            <point x="0.847657" y="1" />
+                            <point x="0.152344" y="1" />
+                            <point x="0.148438" y="0.166666" />
+                            <point x="0.847656" y="0.166666" />
                         </collision-poly>
                     </frame>
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Downloads\GameAssets\0x72_DungeonTilesetII_v1.4\frames\big_demon_run_anim_f2.png">
                         <collision-poly>
-                            <point x="0.804688" y="0.909723" />
-                            <point x="0.257813" y="0.951389" />
-                            <point x="0.257813" y="0.131944" />
-                            <point x="0.734375" y="0.118056" />
+                            <point x="0.847657" y="1" />
+                            <point x="0.152344" y="1" />
+                            <point x="0.148438" y="0.166666" />
+                            <point x="0.847656" y="0.166666" />
                         </collision-poly>
                     </frame>
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Downloads\GameAssets\0x72_DungeonTilesetII_v1.4\frames\big_demon_run_anim_f3.png">
                         <collision-poly>
-                            <point x="0.820313" y="0.888889" />
-                            <point x="0.210938" y="0.958333" />
-                            <point x="0.226563" y="0.402778" />
-                            <point x="0.679688" y="0.326389" />
+                            <point x="0.847657" y="1" />
+                            <point x="0.152344" y="1" />
+                            <point x="0.148438" y="0.166666" />
+                            <point x="0.847656" y="0.166666" />
                         </collision-poly>
                     </frame>
                 </animation>
@@ -592,6 +594,11 @@
         </object-type>
         <object-type name="Resource" sid="285340905165918">
             <plugin id="Text" />
+            <behaviors>
+                <behavior-type name="Flash" sid="913543248640815">
+                    <behavior id="Flash" />
+                </behavior-type>
+            </behaviors>
         </object-type>
         <object-type name="TowerChooser" sid="898121254178699">
             <plugin id="Sprite" />
@@ -1103,6 +1110,9 @@
                 </animation>
             </animation-folder>
         </object-type>
+        <object-type name="Audio" sid="809128029220802">
+            <plugin id="Audio" />
+        </object-type>
     </object-folder>
     <families />
     <layout-folder>
@@ -1121,8 +1131,47 @@
     </event-folder>
     <global-instances>
         <global-instance type="Mouse" uid="6" />
+        <global-instance type="Audio" uid="301">
+            <properties>
+                <timescale-audio>Off</timescale-audio>
+                <saveload>All</saveload>
+                <play-in-background>No</play-in-background>
+                <positioned-audio></positioned-audio>
+                <panning-model>HRTF</panning-model>
+                <distance-model>Inverse</distance-model>
+                <listener-z-height>600</listener-z-height>
+                <reference-distance>600</reference-distance>
+                <maximum-distance>10000</maximum-distance>
+                <roll-off-factor>1</roll-off-factor>
+            </properties>
+        </global-instance>
     </global-instances>
-    <sounds-folder />
+    <sounds-folder>
+        <file name="GameplayBG.m4a" />
+        <file name="GameplayBG.ogg" />
+        <file name="ArrowEject.ogg" />
+        <file name="StoneHit.ogg" />
+        <file name="ArrowEject.m4a" />
+        <file name="StoneHit.m4a" />
+        <file name="TowerBuildProgress.m4a" />
+        <file name="TowerBuildProgress.ogg" />
+        <file name="TowerBuilt.m4a" />
+        <file name="TowerBuilt.ogg" />
+        <file name="GameOver.m4a" />
+        <file name="GameOver.ogg" />
+        <file name="Victory.m4a" />
+        <file name="Victory.ogg" />
+        <file name="ArrowHit.m4a" />
+        <file name="ArrowHit.ogg" />
+        <file name="StoneEject.m4a" />
+        <file name="StoneEject.ogg" />
+        <file name="FireEject.m4a" />
+        <file name="FireEject.ogg" />
+        <file name="FireHit.m4a" />
+        <file name="FireHit.ogg" />
+        <file name="GUWarriorAttack.m4a" />
+        <file name="GUWarriorAttack.ogg" />
+    </sounds-folder>
     <music-folder />
     <files-folder>
         <file-folder name="Icons">
