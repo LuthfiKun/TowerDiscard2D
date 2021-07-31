@@ -58,13 +58,16 @@
             <texture original-source="D:\Downloads\GameAssets\Outdoor and Forest Tileset\Tilesets\Tileset-3.png" />
             <tiles />
         </object-type>
-        <object-type name="Demon" sid="228039006770961">
+        <object-type name="EnemyBarbaric" sid="228039006770961">
             <plugin id="Sprite" />
             <instance-variables>
                 <instance-variable name="Health" sid="231627204549926" type="number" />
-                <instance-variable comment="Resource yang didapat setelah kill" name="Drop" sid="154768611102056" type="number" />
-                <instance-variable name="OnBattleWith" sid="162359601810187" type="number" />
                 <instance-variable name="SpawnTime" sid="980275408756668" type="number" />
+                <instance-variable name="Attack" sid="384321380212823" type="number" />
+                <instance-variable name="OnBattleWith" sid="162359601810187" type="number" />
+                <instance-variable name="MoveSpeed" sid="213622164360444" type="number" />
+                <instance-variable name="AttackSpeed" sid="667413230032787" type="number" />
+                <instance-variable comment="Resource yang didapat setelah kill" name="Drop" sid="154768611102056" type="number" />
             </instance-variables>
             <behaviors>
                 <behavior-type name="Pathfinding" sid="935263257383684">
@@ -72,71 +75,119 @@
                 </behavior-type>
             </behaviors>
             <animation-folder>
-                <animation framecount="4" loop="1" name="Idle" pingpong="0" repeatcount="1" repeatto="0" sid="987236529333200" speed="10">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Downloads\GameAssets\0x72_DungeonTilesetII_v1.4\frames\big_demon_idle_anim_f0.png">
+                <animation framecount="4" loop="1" name="Idle" pingpong="0" repeatcount="1" repeatto="0" sid="987236529333200" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Downloads\GameAssets\mediavalcharpack\BARBARIAN\IDLE 1.png">
                         <collision-poly>
-                            <point x="0.847657" y="1" />
-                            <point x="0.152344" y="1" />
-                            <point x="0.148438" y="0.166666" />
-                            <point x="0.847656" y="0.166666" />
+                            <point x="0.796875" y="0.786458" />
+                            <point x="0.160156" y="0.777344" />
+                            <point x="0.164062" y="0.54427" />
+                            <point x="0.398437" y="0.5" />
+                            <point x="0.476562" y="0.304687" />
+                            <point x="0.791667" y="0.286458" />
                         </collision-poly>
                     </frame>
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Downloads\GameAssets\0x72_DungeonTilesetII_v1.4\frames\big_demon_idle_anim_f1.png">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Downloads\GameAssets\mediavalcharpack\BARBARIAN\IDLE 2.png">
                         <collision-poly>
-                            <point x="0.847657" y="1" />
-                            <point x="0.152344" y="1" />
-                            <point x="0.148438" y="0.166666" />
-                            <point x="0.847656" y="0.166666" />
+                            <point x="0.796875" y="0.786458" />
+                            <point x="0.160156" y="0.777344" />
+                            <point x="0.164062" y="0.54427" />
+                            <point x="0.398437" y="0.5" />
+                            <point x="0.476562" y="0.304687" />
+                            <point x="0.791667" y="0.286458" />
                         </collision-poly>
                     </frame>
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Downloads\GameAssets\0x72_DungeonTilesetII_v1.4\frames\big_demon_idle_anim_f2.png">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Downloads\GameAssets\mediavalcharpack\BARBARIAN\IDLE 3.png">
                         <collision-poly>
-                            <point x="0.847657" y="1" />
-                            <point x="0.152344" y="1" />
-                            <point x="0.148438" y="0.166666" />
-                            <point x="0.847656" y="0.166666" />
+                            <point x="0.796875" y="0.786458" />
+                            <point x="0.160156" y="0.777344" />
+                            <point x="0.164062" y="0.54427" />
+                            <point x="0.398437" y="0.5" />
+                            <point x="0.476562" y="0.304687" />
+                            <point x="0.791667" y="0.286458" />
                         </collision-poly>
                     </frame>
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Downloads\GameAssets\0x72_DungeonTilesetII_v1.4\frames\big_demon_idle_anim_f3.png">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Downloads\GameAssets\mediavalcharpack\BARBARIAN\IDLE 4.png">
                         <collision-poly>
-                            <point x="0.847657" y="1" />
-                            <point x="0.152344" y="1" />
-                            <point x="0.148438" y="0.166666" />
-                            <point x="0.847656" y="0.166666" />
+                            <point x="0.796875" y="0.786458" />
+                            <point x="0.160156" y="0.777344" />
+                            <point x="0.164062" y="0.54427" />
+                            <point x="0.398437" y="0.5" />
+                            <point x="0.476562" y="0.304687" />
+                            <point x="0.791667" y="0.286458" />
                         </collision-poly>
                     </frame>
                 </animation>
-                <animation framecount="4" loop="1" name="Run" pingpong="0" repeatcount="1" repeatto="0" sid="225728508644914" speed="10">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Downloads\GameAssets\0x72_DungeonTilesetII_v1.4\frames\big_demon_run_anim_f0.png">
+                <animation framecount="4" loop="1" name="Walk" pingpong="0" repeatcount="1" repeatto="0" sid="225728508644914" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Downloads\GameAssets\mediavalcharpack\BARBARIAN\WALK 1.png">
                         <collision-poly>
-                            <point x="0.847657" y="1" />
-                            <point x="0.152344" y="1" />
-                            <point x="0.148438" y="0.166666" />
-                            <point x="0.847656" y="0.166666" />
+                            <point x="0.796875" y="0.786458" />
+                            <point x="0.160156" y="0.777344" />
+                            <point x="0.164062" y="0.54427" />
+                            <point x="0.398437" y="0.5" />
+                            <point x="0.476562" y="0.304687" />
+                            <point x="0.791667" y="0.286458" />
                         </collision-poly>
                     </frame>
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Downloads\GameAssets\0x72_DungeonTilesetII_v1.4\frames\big_demon_run_anim_f1.png">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Downloads\GameAssets\mediavalcharpack\BARBARIAN\WALK 2.png">
                         <collision-poly>
-                            <point x="0.847657" y="1" />
-                            <point x="0.152344" y="1" />
-                            <point x="0.148438" y="0.166666" />
-                            <point x="0.847656" y="0.166666" />
+                            <point x="0.796875" y="0.786458" />
+                            <point x="0.160156" y="0.777344" />
+                            <point x="0.164062" y="0.54427" />
+                            <point x="0.398437" y="0.5" />
+                            <point x="0.476562" y="0.304687" />
+                            <point x="0.791667" y="0.286458" />
                         </collision-poly>
                     </frame>
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Downloads\GameAssets\0x72_DungeonTilesetII_v1.4\frames\big_demon_run_anim_f2.png">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Downloads\GameAssets\mediavalcharpack\BARBARIAN\WALK 3.png">
                         <collision-poly>
-                            <point x="0.847657" y="1" />
-                            <point x="0.152344" y="1" />
-                            <point x="0.148438" y="0.166666" />
-                            <point x="0.847656" y="0.166666" />
+                            <point x="0.796875" y="0.786458" />
+                            <point x="0.160156" y="0.777344" />
+                            <point x="0.164062" y="0.54427" />
+                            <point x="0.398437" y="0.5" />
+                            <point x="0.476562" y="0.304687" />
+                            <point x="0.791667" y="0.286458" />
                         </collision-poly>
                     </frame>
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Downloads\GameAssets\0x72_DungeonTilesetII_v1.4\frames\big_demon_run_anim_f3.png">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Downloads\GameAssets\mediavalcharpack\BARBARIAN\WALK 4.png">
                         <collision-poly>
-                            <point x="0.847657" y="1" />
-                            <point x="0.152344" y="1" />
-                            <point x="0.148438" y="0.166666" />
-                            <point x="0.847656" y="0.166666" />
+                            <point x="0.796875" y="0.786458" />
+                            <point x="0.160156" y="0.777344" />
+                            <point x="0.164062" y="0.54427" />
+                            <point x="0.398437" y="0.5" />
+                            <point x="0.476562" y="0.304687" />
+                            <point x="0.791667" y="0.286458" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="3" loop="0" name="Attack" pingpong="0" repeatcount="1" repeatto="0" sid="918511446245058" speed="4">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Downloads\GameAssets\mediavalcharpack\BARBARIAN\ATTACK 1.png">
+                        <collision-poly>
+                            <point x="0.796875" y="0.786458" />
+                            <point x="0.160156" y="0.777344" />
+                            <point x="0.164062" y="0.54427" />
+                            <point x="0.398437" y="0.5" />
+                            <point x="0.476562" y="0.304687" />
+                            <point x="0.791667" y="0.286458" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Downloads\GameAssets\mediavalcharpack\BARBARIAN\ATTACK 2.png">
+                        <collision-poly>
+                            <point x="0.796875" y="0.786458" />
+                            <point x="0.160156" y="0.777344" />
+                            <point x="0.164062" y="0.54427" />
+                            <point x="0.398437" y="0.5" />
+                            <point x="0.476562" y="0.304687" />
+                            <point x="0.791667" y="0.286458" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Downloads\GameAssets\mediavalcharpack\BARBARIAN\ATTACK 3.png">
+                        <collision-poly>
+                            <point x="0.796875" y="0.786458" />
+                            <point x="0.160156" y="0.777344" />
+                            <point x="0.164062" y="0.54427" />
+                            <point x="0.398437" y="0.5" />
+                            <point x="0.476562" y="0.304687" />
+                            <point x="0.791667" y="0.286458" />
                         </collision-poly>
                     </frame>
                 </animation>
@@ -150,7 +201,6 @@
             <instance-variables>
                 <instance-variable comment="Waktu membangun tower (detik)" name="BuildTime" sid="640393789132018" type="number" />
                 <instance-variable comment="Base damage proyektil" name="Damage" sid="876798848035677" type="number" />
-                <instance-variable comment="Tower health point" name="Health" sid="174263212020640" type="number" />
                 <instance-variable comment="Kecepatan menembak (detik)" name="RateofFire" sid="924200330602831" type="number" />
                 <instance-variable comment="Cakupan menembak" name="Range" sid="625605338306505" type="number" />
                 <instance-variable comment="Kecepatan proyektil (pixel per detik)" name="ProjectileSpeed" sid="934936467002552" type="number" />
@@ -606,7 +656,6 @@
             <instance-variables>
                 <instance-variable comment="Waktu membangun tower (detik)" name="BuildTime" sid="244289536622453" type="number" />
                 <instance-variable comment="Base damage proyektil" name="Damage" sid="316278879813701" type="number" />
-                <instance-variable comment="Tower health point" name="Health" sid="618985106955666" type="number" />
                 <instance-variable comment="Kecepatan menembak (detik)" name="RateofFire" sid="392203999167392" type="number" />
                 <instance-variable comment="Cakupan menembak" name="Range" sid="876677023578951" type="number" />
                 <instance-variable comment="Kecepatan proyektil (pixel per detik)" name="ProjectileSpeed" sid="830310108325619" type="number" />
@@ -661,7 +710,6 @@
             <instance-variables>
                 <instance-variable comment="Waktu membangun tower (detik)" name="BuildTime" sid="842649711757310" type="number" />
                 <instance-variable comment="Base damage proyektil" name="Damage" sid="919701092741523" type="number" />
-                <instance-variable comment="Tower health point" name="Health" sid="653701376480994" type="number" />
                 <instance-variable comment="Kecepatan menembak (detik)" name="RateofFire" sid="574319582362168" type="number" />
                 <instance-variable comment="Cakupan menembak" name="Range" sid="455142134999827" type="number" />
                 <instance-variable comment="Kecepatan proyektil (pixel per detik)" name="ProjectileSpeed" sid="796533100418405" type="number" />
@@ -867,37 +915,41 @@
                 <animation framecount="4" loop="1" name="Idle" pingpong="0" repeatcount="1" repeatto="0" sid="351727183460349" speed="5">
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Downloads\GameAssets\mediavalcharpack\WARRIOR\IDLE 1.png">
                         <collision-poly>
-                            <point x="0.223958" y="0.3125" />
+                            <point x="0.268229" y="0.307292" />
                             <point x="0.640625" y="0.286458" />
-                            <point x="0.885417" y="0.677083" />
-                            <point x="0.588542" y="0.773438" />
+                            <point x="0.726562" y="0.580729" />
+                            <point x="0.92448" y="0.648437" />
+                            <point x="0.455729" y="0.802084" />
                             <point x="0.114583" y="0.619792" />
                         </collision-poly>
                     </frame>
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Downloads\GameAssets\mediavalcharpack\WARRIOR\IDLE 2.png">
                         <collision-poly>
-                            <point x="0.223958" y="0.3125" />
+                            <point x="0.268229" y="0.307292" />
                             <point x="0.640625" y="0.286458" />
-                            <point x="0.885417" y="0.677083" />
-                            <point x="0.588542" y="0.773438" />
+                            <point x="0.726562" y="0.580729" />
+                            <point x="0.92448" y="0.648437" />
+                            <point x="0.455729" y="0.802084" />
                             <point x="0.114583" y="0.619792" />
                         </collision-poly>
                     </frame>
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Downloads\GameAssets\mediavalcharpack\WARRIOR\IDLE 3.png">
                         <collision-poly>
-                            <point x="0.223958" y="0.3125" />
+                            <point x="0.268229" y="0.307292" />
                             <point x="0.640625" y="0.286458" />
-                            <point x="0.885417" y="0.677083" />
-                            <point x="0.588542" y="0.773438" />
+                            <point x="0.726562" y="0.580729" />
+                            <point x="0.92448" y="0.648437" />
+                            <point x="0.455729" y="0.802084" />
                             <point x="0.114583" y="0.619792" />
                         </collision-poly>
                     </frame>
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Downloads\GameAssets\mediavalcharpack\WARRIOR\IDLE 4.png">
                         <collision-poly>
-                            <point x="0.223958" y="0.3125" />
+                            <point x="0.268229" y="0.307292" />
                             <point x="0.640625" y="0.286458" />
-                            <point x="0.885417" y="0.677083" />
-                            <point x="0.588542" y="0.773438" />
+                            <point x="0.726562" y="0.580729" />
+                            <point x="0.92448" y="0.648437" />
+                            <point x="0.455729" y="0.802084" />
                             <point x="0.114583" y="0.619792" />
                         </collision-poly>
                     </frame>
@@ -905,37 +957,41 @@
                 <animation framecount="4" loop="1" name="Walk" pingpong="0" repeatcount="1" repeatto="0" sid="565941557536961" speed="3">
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Downloads\GameAssets\mediavalcharpack\WARRIOR\WALK 1.png">
                         <collision-poly>
-                            <point x="0.223958" y="0.3125" />
+                            <point x="0.268229" y="0.307292" />
                             <point x="0.640625" y="0.286458" />
-                            <point x="0.885417" y="0.677083" />
-                            <point x="0.588542" y="0.773438" />
+                            <point x="0.726562" y="0.580729" />
+                            <point x="0.92448" y="0.648437" />
+                            <point x="0.455729" y="0.802084" />
                             <point x="0.114583" y="0.619792" />
                         </collision-poly>
                     </frame>
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Downloads\GameAssets\mediavalcharpack\WARRIOR\WALK 2.png">
                         <collision-poly>
-                            <point x="0.223958" y="0.3125" />
+                            <point x="0.268229" y="0.307292" />
                             <point x="0.640625" y="0.286458" />
-                            <point x="0.885417" y="0.677083" />
-                            <point x="0.588542" y="0.773438" />
+                            <point x="0.726562" y="0.580729" />
+                            <point x="0.92448" y="0.648437" />
+                            <point x="0.455729" y="0.802084" />
                             <point x="0.114583" y="0.619792" />
                         </collision-poly>
                     </frame>
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Downloads\GameAssets\mediavalcharpack\WARRIOR\WALK 3.png">
                         <collision-poly>
-                            <point x="0.223958" y="0.3125" />
+                            <point x="0.268229" y="0.307292" />
                             <point x="0.640625" y="0.286458" />
-                            <point x="0.885417" y="0.677083" />
-                            <point x="0.588542" y="0.773438" />
+                            <point x="0.726562" y="0.580729" />
+                            <point x="0.92448" y="0.648437" />
+                            <point x="0.455729" y="0.802084" />
                             <point x="0.114583" y="0.619792" />
                         </collision-poly>
                     </frame>
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Downloads\GameAssets\mediavalcharpack\WARRIOR\WALK 4.png">
                         <collision-poly>
-                            <point x="0.223958" y="0.3125" />
+                            <point x="0.268229" y="0.307292" />
                             <point x="0.640625" y="0.286458" />
-                            <point x="0.885417" y="0.677083" />
-                            <point x="0.588542" y="0.773438" />
+                            <point x="0.726562" y="0.580729" />
+                            <point x="0.92448" y="0.648437" />
+                            <point x="0.455729" y="0.802084" />
                             <point x="0.114583" y="0.619792" />
                         </collision-poly>
                     </frame>
@@ -943,28 +999,31 @@
                 <animation framecount="3" loop="0" name="Attack" pingpong="0" repeatcount="1" repeatto="0" sid="777306122505013" speed="3">
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Downloads\GameAssets\mediavalcharpack\WARRIOR\ATTACK 1.png">
                         <collision-poly>
-                            <point x="0.223958" y="0.3125" />
+                            <point x="0.268229" y="0.307292" />
                             <point x="0.640625" y="0.286458" />
-                            <point x="0.885417" y="0.677083" />
-                            <point x="0.588542" y="0.773438" />
+                            <point x="0.726562" y="0.580729" />
+                            <point x="0.92448" y="0.648437" />
+                            <point x="0.455729" y="0.802084" />
                             <point x="0.114583" y="0.619792" />
                         </collision-poly>
                     </frame>
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Downloads\GameAssets\mediavalcharpack\WARRIOR\ATTACK 2.png">
                         <collision-poly>
-                            <point x="0.223958" y="0.3125" />
+                            <point x="0.268229" y="0.307292" />
                             <point x="0.640625" y="0.286458" />
-                            <point x="0.885417" y="0.677083" />
-                            <point x="0.588542" y="0.773438" />
+                            <point x="0.726562" y="0.580729" />
+                            <point x="0.92448" y="0.648437" />
+                            <point x="0.455729" y="0.802084" />
                             <point x="0.114583" y="0.619792" />
                         </collision-poly>
                     </frame>
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Downloads\GameAssets\mediavalcharpack\WARRIOR\ATTACK 3.png">
                         <collision-poly>
-                            <point x="0.223958" y="0.3125" />
+                            <point x="0.268229" y="0.307292" />
                             <point x="0.640625" y="0.286458" />
-                            <point x="0.885417" y="0.677083" />
-                            <point x="0.588542" y="0.773438" />
+                            <point x="0.726562" y="0.580729" />
+                            <point x="0.92448" y="0.648437" />
+                            <point x="0.455729" y="0.802084" />
                             <point x="0.114583" y="0.619792" />
                         </collision-poly>
                     </frame>
@@ -1300,94 +1359,116 @@
                 <animation framecount="4" loop="1" name="Idle" pingpong="0" repeatcount="1" repeatto="0" sid="761934157358818" speed="5">
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Downloads\GameAssets\mediavalcharpack\ASSASIN\IDLE 1.png">
                         <collision-poly>
-                            <point x="0.2875" y="0.3125" />
-                            <point x="0.656249" y="0.30625" />
-                            <point x="0.75625" y="0.79375" />
-                            <point x="0.209375" y="0.790625" />
+                            <point x="0.232812" y="0.585937" />
+                            <point x="0.333854" y="0.351042" />
+                            <point x="0.61979" y="0.340104" />
+                            <point x="0.78177" y="0.565625" />
+                            <point x="0.6625" y="0.804167" />
+                            <point x="0.355208" y="0.803646" />
                         </collision-poly>
                     </frame>
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Downloads\GameAssets\mediavalcharpack\ASSASIN\IDLE 2.png">
                         <collision-poly>
-                            <point x="0.2875" y="0.3125" />
-                            <point x="0.656249" y="0.30625" />
-                            <point x="0.75625" y="0.79375" />
-                            <point x="0.209375" y="0.790625" />
+                            <point x="0.232812" y="0.585937" />
+                            <point x="0.333854" y="0.351042" />
+                            <point x="0.61979" y="0.340104" />
+                            <point x="0.78177" y="0.565625" />
+                            <point x="0.6625" y="0.804167" />
+                            <point x="0.355208" y="0.803646" />
                         </collision-poly>
                     </frame>
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Downloads\GameAssets\mediavalcharpack\ASSASIN\IDLE 3.png">
                         <collision-poly>
-                            <point x="0.2875" y="0.3125" />
-                            <point x="0.656249" y="0.30625" />
-                            <point x="0.75625" y="0.79375" />
-                            <point x="0.209375" y="0.790625" />
+                            <point x="0.232812" y="0.585937" />
+                            <point x="0.333854" y="0.351042" />
+                            <point x="0.61979" y="0.340104" />
+                            <point x="0.78177" y="0.565625" />
+                            <point x="0.6625" y="0.804167" />
+                            <point x="0.355208" y="0.803646" />
                         </collision-poly>
                     </frame>
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Downloads\GameAssets\mediavalcharpack\ASSASIN\IDLE 4.png">
                         <collision-poly>
-                            <point x="0.2875" y="0.3125" />
-                            <point x="0.656249" y="0.30625" />
-                            <point x="0.75625" y="0.79375" />
-                            <point x="0.209375" y="0.790625" />
+                            <point x="0.232812" y="0.585937" />
+                            <point x="0.333854" y="0.351042" />
+                            <point x="0.61979" y="0.340104" />
+                            <point x="0.78177" y="0.565625" />
+                            <point x="0.6625" y="0.804167" />
+                            <point x="0.355208" y="0.803646" />
                         </collision-poly>
                     </frame>
                 </animation>
                 <animation framecount="4" loop="1" name="Walk" pingpong="0" repeatcount="1" repeatto="0" sid="649518909132642" speed="5">
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Downloads\GameAssets\mediavalcharpack\ASSASIN\WALK 1.png">
                         <collision-poly>
-                            <point x="0.2875" y="0.3125" />
-                            <point x="0.656249" y="0.30625" />
-                            <point x="0.75625" y="0.79375" />
-                            <point x="0.209375" y="0.790625" />
+                            <point x="0.232812" y="0.585937" />
+                            <point x="0.333854" y="0.351042" />
+                            <point x="0.61979" y="0.340104" />
+                            <point x="0.78177" y="0.565625" />
+                            <point x="0.6625" y="0.804167" />
+                            <point x="0.355208" y="0.803646" />
                         </collision-poly>
                     </frame>
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Downloads\GameAssets\mediavalcharpack\ASSASIN\WALK 2.png">
                         <collision-poly>
-                            <point x="0.2875" y="0.3125" />
-                            <point x="0.656249" y="0.30625" />
-                            <point x="0.75625" y="0.79375" />
-                            <point x="0.209375" y="0.790625" />
+                            <point x="0.232812" y="0.585937" />
+                            <point x="0.333854" y="0.351042" />
+                            <point x="0.61979" y="0.340104" />
+                            <point x="0.78177" y="0.565625" />
+                            <point x="0.6625" y="0.804167" />
+                            <point x="0.355208" y="0.803646" />
                         </collision-poly>
                     </frame>
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Downloads\GameAssets\mediavalcharpack\ASSASIN\WALK 3.png">
                         <collision-poly>
-                            <point x="0.2875" y="0.3125" />
-                            <point x="0.656249" y="0.30625" />
-                            <point x="0.75625" y="0.79375" />
-                            <point x="0.209375" y="0.790625" />
+                            <point x="0.232812" y="0.585937" />
+                            <point x="0.333854" y="0.351042" />
+                            <point x="0.61979" y="0.340104" />
+                            <point x="0.78177" y="0.565625" />
+                            <point x="0.6625" y="0.804167" />
+                            <point x="0.355208" y="0.803646" />
                         </collision-poly>
                     </frame>
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Downloads\GameAssets\mediavalcharpack\ASSASIN\WALK 4.png">
                         <collision-poly>
-                            <point x="0.2875" y="0.3125" />
-                            <point x="0.656249" y="0.30625" />
-                            <point x="0.75625" y="0.79375" />
-                            <point x="0.209375" y="0.790625" />
+                            <point x="0.232812" y="0.585937" />
+                            <point x="0.333854" y="0.351042" />
+                            <point x="0.61979" y="0.340104" />
+                            <point x="0.78177" y="0.565625" />
+                            <point x="0.6625" y="0.804167" />
+                            <point x="0.355208" y="0.803646" />
                         </collision-poly>
                     </frame>
                 </animation>
                 <animation framecount="3" loop="0" name="Attack" pingpong="0" repeatcount="1" repeatto="0" sid="229041750086212" speed="5">
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Downloads\GameAssets\mediavalcharpack\ASSASIN\ATTACK 1.png">
                         <collision-poly>
-                            <point x="0.2875" y="0.3125" />
-                            <point x="0.656249" y="0.30625" />
-                            <point x="0.75625" y="0.79375" />
-                            <point x="0.209375" y="0.790625" />
+                            <point x="0.232812" y="0.585937" />
+                            <point x="0.333854" y="0.351042" />
+                            <point x="0.61979" y="0.340104" />
+                            <point x="0.78177" y="0.565625" />
+                            <point x="0.6625" y="0.804167" />
+                            <point x="0.355208" y="0.803646" />
                         </collision-poly>
                     </frame>
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Downloads\GameAssets\mediavalcharpack\ASSASIN\ATTACK 2.png">
                         <collision-poly>
-                            <point x="0.2875" y="0.3125" />
-                            <point x="0.656249" y="0.30625" />
-                            <point x="0.75625" y="0.79375" />
-                            <point x="0.209375" y="0.790625" />
+                            <point x="0.232812" y="0.585937" />
+                            <point x="0.333854" y="0.351042" />
+                            <point x="0.61979" y="0.340104" />
+                            <point x="0.78177" y="0.565625" />
+                            <point x="0.6625" y="0.804167" />
+                            <point x="0.355208" y="0.803646" />
                         </collision-poly>
                     </frame>
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Downloads\GameAssets\mediavalcharpack\ASSASIN\ATTACK 3.png">
                         <collision-poly>
-                            <point x="0.2875" y="0.3125" />
-                            <point x="0.656249" y="0.30625" />
-                            <point x="0.75625" y="0.79375" />
-                            <point x="0.209375" y="0.790625" />
+                            <point x="0.232812" y="0.585937" />
+                            <point x="0.333854" y="0.351042" />
+                            <point x="0.61979" y="0.340104" />
+                            <point x="0.78177" y="0.565625" />
+                            <point x="0.6625" y="0.804167" />
+                            <point x="0.355208" y="0.803646" />
                         </collision-poly>
                     </frame>
                 </animation>

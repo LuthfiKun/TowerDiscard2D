@@ -394,7 +394,6 @@
                     <instance-variables>
                         <BuildTime>2</BuildTime>
                         <Damage>20</Damage>
-                        <Health>100</Health>
                         <RateofFire>1</RateofFire>
                         <Range>225</Range>
                         <ProjectileSpeed>200</ProjectileSpeed>

@@ -147,7 +147,6 @@
                     <instance-variables>
                         <BuildTime>4</BuildTime>
                         <Damage>50</Damage>
-                        <Health>100</Health>
                         <RateofFire>2.3</RateofFire>
                         <Range>200</Range>
                         <ProjectileSpeed>150</ProjectileSpeed>
@@ -179,7 +178,6 @@
                     <instance-variables>
                         <BuildTime>2</BuildTime>
                         <Damage>20</Damage>
-                        <Health>100</Health>
                         <RateofFire>1</RateofFire>
                         <Range>225</Range>
                         <ProjectileSpeed>200</ProjectileSpeed>
@@ -211,7 +209,6 @@
                     <instance-variables>
                         <BuildTime>3</BuildTime>
                         <Damage>35</Damage>
-                        <Health>100</Health>
                         <RateofFire>1.6</RateofFire>
                         <Range>210</Range>
                         <ProjectileSpeed>170</ProjectileSpeed>

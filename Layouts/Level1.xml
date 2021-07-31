@@ -2829,7 +2829,7 @@
             <blend-mode>0</blend-mode>
             <effect-fallback>0</effect-fallback>
             <instances>
-                <instance type="Demon" uid="3">
+                <instance type="EnemyBarbaric" uid="3">
                     <properties>
                         <initial-visibility>Visible</initial-visibility>
                         <initial-animation>Default</initial-animation>
@@ -2838,9 +2838,12 @@
                     </properties>
                     <instance-variables>
                         <Health>100</Health>
-                        <Drop>5</Drop>
-                        <OnBattleWith>-1</OnBattleWith>
                         <SpawnTime>3</SpawnTime>
+                        <Attack>20</Attack>
+                        <OnBattleWith>-1</OnBattleWith>
+                        <MoveSpeed>50</MoveSpeed>
+                        <AttackSpeed>3</AttackSpeed>
+                        <Drop>5</Drop>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Pathfinding">
@@ -2864,8 +2867,8 @@
                         <x>896</x>
                         <y>240</y>
                         <z>0</z>
-                        <width>24</width>
-                        <height>27</height>
+                        <width>48</width>
+                        <height>48</height>
                         <depth>0</depth>
                         <hotspotX>0.5</hotspotX>
                         <hotspotY>0.5</hotspotY>
@@ -4182,7 +4185,6 @@
                     <instance-variables>
                         <BuildTime>3</BuildTime>
                         <Damage>35</Damage>
-                        <Health>100</Health>
                         <RateofFire>1.6</RateofFire>
                         <Range>210</Range>
                         <ProjectileSpeed>170</ProjectileSpeed>
@@ -4214,7 +4216,6 @@
                     <instance-variables>
                         <BuildTime>4</BuildTime>
                         <Damage>50</Damage>
-                        <Health>100</Health>
                         <RateofFire>2.3</RateofFire>
                         <Range>200</Range>
                         <ProjectileSpeed>150</ProjectileSpeed>
@@ -4246,7 +4247,6 @@
                     <instance-variables>
                         <BuildTime>2</BuildTime>
                         <Damage>20</Damage>
-                        <Health>100</Health>
                         <RateofFire>1</RateofFire>
                         <Range>225</Range>
                         <ProjectileSpeed>200</ProjectileSpeed>
