@@ -1580,6 +1580,30 @@
                 </animation>
             </animation-folder>
         </object-type>
+        <object-type name="Sprite2" sid="507190123246751">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="372725349014727" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Sprite3" sid="781895299143290">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="358468509497579" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Sprite4" sid="702248288331686">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="509118409753494" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
     </object-folder>
     <families />
     <layout-folder>
@@ -1588,6 +1612,9 @@
         <layout>GUSelect.xml</layout>
         <layout>Level1.xml</layout>
         <layout>Level2.xml</layout>
+        <layout>Level3.xml</layout>
+        <layout>Level4.xml</layout>
+        <layout>Level5.xml</layout>
     </layout-folder>
     <event-folder>
         <event-sheet>Gameplay_Event.xml</event-sheet>
@@ -1596,8 +1623,8 @@
         <event-sheet>GUSelect_Event.xml</event-sheet>
     </event-folder>
     <global-instances>
-        <global-instance type="Mouse" uid="6" />
-        <global-instance type="Audio" uid="301">
+        <global-instance type="Mouse" uid="478" />
+        <global-instance type="Audio" uid="479">
             <properties>
                 <timescale-audio>Off</timescale-audio>
                 <saveload>All</saveload>

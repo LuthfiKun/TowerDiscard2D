@@ -4395,7 +4395,7 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>440</x>
+                        <x>432</x>
                         <y>136</y>
                         <z>0</z>
                         <width>480</width>
@@ -4422,7 +4422,7 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>440</x>
+                        <x>432</x>
                         <y>176</y>
                         <z>0</z>
                         <width>472</width>

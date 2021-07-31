@@ -4,11 +4,7 @@
     <name>Gameplay_Event</name>
     <events>
         <variable comment="Pointer UID untuk TowerPlatform " constant="0" name="ClickedPlatform" sid="178994877447450" static="0" type="number">0</variable>
-        <variable comment="Digunakan untuk membangun Tower" constant="0" name="Resources" sid="848721712394318" static="0" type="number">80</variable>
         <variable comment="Jumlah maksimal enemies yang dapat masuk benteng" constant="0" name="LivePoint" sid="661820242717193" static="0" type="number">5</variable>
-        <variable comment="Jumlah musuh jenis demon yang akan di spawn" constant="0" name="EnemyCount" sid="640278798693073" static="0" type="number">5</variable>
-        <variable comment="Total waktu penyelesaian level (detik)" constant="0" name="LevelCountdown" sid="815549797291288" static="0" type="number">45</variable>
-        <variable comment="Waktu tunggu sebelum musuh mulai spawn (detik)" constant="0" name="SpawnCountdown" sid="649533743159417" static="0" type="number">2</variable>
         <comment>Saat Layout dimulai, PlatformPlace akan diisi dengan koordinat X dan Y yang nantinya akan jadi lokasi TowerPlatform.</comment>
         <event-block sid="808605383446827">
             <conditions>
