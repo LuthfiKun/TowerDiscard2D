@@ -1604,11 +1604,18 @@
                 </animation>
             </animation-folder>
         </object-type>
-        <object-type name="sprite5" sid="742538236170798">
+        <object-type name="Sprite5" sid="778392547995651">
             <plugin id="Sprite" />
             <animation-folder>
-                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="227016413926166" speed="5">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="710828204192239" speed="5">
+                    <frame duration="1" hotspotX="0.50057" hotspotY="0.5" original-source="D:\Downloads\GameAssets\map\MAP lvl 2 TG.png">
+                        <collision-poly>
+                            <point x="0.00157356" y="0.0177008" />
+                            <point x="0.995326" y="0.00300212" />
+                            <point x="0.995326" y="0.994141" />
+                            <point x="0.00157356" y="0.979442" />
+                        </collision-poly>
+                    </frame>
                 </animation>
             </animation-folder>
         </object-type>
