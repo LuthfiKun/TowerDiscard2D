@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <c2eventsheet>
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
-    <name>Level 1_Event</name>
+    <name>Gameplay_Event</name>
     <events>
         <variable comment="Pointer UID untuk TowerPlatform " constant="0" name="ClickedPlatform" sid="178994877447450" static="0" type="number">0</variable>
         <variable comment="Digunakan untuk membangun Tower" constant="0" name="Resources" sid="848721712394318" static="0" type="number">80</variable>
@@ -105,10 +105,6 @@
                         <condition id="-4" name="Trigger once while true" sid="361170794534658" type="System" />
                     </conditions>
                     <actions>
-                        <action id="-4" name="Set layer visible" sid="634368581546917" type="System">
-                            <param id="0" name="Layer">3</param>
-                            <param id="1" name="Visibility">1</param>
-                        </action>
                         <action id="6" name="Stop" sid="745279540936822" type="Audio">
                             <param id="0" name="Tag">&quot;GameplayBGMusic&quot;</param>
                         </action>
@@ -170,10 +166,6 @@
                 <action id="2" name="Set at X" sid="421839124271625" type="LevelStar">
                     <param id="0" name="X">0</param>
                     <param id="1" name="Value">ceil(LivePoint/2)</param>
-                </action>
-                <action id="-4" name="Set layer visible" sid="809816932166348" type="System">
-                    <param id="0" name="Layer">3</param>
-                    <param id="1" name="Visibility">1</param>
                 </action>
                 <action id="-15" name="Set visible" sid="840637433872856" type="ScreenOverlay">
                     <param id="0" name="Visibility">1</param>
@@ -262,10 +254,6 @@
                 <action id="-41" name="Wait for signal" sid="485592340464734" type="System">
                     <param id="0" name="Tag">&quot;TutorialStep-2&quot;</param>
                 </action>
-                <action id="-4" name="Set layer visible" sid="378345687843847" type="System">
-                    <param id="0" name="Layer">3</param>
-                    <param id="1" name="Visibility">0</param>
-                </action>
                 <action id="-13" name="Set time scale" sid="507962464819784" type="System">
                     <param id="0" name="Time scale">1</param>
                 </action>
@@ -286,10 +274,6 @@
                 </condition>
             </conditions>
             <actions>
-                <action id="-4" name="Set layer visible" sid="246991222294969" type="System">
-                    <param id="0" name="Layer">3</param>
-                    <param id="1" name="Visibility">1</param>
-                </action>
                 <action id="-13" name="Set time scale" sid="858807779582592" type="System">
                     <param id="0" name="Time scale">0</param>
                 </action>
@@ -339,10 +323,6 @@
                         </condition>
                     </conditions>
                     <actions>
-                        <action id="-4" name="Set layer visible" sid="807265235488672" type="System">
-                            <param id="0" name="Layer">3</param>
-                            <param id="1" name="Visibility">1</param>
-                        </action>
                         <action id="-13" name="Set time scale" sid="265201920362628" type="System">
                             <param id="0" name="Time scale">0</param>
                         </action>
@@ -383,10 +363,6 @@
                         <action id="-9" name="Set value" sid="366406789033892" type="System">
                             <param id="0" name="Variable">Tutorial</param>
                             <param id="1" name="Value">0</param>
-                        </action>
-                        <action id="-4" name="Set layer visible" sid="803111069265791" type="System">
-                            <param id="0" name="Layer">3</param>
-                            <param id="1" name="Visibility">0</param>
                         </action>
                         <action id="-13" name="Set time scale" sid="700630564070100" type="System">
                             <param id="0" name="Time scale">1</param>
@@ -567,7 +543,7 @@
                 </action>
                 <action id="-3" name="Create object" sid="343960262859397" type="System">
                     <param id="0" name="Object to create">TowerFire</param>
-                    <param id="1" name="Layer">2</param>
+                    <param id="1" name="Layer">0</param>
                     <param id="2" name="X">TowerPlatform.X+24</param>
                     <param id="3" name="Y">TowerPlatform.Y+12</param>
                 </action>
@@ -690,7 +666,7 @@
                 </action>
                 <action id="-3" name="Create object" sid="628118599980043" type="System">
                     <param id="0" name="Object to create">TowerStone</param>
-                    <param id="1" name="Layer">2</param>
+                    <param id="1" name="Layer">0</param>
                     <param id="2" name="X">TowerPlatform.X+24</param>
                     <param id="3" name="Y">TowerPlatform.Y+12</param>
                 </action>
@@ -810,7 +786,7 @@
                 </action>
                 <action id="-3" name="Create object" sid="909222463480747" type="System">
                     <param id="0" name="Object to create">TowerArrow</param>
-                    <param id="1" name="Layer">2</param>
+                    <param id="1" name="Layer">0</param>
                     <param id="2" name="X">TowerPlatform.X+24</param>
                     <param id="3" name="Y">TowerPlatform.Y+12</param>
                 </action>
@@ -1789,6 +1765,9 @@
                             <param id="0" name="Animation">&quot;Attack&quot;</param>
                             <param id="1" name="From">1</param>
                         </action>
+                        <action id="6" name="Set speed" sid="655157175291687" type="GUWarrior">
+                            <param id="0" name="Speed">GUWarrior.AttackSpeed</param>
+                        </action>
                     </actions>
                 </event-block>
                 <event-block sid="452727057828922">
@@ -1983,6 +1962,9 @@
                         <action id="4" name="Set animation" sid="741925851444837" type="GUAssassin">
                             <param id="0" name="Animation">&quot;Attack&quot;</param>
                             <param id="1" name="From">1</param>
+                        </action>
+                        <action id="6" name="Set speed" sid="371378206339795" type="GUAssassin">
+                            <param id="0" name="Speed">GUAssassin.AttackSpeed</param>
                         </action>
                     </actions>
                 </event-block>

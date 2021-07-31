@@ -601,18 +601,6 @@
                 </behavior-type>
             </behaviors>
         </object-type>
-        <object-type name="TowerChooser" sid="898121254178699">
-            <plugin id="Sprite" />
-            <animation-folder>
-                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="560300654738756" speed="5">
-                    <frame duration="1" hotspotX="0.5" hotspotY="1">
-                        <image-point name="TowerSpot" x="0.181818" y="0.875" />
-                        <image-point name="TowerSpot" x="0.5" y="0.875" />
-                        <image-point name="TowerSpot" x="0.818182" y="0.875" />
-                    </frame>
-                </animation>
-            </animation-folder>
-        </object-type>
         <object-type name="TowerArrow" sid="530269997980181">
             <plugin id="Sprite" />
             <instance-variables>
@@ -865,6 +853,7 @@
                 <instance-variable name="OnBattleWith" sid="454393537258222" type="number" />
                 <instance-variable name="TargetUID" sid="883324569637536" type="number" />
                 <instance-variable name="MoveSpeed" sid="593653548207626" type="number" />
+                <instance-variable name="AttackSpeed" sid="650759863582515" type="number" />
             </instance-variables>
             <behaviors>
                 <behavior-type name="Pathfinding" sid="100695207557576">
@@ -951,7 +940,7 @@
                         </collision-poly>
                     </frame>
                 </animation>
-                <animation framecount="3" loop="0" name="Attack" pingpong="0" repeatcount="1" repeatto="0" sid="777306122505013" speed="0">
+                <animation framecount="3" loop="0" name="Attack" pingpong="0" repeatcount="1" repeatto="0" sid="777306122505013" speed="3">
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Downloads\GameAssets\mediavalcharpack\WARRIOR\ATTACK 1.png">
                         <collision-poly>
                             <point x="0.223958" y="0.3125" />
@@ -1297,6 +1286,7 @@
                 <instance-variable name="OnBattleWith" sid="772323093265677" type="number" />
                 <instance-variable name="TargetUID" sid="794313914144436" type="number" />
                 <instance-variable name="MoveSpeed" sid="927593729716106" type="number" />
+                <instance-variable name="AttackSpeed" sid="247055985297022" type="number" />
             </instance-variables>
             <behaviors>
                 <behavior-type name="Pathfinding" sid="695951809167126">
@@ -1502,14 +1492,14 @@
     </object-folder>
     <families />
     <layout-folder>
-        <layout>Level 1.xml</layout>
+        <layout>Level1.xml</layout>
         <layout>MainMenu.xml</layout>
         <layout>LevelSelect.xml</layout>
         <layout>GUSelect.xml</layout>
         <layout>ResearchUpgrade.xml</layout>
     </layout-folder>
     <event-folder>
-        <event-sheet>Level 1_Event.xml</event-sheet>
+        <event-sheet>Gameplay_Event.xml</event-sheet>
         <event-sheet>MainMenu_Event.xml</event-sheet>
         <event-sheet>LevelSelect_Event.xml</event-sheet>
         <event-sheet>GUSelect_Event.xml</event-sheet>
