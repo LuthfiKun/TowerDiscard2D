@@ -6,7 +6,7 @@
         <variable comment="Simpan Level yang dituju" constant="0" name="NextLevel" sid="306005995179050" static="0" type="text">&quot;&quot;</variable>
         <variable comment="Posisi Y dari Star atas di LevelSelect" constant="0" name="UpperY" sid="886098105818275" static="0" type="number">0</variable>
         <variable comment="Posisi Y dari Star bawah di LevelSelect" constant="0" name="LowerY" sid="291613943951956" static="0" type="number">0</variable>
-        <variable comment="Mengindikasikan state dari Tutorial. Tanpa tutorial = 0" constant="0" name="Tutorial" sid="610685229138336" static="0" type="number">1</variable>
+        <variable comment="Mengindikasikan state dari Tutorial. Tanpa tutorial = 0" constant="0" name="Tutorial" sid="610685229138336" static="0" type="number">0</variable>
         <event-block sid="358419511572642">
             <conditions>
                 <condition id="-2" name="On start of layout" sid="890268122405576" type="System" />
