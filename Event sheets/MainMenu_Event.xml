@@ -25,28 +25,6 @@
                 </action>
             </actions>
         </event-block>
-        <event-block sid="287944274540319">
-            <conditions>
-                <condition id="7" name="Cursor is over object" sid="368759461502694" type="Mouse">
-                    <param id="0" name="Object">PlayText</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="3" name="Set font size" sid="778433698734485" type="PlayText">
-                    <param id="0" name="Size (pt)">36</param>
-                </action>
-            </actions>
-        </event-block>
-        <event-block sid="488901082654536">
-            <conditions>
-                <condition id="-22" name="Else" sid="905663709231411" type="System" />
-            </conditions>
-            <actions>
-                <action id="3" name="Set font size" sid="103614150642893" type="PlayText">
-                    <param id="0" name="Size (pt)">24</param>
-                </action>
-            </actions>
-        </event-block>
         <event-block sid="860938624242618">
             <conditions>
                 <condition id="6" name="On object clicked" sid="136820543509959" type="Mouse">

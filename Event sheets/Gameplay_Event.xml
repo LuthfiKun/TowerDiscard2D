@@ -173,7 +173,7 @@
                     <param id="1" name="Visibility">1</param>
                 </action>
                 <action id="2" name="Set at X" sid="421839124271625" type="LevelStar">
-                    <param id="0" name="X">0</param>
+                    <param id="0" name="X">CurrentLevel</param>
                     <param id="1" name="Value">ceil(LivePoint/2)</param>
                 </action>
                 <action id="-13" name="Set time scale" sid="337680383497536" type="System">
