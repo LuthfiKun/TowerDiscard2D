@@ -84,7 +84,7 @@
                     <effect-fallback>0</effect-fallback>
                     <world>
                         <x>442</x>
-                        <y>30</y>
+                        <y>-3</y>
                         <z>0</z>
                         <width>459.477966309</width>
                         <height>68.921699524</height>
@@ -133,13 +133,13 @@
                     <effect-fallback>0</effect-fallback>
                     <world>
                         <x>192</x>
-                        <y>256</y>
+                        <y>224</y>
                         <z>0</z>
-                        <width>180</width>
-                        <height>270</height>
+                        <width>191.464645386</width>
+                        <height>288.805297852</height>
                         <depth>0</depth>
-                        <hotspotX>0.513126493</hotspotX>
-                        <hotspotY>0.50880003</hotspotY>
+                        <hotspotX>0.513888896</hotspotX>
+                        <hotspotY>0.509259284</hotspotY>
                         <angle>0</angle>
                         <opacity>1</opacity>
                     </world>
@@ -155,13 +155,13 @@
                     <effect-fallback>0</effect-fallback>
                     <world>
                         <x>448</x>
-                        <y>256</y>
+                        <y>222</y>
                         <z>0</z>
-                        <width>180</width>
-                        <height>270</height>
+                        <width>191.7159729</width>
+                        <height>292.184356689</height>
                         <depth>0</depth>
-                        <hotspotX>0.497041434</hotspotX>
-                        <hotspotY>0.498997986</hotspotY>
+                        <hotspotX>0.497222215</hotspotX>
+                        <hotspotY>0.498148143</hotspotY>
                         <angle>0</angle>
                         <opacity>1</opacity>
                     </world>
@@ -177,13 +177,62 @@
                     <effect-fallback>0</effect-fallback>
                     <world>
                         <x>704</x>
-                        <y>256</y>
+                        <y>222</y>
                         <z>0</z>
                         <width>180</width>
                         <height>270</height>
                         <depth>0</depth>
                         <hotspotX>0.494983286</hotspotX>
                         <hotspotY>0.498855829</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="GUTextBar" uid="314">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>448</x>
+                        <y>416</y>
+                        <z>0</z>
+                        <width>220</width>
+                        <height>72</height>
+                        <depth>0</depth>
+                        <hotspotX>0.500404835</hotspotX>
+                        <hotspotY>0.5</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="ChosenGroundUnitText" uid="315">
+                    <properties>
+                        <text>ChosenGU</text>
+                        <initial-visibility>Invisible</initial-visibility>
+                        <font>Arial,-29,700,0</font>
+                        <color>255,255,255</color>
+                        <horizontal-alignment>Center</horizontal-alignment>
+                        <vertical-alignment>Center</vertical-alignment>
+                        <hotspot>Center</hotspot>
+                        <wrapping>Word</wrapping>
+                        <line-height>0</line-height>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>448</x>
+                        <y>416</y>
+                        <z>0</z>
+                        <width>350.542449951</width>
+                        <height>52.581367493</height>
+                        <depth>0</depth>
+                        <hotspotX>0.5</hotspotX>
+                        <hotspotY>0.5</hotspotY>
                         <angle>0</angle>
                         <opacity>1</opacity>
                     </world>

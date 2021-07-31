@@ -3,7 +3,7 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>GUSelect_Event</name>
     <events>
-        <variable comment="Ground unit yang akan digunakan" constant="0" name="GUToActivate" sid="413737422579693" static="0" type="text">GUAssassin</variable>
+        <variable comment="Ground unit yang akan digunakan" constant="0" name="GUToActivate" sid="413737422579693" static="0" type="text"></variable>
         <event-block sid="987885565418745">
             <conditions>
                 <condition id="6" name="On object clicked" sid="739986030039539" type="Mouse">
@@ -20,6 +20,12 @@
                     <param id="0" name="Variable">GUToActivate</param>
                     <param id="1" name="Value">&quot;GUAssassin&quot;</param>
                 </action>
+                <action id="0" name="Set text" sid="734411016359130" type="ChosenGroundUnitText">
+                    <param id="0" name="Text">&quot;Assassin&quot;</param>
+                </action>
+                <action id="-15" name="Set visible" sid="286540307838519" type="ChosenGroundUnitText">
+                    <param id="0" name="Visibility">1</param>
+                </action>
             </actions>
         </event-block>
         <event-block sid="399926735147292">
@@ -27,7 +33,7 @@
                 <condition id="6" name="On object clicked" sid="699095912516263" type="Mouse">
                     <param id="0" name="Mouse button">0</param>
                     <param id="1" name="Click type">0</param>
-                    <param id="2" name="Object clicked">AssassinCard</param>
+                    <param id="2" name="Object clicked">WarriorCard</param>
                 </condition>
             </conditions>
             <actions>
@@ -37,6 +43,12 @@
                 <action id="-9" name="Set value" sid="648729060858271" type="System">
                     <param id="0" name="Variable">GUToActivate</param>
                     <param id="1" name="Value">&quot;GUWarrior&quot;</param>
+                </action>
+                <action id="0" name="Set text" sid="481773794411410" type="ChosenGroundUnitText">
+                    <param id="0" name="Text">&quot;Warrior&quot;</param>
+                </action>
+                <action id="-15" name="Set visible" sid="124437727077685" type="ChosenGroundUnitText">
+                    <param id="0" name="Visibility">1</param>
                 </action>
             </actions>
         </event-block>

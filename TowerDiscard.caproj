@@ -789,7 +789,18 @@
             <plugin id="Sprite" />
             <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="670664909151541" speed="5">
-                    <frame duration="1" hotspotX="0.513126" hotspotY="0.5088" original-source="D:\AMIKOM\Teknologi Game\TA\CardBack1.png" />
+                    <frame duration="1" hotspotX="0.513889" hotspotY="0.509259" original-source="D:\AMIKOM\Teknologi Game\TA\AssassinCard.png">
+                        <collision-poly>
+                            <point x="0.0220994" y="0.0147601" />
+                            <point x="0.5" y="0.00184502" />
+                            <point x="0.977901" y="0.0147601" />
+                            <point x="0.997238" y="0.5" />
+                            <point x="0.977901" y="0.98524" />
+                            <point x="0.5" y="0.998155" />
+                            <point x="0.0220994" y="0.98524" />
+                            <point x="0.00276243" y="0.5" />
+                        </collision-poly>
+                    </frame>
                 </animation>
             </animation-folder>
         </object-type>
@@ -797,16 +808,16 @@
             <plugin id="Sprite" />
             <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="700971613839725" speed="5">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\AMIKOM\Teknologi Game\TA\star2.png">
+                    <frame duration="1" hotspotX="0.51875" hotspotY="0.475" original-source="D:\AMIKOM\Teknologi Game\TA\GoldenWoodUI2.png">
                         <collision-poly>
-                            <point x="0.276817" y="0.276817" />
-                            <point x="0.5" y="0.0553633" />
-                            <point x="0.723183" y="0.276817" />
-                            <point x="0.775087" y="0.5" />
-                            <point x="0.941176" y="0.941176" />
-                            <point x="0.5" y="0.775087" />
-                            <point x="0.0588235" y="0.941176" />
-                            <point x="0.221453" y="0.5" />
+                            <point x="0.972391" y="0" />
+                            <point x="1" y="0" />
+                            <point x="1" y="0" />
+                            <point x="1" y="0" />
+                            <point x="1" y="1" />
+                            <point x="1" y="0" />
+                            <point x="0" y="1" />
+                            <point x="0.441483" y="0" />
                         </collision-poly>
                     </frame>
                 </animation>
@@ -1396,7 +1407,7 @@
             <plugin id="Sprite" />
             <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="159073399657186" speed="5">
-                    <frame duration="1" hotspotX="0.497041" hotspotY="0.498998" original-source="D:\AMIKOM\Teknologi Game\TA\BCardBack1.png">
+                    <frame duration="1" hotspotX="0.497222" hotspotY="0.498148" original-source="D:\AMIKOM\Teknologi Game\TA\WarriorCard.png">
                         <collision-poly>
                             <point x="0.0177515" y="0.174349" />
                             <point x="0.497041" y="0.00801603" />
@@ -1433,6 +1444,60 @@
         <object-type name="TiledBackground2" sid="747101464657813">
             <plugin id="TiledBg" />
             <texture original-source="D:\AMIKOM\Teknologi Game\TA\StoneWall_TXR.png" />
+        </object-type>
+        <object-type name="TowerPickerBGBar2" sid="633950346903329">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="554697586592898" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Downloads\GameAssets\GoldenWoodUI.png">
+                        <collision-poly>
+                            <point x="0" y="0" />
+                            <point x="0.952055" y="0" />
+                            <point x="1" y="0" />
+                            <point x="0.964897" y="0.904624" />
+                            <point x="0" y="0.826589" />
+                            <point x="0" y="0" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="TowerPickerBGBar3" sid="616350835438047">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="688305192928553" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Downloads\GameAssets\GoldenWoodUI.png">
+                        <collision-poly>
+                            <point x="0" y="0" />
+                            <point x="0.952055" y="0" />
+                            <point x="1" y="0" />
+                            <point x="0.964897" y="0.904624" />
+                            <point x="0" y="0.826589" />
+                            <point x="0" y="0" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="GUTextBar" sid="707592606655205">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="953210158208020" speed="5">
+                    <frame duration="1" hotspotX="0.500405" hotspotY="0.5" original-source="D:\Downloads\GameAssets\GoldenWoodUI.png">
+                        <collision-poly>
+                            <point x="0.0842105" y="0" />
+                            <point x="1" y="0" />
+                            <point x="1" y="0" />
+                            <point x="1" y="1" />
+                            <point x="0.0955465" y="1" />
+                            <point x="0.00890688" y="0" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="ChosenGroundUnitText" sid="934762955134955">
+            <plugin id="Text" />
         </object-type>
     </object-folder>
     <families />
