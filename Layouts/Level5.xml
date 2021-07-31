@@ -796,8 +796,8 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>302</x>
-                        <y>10</y>
+                        <x>286.290924072</x>
+                        <y>9.316940308</y>
                         <z>0</z>
                         <width>8</width>
                         <height>16</height>
@@ -847,8 +847,8 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>236.602355957</x>
-                        <y>19.12594223</y>
+                        <x>229.602355957</x>
+                        <y>10.12594223</y>
                         <z>0</z>
                         <width>98.520324707</width>
                         <height>8</height>
@@ -876,10 +876,10 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>173.315414429</x>
-                        <y>61.606285095</y>
+                        <x>167.042404175</x>
+                        <y>51.817276001</y>
                         <z>0</z>
-                        <width>56.576805115</width>
+                        <width>58.722549438</width>
                         <height>8</height>
                         <depth>0</depth>
                         <hotspotX>0.5</hotspotX>
@@ -905,10 +905,10 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>151.592498779</x>
-                        <y>95.322914124</y>
+                        <x>145.122817993</x>
+                        <y>88.545837402</y>
                         <z>0</z>
-                        <width>26.950151443</width>
+                        <width>34.037742615</width>
                         <height>8</height>
                         <depth>0</depth>
                         <hotspotX>0.5</hotspotX>
@@ -934,15 +934,15 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>162.353775024</x>
-                        <y>128.55770874</y>
+                        <x>156.516479492</x>
+                        <y>127.421325684</y>
                         <z>0</z>
-                        <width>51.23059082</width>
+                        <width>57.554546356</width>
                         <height>8</height>
                         <depth>0</depth>
                         <hotspotX>0.5</hotspotX>
                         <hotspotY>0.5</hotspotY>
-                        <angle>0.964762807</angle>
+                        <angle>0.899425149</angle>
                         <opacity>1</opacity>
                     </world>
                 </instance>
@@ -1253,7 +1253,7 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>307.27911377</x>
+                        <x>311.27911377</x>
                         <y>29.831634521</y>
                         <z>0</z>
                         <width>69.611671448</width>
@@ -1282,8 +1282,8 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>268.075866699</x>
-                        <y>53.459369659</y>
+                        <x>272.075866699</x>
+                        <y>51.459369659</y>
                         <z>0</z>
                         <width>25.015960693</width>
                         <height>8</height>
@@ -1311,8 +1311,8 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>258.750915527</x>
-                        <y>68.31578064</y>
+                        <x>263.750915527</x>
+                        <y>67.31578064</y>
                         <z>0</z>
                         <width>15.592378616</width>
                         <height>8</height>
@@ -1650,11 +1650,11 @@
                         <collisions>Enabled</collisions>
                     </properties>
                     <instance-variables>
-                        <Health>100</Health>
+                        <Health>120</Health>
                         <SpawnTime>3</SpawnTime>
                         <Attack>20</Attack>
                         <OnBattleWith>-1</OnBattleWith>
-                        <MoveSpeed>50</MoveSpeed>
+                        <MoveSpeed>35</MoveSpeed>
                         <AttackSpeed>3</AttackSpeed>
                         <Drop>5</Drop>
                     </instance-variables>
@@ -2021,9 +2021,9 @@
                     </properties>
                     <instance-variables>
                         <BuildTime>3</BuildTime>
-                        <Damage>35</Damage>
+                        <Damage>30</Damage>
                         <RateofFire>1.6</RateofFire>
-                        <Range>210</Range>
+                        <Range>170</Range>
                         <ProjectileSpeed>170</ProjectileSpeed>
                         <Cost>55</Cost>
                         <Icon>true</Icon>
@@ -2054,7 +2054,7 @@
                         <BuildTime>4</BuildTime>
                         <Damage>50</Damage>
                         <RateofFire>2.3</RateofFire>
-                        <Range>200</Range>
+                        <Range>180</Range>
                         <ProjectileSpeed>150</ProjectileSpeed>
                         <Cost>75</Cost>
                         <Icon>true</Icon>
@@ -2084,8 +2084,8 @@
                     <instance-variables>
                         <BuildTime>2</BuildTime>
                         <Damage>20</Damage>
-                        <RateofFire>1</RateofFire>
-                        <Range>225</Range>
+                        <RateofFire>1.5</RateofFire>
+                        <Range>210</Range>
                         <ProjectileSpeed>200</ProjectileSpeed>
                         <Cost>40</Cost>
                         <Icon>true</Icon>

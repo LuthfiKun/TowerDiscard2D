@@ -1554,7 +1554,7 @@
                         <collisions>Enabled</collisions>
                     </properties>
                     <instance-variables>
-                        <Health>100</Health>
+                        <Health>120</Health>
                         <SpawnTime>3</SpawnTime>
                         <Attack>20</Attack>
                         <OnBattleWith>-1</OnBattleWith>
@@ -1925,9 +1925,9 @@
                     </properties>
                     <instance-variables>
                         <BuildTime>3</BuildTime>
-                        <Damage>35</Damage>
+                        <Damage>30</Damage>
                         <RateofFire>1.6</RateofFire>
-                        <Range>210</Range>
+                        <Range>170</Range>
                         <ProjectileSpeed>170</ProjectileSpeed>
                         <Cost>55</Cost>
                         <Icon>true</Icon>
@@ -1958,7 +1958,7 @@
                         <BuildTime>4</BuildTime>
                         <Damage>50</Damage>
                         <RateofFire>2.3</RateofFire>
-                        <Range>200</Range>
+                        <Range>180</Range>
                         <ProjectileSpeed>150</ProjectileSpeed>
                         <Cost>75</Cost>
                         <Icon>true</Icon>
@@ -1988,8 +1988,8 @@
                     <instance-variables>
                         <BuildTime>2</BuildTime>
                         <Damage>20</Damage>
-                        <RateofFire>1</RateofFire>
-                        <Range>225</Range>
+                        <RateofFire>1.5</RateofFire>
+                        <Range>210</Range>
                         <ProjectileSpeed>200</ProjectileSpeed>
                         <Cost>40</Cost>
                         <Icon>true</Icon>

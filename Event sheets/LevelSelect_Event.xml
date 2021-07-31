@@ -3,6 +3,7 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>LevelSelect_Event</name>
     <events>
+        <variable comment="Nunjuk ke level berapa (0-based)" constant="0" name="CurrentLevel" sid="503863652552586" static="0" type="number">0</variable>
         <variable comment="Mengindikasikan state dari Tutorial. Tanpa tutorial = 0" constant="0" name="Tutorial" sid="610685229138336" static="0" type="number">0</variable>
         <variable comment="Digunakan untuk membangun Tower" constant="0" name="Resources" sid="848721712394318" static="0" type="number">80</variable>
         <variable comment="Jumlah musuh jenis demon yang akan di spawn" constant="0" name="EnemyCount" sid="640278798693073" static="0" type="number">5</variable>
@@ -134,11 +135,41 @@
                 </condition>
             </conditions>
             <actions>
+                <action id="0" name="Play" sid="424534911722301" type="Audio">
+                    <param id="0" name="Audio file">Click</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">0</param>
+                    <param id="1" name="Tag (optional)">&quot;Click&quot;</param>
+                </action>
                 <action id="-15" name="Set visible" sid="966609358673077" type="ChosenGroundUnitText">
                     <param id="0" name="Visibility">0</param>
                 </action>
                 <action id="-15" name="Set visible" sid="521165876992739" type="ToBattle">
                     <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-9" name="Set value" sid="541090997062897" type="System">
+                    <param id="0" name="Variable">EnemyCount</param>
+                    <param id="1" name="Value">10</param>
+                </action>
+                <action id="-9" name="Set value" sid="945653822836250" type="System">
+                    <param id="0" name="Variable">Resources</param>
+                    <param id="1" name="Value">75</param>
+                </action>
+                <action id="-9" name="Set value" sid="709581408971995" type="System">
+                    <param id="0" name="Variable">LevelCountdown</param>
+                    <param id="1" name="Value">50</param>
+                </action>
+                <action id="-9" name="Set value" sid="313414276167726" type="System">
+                    <param id="0" name="Variable">SpawnCountdown</param>
+                    <param id="1" name="Value">10</param>
+                </action>
+                <action id="-9" name="Set value" sid="444469064168308" type="System">
+                    <param id="0" name="Variable">CurrentLevel</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-9" name="Set value" sid="196920202206555" type="System">
+                    <param id="0" name="Variable">Tutorial</param>
+                    <param id="1" name="Value">1</param>
                 </action>
                 <action id="-9" name="Set value" sid="468633235313972" type="System">
                     <param id="0" name="Variable">NextLevel</param>
@@ -149,30 +180,218 @@
                 </action>
             </actions>
         </event-block>
-        <event-block sid="188625207814989">
+        <event-block sid="261261449568119">
             <conditions>
-                <condition id="6" name="On object clicked" sid="775056630345031" type="Mouse">
+                <condition id="6" name="On object clicked" sid="175448434618075" type="Mouse">
                     <param id="0" name="Mouse button">0</param>
                     <param id="1" name="Click type">0</param>
                     <param id="2" name="Object clicked">LevelSelectBox2</param>
                 </condition>
             </conditions>
             <actions>
-                <action id="-15" name="Set visible" sid="486763940168708" type="ChosenGroundUnitText">
+                <action id="0" name="Play" sid="964421656805576" type="Audio">
+                    <param id="0" name="Audio file">Click</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">0</param>
+                    <param id="1" name="Tag (optional)">&quot;Click&quot;</param>
+                </action>
+                <action id="-15" name="Set visible" sid="395994879794679" type="ChosenGroundUnitText">
                     <param id="0" name="Visibility">0</param>
                 </action>
-                <action id="-15" name="Set visible" sid="777048032135618" type="ToBattle">
+                <action id="-15" name="Set visible" sid="813908362139196" type="ToBattle">
                     <param id="0" name="Visibility">0</param>
                 </action>
-                <action id="-9" name="Set value" sid="764562111976491" type="System">
-                    <param id="0" name="Variable">NextLevel</param>
-                    <param id="1" name="Value">&quot;Level2&quot;</param>
+                <action id="-9" name="Set value" sid="129571977412444" type="System">
+                    <param id="0" name="Variable">EnemyCount</param>
+                    <param id="1" name="Value">15</param>
                 </action>
-                <action id="-9" name="Set value" sid="997716113027350" type="System">
+                <action id="-9" name="Set value" sid="193567460019280" type="System">
+                    <param id="0" name="Variable">Resources</param>
+                    <param id="1" name="Value">90</param>
+                </action>
+                <action id="-9" name="Set value" sid="132344863301542" type="System">
+                    <param id="0" name="Variable">LevelCountdown</param>
+                    <param id="1" name="Value">65</param>
+                </action>
+                <action id="-9" name="Set value" sid="309831939424961" type="System">
+                    <param id="0" name="Variable">SpawnCountdown</param>
+                    <param id="1" name="Value">10</param>
+                </action>
+                <action id="-9" name="Set value" sid="817248715013028" type="System">
+                    <param id="0" name="Variable">CurrentLevel</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="-9" name="Set value" sid="275929609153960" type="System">
                     <param id="0" name="Variable">Tutorial</param>
                     <param id="1" name="Value">0</param>
                 </action>
-                <action id="-2" name="Go to layout" sid="612109996815389" type="System">
+                <action id="-9" name="Set value" sid="960284977451402" type="System">
+                    <param id="0" name="Variable">NextLevel</param>
+                    <param id="1" name="Value">&quot;Level2&quot;</param>
+                </action>
+                <action id="-2" name="Go to layout" sid="780539944499857" type="System">
+                    <param id="0" name="Layout">GUSelect</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="938146546618520">
+            <conditions>
+                <condition id="6" name="On object clicked" sid="409549163527418" type="Mouse">
+                    <param id="0" name="Mouse button">0</param>
+                    <param id="1" name="Click type">0</param>
+                    <param id="2" name="Object clicked">LevelSelectBox3</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Play" sid="821822164972684" type="Audio">
+                    <param id="0" name="Audio file">Click</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">0</param>
+                    <param id="1" name="Tag (optional)">&quot;Click&quot;</param>
+                </action>
+                <action id="-15" name="Set visible" sid="558138392076394" type="ChosenGroundUnitText">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="773150913519513" type="ToBattle">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-9" name="Set value" sid="159019152712720" type="System">
+                    <param id="0" name="Variable">EnemyCount</param>
+                    <param id="1" name="Value">20</param>
+                </action>
+                <action id="-9" name="Set value" sid="663283936943353" type="System">
+                    <param id="0" name="Variable">Resources</param>
+                    <param id="1" name="Value">100</param>
+                </action>
+                <action id="-9" name="Set value" sid="595967971806986" type="System">
+                    <param id="0" name="Variable">LevelCountdown</param>
+                    <param id="1" name="Value">80</param>
+                </action>
+                <action id="-9" name="Set value" sid="657186470193641" type="System">
+                    <param id="0" name="Variable">SpawnCountdown</param>
+                    <param id="1" name="Value">10</param>
+                </action>
+                <action id="-9" name="Set value" sid="165097213226320" type="System">
+                    <param id="0" name="Variable">CurrentLevel</param>
+                    <param id="1" name="Value">2</param>
+                </action>
+                <action id="-9" name="Set value" sid="378353591637559" type="System">
+                    <param id="0" name="Variable">Tutorial</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-9" name="Set value" sid="974582902401595" type="System">
+                    <param id="0" name="Variable">NextLevel</param>
+                    <param id="1" name="Value">&quot;Level3&quot;</param>
+                </action>
+                <action id="-2" name="Go to layout" sid="573254679240171" type="System">
+                    <param id="0" name="Layout">GUSelect</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="713333255687169">
+            <conditions>
+                <condition id="6" name="On object clicked" sid="739841723554852" type="Mouse">
+                    <param id="0" name="Mouse button">0</param>
+                    <param id="1" name="Click type">0</param>
+                    <param id="2" name="Object clicked">LevelSelectBox4</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Play" sid="222595645195171" type="Audio">
+                    <param id="0" name="Audio file">Click</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">0</param>
+                    <param id="1" name="Tag (optional)">&quot;Click&quot;</param>
+                </action>
+                <action id="-15" name="Set visible" sid="705290546572812" type="ChosenGroundUnitText">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="247157139020448" type="ToBattle">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-9" name="Set value" sid="812466258375074" type="System">
+                    <param id="0" name="Variable">EnemyCount</param>
+                    <param id="1" name="Value">25</param>
+                </action>
+                <action id="-9" name="Set value" sid="164294718059242" type="System">
+                    <param id="0" name="Variable">Resources</param>
+                    <param id="1" name="Value">120</param>
+                </action>
+                <action id="-9" name="Set value" sid="296448199656867" type="System">
+                    <param id="0" name="Variable">LevelCountdown</param>
+                    <param id="1" name="Value">90</param>
+                </action>
+                <action id="-9" name="Set value" sid="388307239932737" type="System">
+                    <param id="0" name="Variable">SpawnCountdown</param>
+                    <param id="1" name="Value">10</param>
+                </action>
+                <action id="-9" name="Set value" sid="112436674303195" type="System">
+                    <param id="0" name="Variable">CurrentLevel</param>
+                    <param id="1" name="Value">3</param>
+                </action>
+                <action id="-9" name="Set value" sid="550042573992907" type="System">
+                    <param id="0" name="Variable">Tutorial</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-9" name="Set value" sid="872556387676148" type="System">
+                    <param id="0" name="Variable">NextLevel</param>
+                    <param id="1" name="Value">&quot;Level4&quot;</param>
+                </action>
+                <action id="-2" name="Go to layout" sid="584669637500847" type="System">
+                    <param id="0" name="Layout">GUSelect</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="465672812430396">
+            <conditions>
+                <condition id="6" name="On object clicked" sid="347427841795686" type="Mouse">
+                    <param id="0" name="Mouse button">0</param>
+                    <param id="1" name="Click type">0</param>
+                    <param id="2" name="Object clicked">LevelSelectBox5</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Play" sid="379809277770701" type="Audio">
+                    <param id="0" name="Audio file">Click</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">0</param>
+                    <param id="1" name="Tag (optional)">&quot;Click&quot;</param>
+                </action>
+                <action id="-15" name="Set visible" sid="964933814205526" type="ChosenGroundUnitText">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="409501724892930" type="ToBattle">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-9" name="Set value" sid="773963839767140" type="System">
+                    <param id="0" name="Variable">EnemyCount</param>
+                    <param id="1" name="Value">30</param>
+                </action>
+                <action id="-9" name="Set value" sid="687070635433762" type="System">
+                    <param id="0" name="Variable">Resources</param>
+                    <param id="1" name="Value">200</param>
+                </action>
+                <action id="-9" name="Set value" sid="514876434905531" type="System">
+                    <param id="0" name="Variable">LevelCountdown</param>
+                    <param id="1" name="Value">105</param>
+                </action>
+                <action id="-9" name="Set value" sid="666057907029311" type="System">
+                    <param id="0" name="Variable">SpawnCountdown</param>
+                    <param id="1" name="Value">10</param>
+                </action>
+                <action id="-9" name="Set value" sid="866189869088239" type="System">
+                    <param id="0" name="Variable">CurrentLevel</param>
+                    <param id="1" name="Value">4</param>
+                </action>
+                <action id="-9" name="Set value" sid="605612280175371" type="System">
+                    <param id="0" name="Variable">Tutorial</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-9" name="Set value" sid="831779613185981" type="System">
+                    <param id="0" name="Variable">NextLevel</param>
+                    <param id="1" name="Value">&quot;Level5&quot;</param>
+                </action>
+                <action id="-2" name="Go to layout" sid="452194582197064" type="System">
                     <param id="0" name="Layout">GUSelect</param>
                 </action>
             </actions>
