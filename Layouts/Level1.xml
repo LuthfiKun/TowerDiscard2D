@@ -4272,7 +4272,7 @@
             <effects />
         </layer>
         <layer name="MenuUI" sid="775957737127564">
-            <initially-visible>0</initially-visible>
+            <initially-visible>1</initially-visible>
             <background-color>0,0,0</background-color>
             <transparent>1</transparent>
             <parallax>
@@ -4289,7 +4289,7 @@
             <instances>
                 <instance type="ScreenOverlay" uid="269">
                     <properties>
-                        <initial-visibility>Visible</initial-visibility>
+                        <initial-visibility>Invisible</initial-visibility>
                         <initial-animation>Default</initial-animation>
                         <initial-frame>0</initial-frame>
                         <collisions>Enabled</collisions>
@@ -4334,7 +4334,7 @@
                 <instance type="Resume" uid="262">
                     <properties>
                         <text>Resume</text>
-                        <initial-visibility>Visible</initial-visibility>
+                        <initial-visibility>Invisible</initial-visibility>
                         <font>Arial,-24,400,0</font>
                         <color>255,255,255</color>
                         <horizontal-alignment>Center</horizontal-alignment>
@@ -4361,7 +4361,7 @@
                 <instance type="MainMenu" uid="263">
                     <properties>
                         <text>Main Menu</text>
-                        <initial-visibility>Visible</initial-visibility>
+                        <initial-visibility>Invisible</initial-visibility>
                         <font>Arial,-24,400,0</font>
                         <color>255,255,255</color>
                         <horizontal-alignment>Center</horizontal-alignment>

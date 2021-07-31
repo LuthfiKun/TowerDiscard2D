@@ -14,6 +14,7 @@
         <plugin author="Scirra" id="Audio" version="1">Audio</plugin>
         <plugin author="Scirra" id="Mouse" version="1">Mouse</plugin>
         <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
+        <plugin author="Scirra" id="Spritefont2" version="1">Sprite font</plugin>
         <plugin author="Scirra" id="Text" version="1">Text</plugin>
         <plugin author="Scirra" id="TiledBg" version="1">Tiled Background</plugin>
         <plugin author="Scirra" id="Tilemap" version="1">Tilemap</plugin>
@@ -470,7 +471,7 @@
                 </animation>
             </animation-folder>
         </object-type>
-        <object-type name="Level1" sid="106764093884986">
+        <object-type name="LevelNo" sid="106764093884986">
             <plugin id="Text" />
         </object-type>
         <object-type name="LevelSelectBox2" sid="118942863016369">
@@ -1049,14 +1050,6 @@
                 </animation>
             </animation-folder>
         </object-type>
-        <object-type name="BGKastilBatu" sid="975958288746353">
-            <plugin id="TiledBg" />
-            <texture original-source="D:\AMIKOM\Teknologi Game\TA\Castle_Wall.png" />
-        </object-type>
-        <object-type name="BGStoneWall" sid="524578733870669">
-            <plugin id="TiledBg" />
-            <texture original-source="D:\AMIKOM\Teknologi Game\TA\StoneWall_TXR.png" />
-        </object-type>
         <object-type name="WoodBoard" sid="498915020630156">
             <plugin id="Sprite" />
             <animation-folder>
@@ -1512,10 +1505,6 @@
             <plugin id="TiledBg" />
             <texture original-source="D:\AMIKOM\Teknologi Game\TA\StoneWall_TXR.png" />
         </object-type>
-        <object-type name="TiledBackground2" sid="747101464657813">
-            <plugin id="TiledBg" />
-            <texture original-source="D:\AMIKOM\Teknologi Game\TA\StoneWall_TXR.png" />
-        </object-type>
         <object-type name="TowerPickerBGBar2" sid="633950346903329">
             <plugin id="Sprite" />
             <animation-folder>
@@ -1570,21 +1559,41 @@
         <object-type name="ChosenGroundUnitText" sid="934762955134955">
             <plugin id="Text" />
         </object-type>
+        <object-type name="SpriteFont" sid="182985302597760">
+            <plugin id="Spritefont2" />
+            <texture />
+        </object-type>
+        <object-type name="BackgroundLevel2" sid="420553193086872">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="967383658548863" speed="5">
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="D:\AMIKOM\Teknologi Game\TA\map\1.png">
+                        <collision-poly>
+                            <point x="0.00263713" y="0.00469043" />
+                            <point x="0.508966" y="0.000938086" />
+                            <point x="0.998945" y="0.0347092" />
+                            <point x="0.998945" y="0.965291" />
+                            <point x="0.508966" y="0.998124" />
+                            <point x="0.00263713" y="0.99531" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
     </object-folder>
     <families />
     <layout-folder>
-        <layout>Level1.xml</layout>
         <layout>MainMenu.xml</layout>
         <layout>LevelSelect.xml</layout>
         <layout>GUSelect.xml</layout>
-        <layout>ResearchUpgrade.xml</layout>
+        <layout>Level1.xml</layout>
+        <layout>Level2.xml</layout>
     </layout-folder>
     <event-folder>
         <event-sheet>Gameplay_Event.xml</event-sheet>
         <event-sheet>MainMenu_Event.xml</event-sheet>
         <event-sheet>LevelSelect_Event.xml</event-sheet>
         <event-sheet>GUSelect_Event.xml</event-sheet>
-        <event-sheet>ResearchUpgrade_Event.xml</event-sheet>
     </event-folder>
     <global-instances>
         <global-instance type="Mouse" uid="6" />

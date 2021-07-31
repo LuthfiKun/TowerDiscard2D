@@ -6,7 +6,7 @@
         <variable comment="Pointer UID untuk TowerPlatform " constant="0" name="ClickedPlatform" sid="178994877447450" static="0" type="number">0</variable>
         <variable comment="Digunakan untuk membangun Tower" constant="0" name="Resources" sid="848721712394318" static="0" type="number">80</variable>
         <variable comment="Jumlah maksimal enemies yang dapat masuk benteng" constant="0" name="LivePoint" sid="661820242717193" static="0" type="number">5</variable>
-        <variable comment="Jumlah musuh jenis demon yang akan di spawn" constant="0" name="EnemyCount" sid="640278798693073" static="0" type="number">5</variable>
+        <variable comment="Jumlah musuh jenis demon yang akan di spawn" constant="0" name="DemonCount" sid="640278798693073" static="0" type="number">5</variable>
         <variable comment="Total waktu penyelesaian level (detik)" constant="0" name="LevelCountdown" sid="815549797291288" static="0" type="number">45</variable>
         <variable comment="Waktu tunggu sebelum musuh mulai spawn (detik)" constant="0" name="SpawnCountdown" sid="649533743159417" static="0" type="number">2</variable>
         <comment>Saat Layout dimulai, PlatformPlace akan diisi dengan koordinat X dan Y yang nantinya akan jadi lokasi TowerPlatform.</comment>
@@ -18,6 +18,9 @@
                 <action id="-12" name="Set group active" sid="593769756754218" type="System">
                     <param id="0" name="Group name">GUToActivate</param>
                     <param id="1" name="State">1</param>
+                </action>
+                <action id="-15" name="Set visible" sid="893634140265644" type="WoodBoard">
+                    <param id="0" name="Visibility">0</param>
                 </action>
                 <action id="4" name="Preload" sid="238257633497812" type="Audio">
                     <param id="0" name="Audio file">StoneHit</param>
@@ -64,7 +67,7 @@
                 <event-block sid="634367472561327">
                     <conditions>
                         <condition id="-12" name="Repeat" sid="996107407900145" type="System">
-                            <param id="0" name="Count">EnemyCount</param>
+                            <param id="0" name="Count">DemonCount</param>
                         </condition>
                     </conditions>
                     <actions>
@@ -104,9 +107,8 @@
                         <action id="6" name="Stop" sid="745279540936822" type="Audio">
                             <param id="0" name="Tag">&quot;GameplayBGMusic&quot;</param>
                         </action>
-                        <action id="-4" name="Set layer visible" sid="528573938277585" type="System">
-                            <param id="0" name="Layer">3</param>
-                            <param id="1" name="Visibility">1</param>
+                        <action id="-15" name="Set visible" sid="730389586815487" type="ScreenOverlay">
+                            <param id="0" name="Visibility">1</param>
                         </action>
                         <action id="-13" name="Set time scale" sid="930290362361803" type="System">
                             <param id="0" name="Time scale">0</param>
@@ -139,9 +141,6 @@
                             <param id="3" name="Volume">0</param>
                             <param id="1" name="Tag (optional)">&quot;GameOverScreenMusic&quot;</param>
                         </action>
-                        <action id="-15" name="Set visible" sid="769820703318539" type="Resume">
-                            <param id="0" name="Visibility">0</param>
-                        </action>
                     </actions>
                 </event-block>
             </sub-events>
@@ -150,7 +149,7 @@
         <event-block sid="682133713522493">
             <conditions>
                 <condition id="-14" name="Compare variable" sid="739309423875037" type="System">
-                    <param id="0" name="Variable">EnemyCount</param>
+                    <param id="0" name="Variable">DemonCount</param>
                     <param id="1" name="Comparison">0</param>
                     <param id="2" name="Value">0</param>
                 </condition>
@@ -163,13 +162,12 @@
                 <action id="6" name="Stop" sid="541163977990406" type="Audio">
                     <param id="0" name="Tag">&quot;GameplayBGMusic&quot;</param>
                 </action>
-                <action id="-4" name="Set layer visible" sid="801654712928903" type="System">
-                    <param id="0" name="Layer">3</param>
-                    <param id="1" name="Visibility">1</param>
-                </action>
                 <action id="2" name="Set at X" sid="421839124271625" type="LevelStar">
                     <param id="0" name="X">0</param>
                     <param id="1" name="Value">ceil(LivePoint/2)</param>
+                </action>
+                <action id="-15" name="Set visible" sid="840637433872856" type="ScreenOverlay">
+                    <param id="0" name="Visibility">1</param>
                 </action>
                 <action id="-13" name="Set time scale" sid="337680383497536" type="System">
                     <param id="0" name="Time scale">0</param>
@@ -202,9 +200,6 @@
                     <param id="3" name="Volume">0</param>
                     <param id="1" name="Tag (optional)">&quot;VictoryScreenMusic&quot;</param>
                 </action>
-                <action id="-15" name="Set visible" sid="239341321268534" type="Resume">
-                    <param id="0" name="Visibility">0</param>
-                </action>
             </actions>
         </event-block>
         <comment>Tutorial membangun tower</comment>
@@ -217,6 +212,10 @@
                 </condition>
             </conditions>
             <actions>
+                <action id="-4" name="Set layer visible" sid="960333906784241" type="System">
+                    <param id="0" name="Layer">3</param>
+                    <param id="1" name="Visibility">1</param>
+                </action>
                 <action id="-13" name="Set time scale" sid="632785467094228" type="System">
                     <param id="0" name="Time scale">0</param>
                 </action>
@@ -382,10 +381,7 @@
                     <param id="1" name="Click type">0</param>
                     <param id="2" name="Object clicked">TutorialConfirm</param>
                 </condition>
-                <condition id="-9" name="Is visible" sid="269648367713762" type="TutorialConfirm" />
-                <condition id="-9" inverted="1" name="Layer is visible" sid="135747908616043" type="System">
-                    <param id="0" name="Layer">3</param>
-                </condition>
+                <condition id="-9" inverted="1" name="Is visible" sid="114209384598633" type="ScreenOverlay" />
             </conditions>
             <actions>
                 <action id="-10" name="Add to" sid="448297806647214" type="System">
@@ -1479,106 +1475,8 @@
             </conditions>
             <actions>
                 <action id="-11" name="Subtract from" sid="404649380856572" type="System">
-                    <param id="0" name="Variable">EnemyCount</param>
+                    <param id="0" name="Variable">DemonCount</param>
                     <param id="1" name="Value">1</param>
-                </action>
-            </actions>
-        </event-block>
-        <event-block sid="305212488283746">
-            <conditions>
-                <condition id="1" name="Is overlapping another object" sid="560404485815104" type="EnemyBarbaric">
-                    <param id="0" name="Object">GUWarrior</param>
-                </condition>
-                <condition id="-14" name="Pick by unique ID" sid="219802891763682" type="GUWarrior">
-                    <param id="0" name="Unique ID">EnemyBarbaric.OnBattleWith</param>
-                </condition>
-                <condition id="-7" name="Compare instance variable" sid="201159437108682" type="EnemyBarbaric">
-                    <param id="0" name="Instance variable">OnBattleWith</param>
-                    <param id="1" name="Comparison">1</param>
-                    <param id="2" name="Value">-1</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="4" name="Set animation" sid="232029274606685" type="EnemyBarbaric">
-                    <param id="0" name="Animation">&quot;Attack&quot;</param>
-                    <param id="1" name="From">1</param>
-                </action>
-                <action id="6" name="Set speed" sid="127720403621810" type="EnemyBarbaric">
-                    <param id="0" name="Speed">EnemyBarbaric.AttackSpeed</param>
-                </action>
-            </actions>
-        </event-block>
-        <event-block sid="853302497637217">
-            <conditions>
-                <condition id="1" name="Is overlapping another object" sid="952769954153736" type="EnemyBarbaric">
-                    <param id="0" name="Object">GUAssassin</param>
-                </condition>
-                <condition id="-14" name="Pick by unique ID" sid="669404410784626" type="GUAssassin">
-                    <param id="0" name="Unique ID">EnemyBarbaric.OnBattleWith</param>
-                </condition>
-                <condition id="-7" name="Compare instance variable" sid="354681458487227" type="EnemyBarbaric">
-                    <param id="0" name="Instance variable">OnBattleWith</param>
-                    <param id="1" name="Comparison">1</param>
-                    <param id="2" name="Value">-1</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="4" name="Set animation" sid="631534767136039" type="EnemyBarbaric">
-                    <param id="0" name="Animation">&quot;Attack&quot;</param>
-                    <param id="1" name="From">1</param>
-                </action>
-                <action id="6" name="Set speed" sid="243096559725555" type="EnemyBarbaric">
-                    <param id="0" name="Speed">EnemyBarbaric.AttackSpeed</param>
-                </action>
-            </actions>
-        </event-block>
-        <event-block sid="732799032115951">
-            <conditions>
-                <condition id="4" name="On finished" sid="497923577631996" type="EnemyBarbaric">
-                    <param id="0" name="Animation">&quot;Attack&quot;</param>
-                </condition>
-                <condition id="-14" name="Pick by unique ID" sid="845900985698469" type="GUWarrior">
-                    <param id="0" name="Unique ID">EnemyBarbaric.OnBattleWith</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="0" name="Play" sid="366035558463303" type="Audio">
-                    <param id="0" name="Audio file">GUWarriorAttack</param>
-                    <param id="2" name="Loop">0</param>
-                    <param id="3" name="Volume">-10</param>
-                    <param id="1" name="Tag (optional)">&quot;GUWarriorAttack&quot;</param>
-                </action>
-                <action id="-12" name="Subtract from" sid="305264136456701" type="GUWarrior">
-                    <param id="0" name="Instance variable">Health</param>
-                    <param id="1" name="Value">EnemyBarbaric.Attack</param>
-                </action>
-                <action id="3" name="Start" sid="778020435653107" type="EnemyBarbaric">
-                    <param id="0" name="From">1</param>
-                </action>
-            </actions>
-        </event-block>
-        <event-block sid="571684590426325">
-            <conditions>
-                <condition id="4" name="On finished" sid="516903390507206" type="EnemyBarbaric">
-                    <param id="0" name="Animation">&quot;Attack&quot;</param>
-                </condition>
-                <condition id="-14" name="Pick by unique ID" sid="398073390303707" type="GUAssassin">
-                    <param id="0" name="Unique ID">EnemyBarbaric.OnBattleWith</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="0" name="Play" sid="602747187436475" type="Audio">
-                    <param id="0" name="Audio file">GUWarriorAttack</param>
-                    <param id="2" name="Loop">0</param>
-                    <param id="3" name="Volume">-10</param>
-                    <param id="1" name="Tag (optional)">&quot;GUWarriorAttack&quot;</param>
-                </action>
-                <action id="-12" name="Subtract from" sid="907849939944041" type="GUAssassin">
-                    <param id="0" name="Instance variable">Heatlh</param>
-                    <param id="1" name="Value">EnemyBarbaric.Attack</param>
-                </action>
-                <action id="3" name="Start" sid="861910100468390" type="EnemyBarbaric">
-                    <param id="0" name="From">1</param>
                 </action>
             </actions>
         </event-block>
@@ -1592,7 +1490,19 @@
                 </condition>
             </conditions>
             <actions>
-                <action id="-4" name="Set layer visible" sid="683114331197740" type="System">
+                <action id="-15" name="Set visible" sid="199472147458160" type="WoodBoard">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-15" name="Set visible" sid="983345213818130" type="ScreenOverlay">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-15" name="Set visible" sid="177850545280456" type="Resume">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-15" name="Set visible" sid="458660103829494" type="MainMenu">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-4" name="Set layer visible" sid="715130412580121" type="System">
                     <param id="0" name="Layer">3</param>
                     <param id="1" name="Visibility">1</param>
                 </action>
@@ -1609,28 +1519,34 @@
                     <param id="1" name="Click type">0</param>
                     <param id="2" name="Object clicked">Resume</param>
                 </condition>
-                <condition id="-9" name="Is visible" sid="277506100376422" type="Resume" />
-                <condition id="-9" name="Layer is visible" sid="106041579458316" type="System">
-                    <param id="0" name="Layer">3</param>
-                </condition>
+                <condition id="-9" name="Is visible" sid="437358002039727" type="Resume" />
             </conditions>
             <actions>
-                <action id="-4" name="Set layer visible" sid="633961884009494" type="System">
-                    <param id="0" name="Layer">3</param>
-                    <param id="1" name="Visibility">0</param>
+                <action id="-15" name="Set visible" sid="661887595016690" type="WoodBoard">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="291481582859962" type="ScreenOverlay">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="114481441069221" type="Resume">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="195705076375758" type="MainMenu">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-13" name="Set time scale" sid="363469692430667" type="System">
+                    <param id="0" name="Time scale">1</param>
                 </action>
             </actions>
             <sub-events>
-                <event-block sid="394991830564406">
+                <event-block sid="700336187447947">
                     <conditions>
-                        <condition id="-9" inverted="1" name="Is visible" sid="398380040980980" type="TutorialBG" />
-                        <condition id="-9" inverted="1" name="Is visible" sid="517451356306013" type="ToutorialArrow" />
-                        <condition id="-9" inverted="1" name="Is visible" sid="269347962595859" type="TutorialConfirm" />
-                        <condition id="-9" inverted="1" name="Is visible" sid="755845327461439" type="TutorialText" />
+                        <condition id="-9" inverted="1" name="Is visible" sid="889008248000806" type="TutorialText" />
                     </conditions>
                     <actions>
-                        <action id="-13" name="Set time scale" sid="363469692430667" type="System">
-                            <param id="0" name="Time scale">1</param>
+                        <action id="-4" name="Set layer visible" sid="963732718970526" type="System">
+                            <param id="0" name="Layer">3</param>
+                            <param id="1" name="Visibility">0</param>
                         </action>
                     </actions>
                 </event-block>
@@ -1644,10 +1560,7 @@
                     <param id="1" name="Click type">0</param>
                     <param id="2" name="Object clicked">MainMenu</param>
                 </condition>
-                <condition id="-9" name="Is visible" sid="937386697401993" type="MainMenu" />
-                <condition id="-9" name="Layer is visible" sid="969474865203083" type="System">
-                    <param id="0" name="Layer">3</param>
-                </condition>
+                <condition id="-9" name="Is visible" sid="573863621182461" type="MainMenu" />
             </conditions>
             <actions>
                 <action id="0" name="Set text" sid="661377821022902" type="MenuText">
@@ -1714,6 +1627,21 @@
             </actions>
         </event-block>
         <comment>Kembalikan semua variabel ke default setelah layout selesai</comment>
+        <event-block sid="299609143265007">
+            <conditions>
+                <condition id="-3" name="On end of layout" sid="906156692386094" type="System" />
+            </conditions>
+            <actions>
+                <action id="-21" name="Reset global variables" sid="793352515037802" type="System" />
+                <action id="-26" name="Restart layout" sid="236348667548091" type="System" />
+                <action id="-4" name="Set layer visible" sid="962303840395696" type="System">
+                    <param id="0" name="Layer">3</param>
+                    <param id="1" name="Visibility">0</param>
+                </action>
+                <action id="33" name="Stop all" sid="713823893364575" type="Audio" />
+                <action id="37" name="Unload all audio" sid="512074314544477" type="Audio" />
+            </actions>
+        </event-block>
         <event-block sid="977805386040268">
             <conditions>
                 <condition id="-6" name="Every X seconds" sid="940103721179365" type="System">
@@ -1946,33 +1874,6 @@
                 </action>
             </actions>
         </event-block>
-        <event-block sid="233592774307244">
-            <conditions>
-                <condition id="-7" name="Compare instance variable" sid="170859131478057" type="GUWarrior">
-                    <param id="0" name="Instance variable">Health</param>
-                    <param id="1" name="Comparison">3</param>
-                    <param id="2" name="Value">0</param>
-                </condition>
-                <condition id="-14" name="Pick by unique ID" sid="796428851287818" type="EnemyBarbaric">
-                    <param id="0" name="Unique ID">GUWarrior.OnBattleWith</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="-9" name="Destroy" sid="769354033338396" type="GUWarrior" />
-                <action id="-10" name="Set value" sid="691025922279464" type="EnemyBarbaric">
-                    <param id="0" name="Instance variable">OnBattleWith</param>
-                    <param id="1" name="Value">-1</param>
-                </action>
-                <action id="4" name="Set animation" sid="919823522953538" type="EnemyBarbaric">
-                    <param id="0" name="Animation">&quot;Idle&quot;</param>
-                    <param id="1" name="From">1</param>
-                </action>
-                <action behavior="Pathfinding" id="0" name="Find path" sid="724110914988789" type="EnemyBarbaric">
-                    <param id="0" name="X">EnemyEnd.X</param>
-                    <param id="1" name="Y">EnemyEnd.Y</param>
-                </action>
-            </actions>
-        </event-block>
         <event-block sid="778006156092363">
             <conditions>
                 <condition id="-18" name="On created" sid="457705808388596" type="GUAssassin" />
@@ -2157,6 +2058,131 @@
                 </action>
             </actions>
         </event-block>
+        <event-block sid="305212488283746">
+            <conditions>
+                <condition id="1" name="Is overlapping another object" sid="560404485815104" type="EnemyBarbaric">
+                    <param id="0" name="Object">GUWarrior</param>
+                </condition>
+                <condition id="-14" name="Pick by unique ID" sid="219802891763682" type="GUWarrior">
+                    <param id="0" name="Unique ID">EnemyBarbaric.OnBattleWith</param>
+                </condition>
+                <condition id="-7" name="Compare instance variable" sid="201159437108682" type="EnemyBarbaric">
+                    <param id="0" name="Instance variable">OnBattleWith</param>
+                    <param id="1" name="Comparison">1</param>
+                    <param id="2" name="Value">-1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" sid="232029274606685" type="EnemyBarbaric">
+                    <param id="0" name="Animation">&quot;Attack&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+                <action id="6" name="Set speed" sid="127720403621810" type="EnemyBarbaric">
+                    <param id="0" name="Speed">EnemyBarbaric.AttackSpeed</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="853302497637217">
+            <conditions>
+                <condition id="1" name="Is overlapping another object" sid="952769954153736" type="EnemyBarbaric">
+                    <param id="0" name="Object">GUAssassin</param>
+                </condition>
+                <condition id="-14" name="Pick by unique ID" sid="669404410784626" type="GUAssassin">
+                    <param id="0" name="Unique ID">EnemyBarbaric.OnBattleWith</param>
+                </condition>
+                <condition id="-7" name="Compare instance variable" sid="354681458487227" type="EnemyBarbaric">
+                    <param id="0" name="Instance variable">OnBattleWith</param>
+                    <param id="1" name="Comparison">1</param>
+                    <param id="2" name="Value">-1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" sid="631534767136039" type="EnemyBarbaric">
+                    <param id="0" name="Animation">&quot;Attack&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+                <action id="6" name="Set speed" sid="243096559725555" type="EnemyBarbaric">
+                    <param id="0" name="Speed">EnemyBarbaric.AttackSpeed</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="732799032115951">
+            <conditions>
+                <condition id="4" name="On finished" sid="497923577631996" type="EnemyBarbaric">
+                    <param id="0" name="Animation">&quot;Attack&quot;</param>
+                </condition>
+                <condition id="-14" name="Pick by unique ID" sid="845900985698469" type="GUWarrior">
+                    <param id="0" name="Unique ID">EnemyBarbaric.OnBattleWith</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Play" sid="366035558463303" type="Audio">
+                    <param id="0" name="Audio file">GUWarriorAttack</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">-10</param>
+                    <param id="1" name="Tag (optional)">&quot;GUWarriorAttack&quot;</param>
+                </action>
+                <action id="-12" name="Subtract from" sid="305264136456701" type="GUWarrior">
+                    <param id="0" name="Instance variable">Health</param>
+                    <param id="1" name="Value">EnemyBarbaric.Attack</param>
+                </action>
+                <action id="3" name="Start" sid="778020435653107" type="EnemyBarbaric">
+                    <param id="0" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="571684590426325">
+            <conditions>
+                <condition id="4" name="On finished" sid="516903390507206" type="EnemyBarbaric">
+                    <param id="0" name="Animation">&quot;Attack&quot;</param>
+                </condition>
+                <condition id="-14" name="Pick by unique ID" sid="398073390303707" type="GUAssassin">
+                    <param id="0" name="Unique ID">EnemyBarbaric.OnBattleWith</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Play" sid="602747187436475" type="Audio">
+                    <param id="0" name="Audio file">GUWarriorAttack</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">-10</param>
+                    <param id="1" name="Tag (optional)">&quot;GUWarriorAttack&quot;</param>
+                </action>
+                <action id="-12" name="Subtract from" sid="907849939944041" type="GUAssassin">
+                    <param id="0" name="Instance variable">Heatlh</param>
+                    <param id="1" name="Value">EnemyBarbaric.Attack</param>
+                </action>
+                <action id="3" name="Start" sid="861910100468390" type="EnemyBarbaric">
+                    <param id="0" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="233592774307244">
+            <conditions>
+                <condition id="-7" name="Compare instance variable" sid="170859131478057" type="GUWarrior">
+                    <param id="0" name="Instance variable">Health</param>
+                    <param id="1" name="Comparison">3</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+                <condition id="-14" name="Pick by unique ID" sid="796428851287818" type="EnemyBarbaric">
+                    <param id="0" name="Unique ID">GUWarrior.OnBattleWith</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="769354033338396" type="GUWarrior" />
+                <action id="-10" name="Set value" sid="691025922279464" type="EnemyBarbaric">
+                    <param id="0" name="Instance variable">OnBattleWith</param>
+                    <param id="1" name="Value">-1</param>
+                </action>
+                <action id="4" name="Set animation" sid="919823522953538" type="EnemyBarbaric">
+                    <param id="0" name="Animation">&quot;Idle&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+                <action behavior="Pathfinding" id="0" name="Find path" sid="724110914988789" type="EnemyBarbaric">
+                    <param id="0" name="X">EnemyEnd.X</param>
+                    <param id="1" name="Y">EnemyEnd.Y</param>
+                </action>
+            </actions>
+        </event-block>
         <event-block sid="602642421561908">
             <conditions>
                 <condition id="-7" name="Compare instance variable" sid="267015737259232" type="GUAssassin">
@@ -2181,24 +2207,6 @@
                 <action behavior="Pathfinding" id="0" name="Find path" sid="385218567983572" type="EnemyBarbaric">
                     <param id="0" name="X">EnemyEnd.X</param>
                     <param id="1" name="Y">EnemyEnd.Y</param>
-                </action>
-            </actions>
-        </event-block>
-        <event-block sid="299609143265007">
-            <conditions>
-                <condition id="-3" name="On end of layout" sid="906156692386094" type="System" />
-            </conditions>
-            <actions>
-                <action id="-21" name="Reset global variables" sid="793352515037802" type="System" />
-                <action id="-26" name="Restart layout" sid="236348667548091" type="System" />
-                <action id="-4" name="Set layer visible" sid="462672140217010" type="System">
-                    <param id="0" name="Layer">3</param>
-                    <param id="1" name="Visibility">0</param>
-                </action>
-                <action id="33" name="Stop all" sid="713823893364575" type="Audio" />
-                <action id="37" name="Unload all audio" sid="512074314544477" type="Audio" />
-                <action id="-13" name="Set time scale" sid="640432698607961" type="System">
-                    <param id="0" name="Time scale">0</param>
                 </action>
             </actions>
         </event-block>
