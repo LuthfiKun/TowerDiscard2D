@@ -19,17 +19,23 @@
                     <param id="0" name="Group name">GUToActivate</param>
                     <param id="1" name="State">1</param>
                 </action>
-                <action id="4" name="Preload" sid="238257633497812" type="Audio">
-                    <param id="0" name="Audio file">StoneHit</param>
-                </action>
                 <action id="4" name="Preload" sid="529217020586642" type="Audio">
                     <param id="0" name="Audio file">ArrowEject</param>
+                </action>
+                <action id="4" name="Preload" sid="608606804309094" type="Audio">
+                    <param id="0" name="Audio file">Click</param>
+                </action>
+                <action id="4" name="Preload" sid="122792384956688" type="Audio">
+                    <param id="0" name="Audio file">ClickFail</param>
                 </action>
                 <action id="4" name="Preload" sid="390526866457696" type="Audio">
                     <param id="0" name="Audio file">GameOver</param>
                 </action>
                 <action id="4" name="Preload" sid="827066937677958" type="Audio">
                     <param id="0" name="Audio file">GameplayBG</param>
+                </action>
+                <action id="4" name="Preload" sid="238257633497812" type="Audio">
+                    <param id="0" name="Audio file">StoneHit</param>
                 </action>
                 <action id="4" name="Preload" sid="671637400488284" type="Audio">
                     <param id="0" name="Audio file">TowerBuildProgress</param>
@@ -45,6 +51,9 @@
                 </action>
                 <action id="0" name="Set text" sid="735026094976752" type="Resource">
                     <param id="0" name="Text">Resources</param>
+                </action>
+                <action id="6" name="Stop" sid="586022042048664" type="Audio">
+                    <param id="0" name="Tag">&quot;MenuBG&quot;</param>
                 </action>
                 <action id="0" name="Play" sid="111445845555525" type="Audio">
                     <param id="0" name="Audio file">GameplayBG</param>
@@ -195,7 +204,7 @@
                 </action>
                 <action id="0" name="Play" sid="361870968289552" type="Audio">
                     <param id="0" name="Audio file">Victory</param>
-                    <param id="2" name="Loop">1</param>
+                    <param id="2" name="Loop">0</param>
                     <param id="3" name="Volume">0</param>
                     <param id="1" name="Tag (optional)">&quot;VictoryScreenMusic&quot;</param>
                 </action>
@@ -385,6 +394,12 @@
                 </condition>
             </conditions>
             <actions>
+                <action id="0" name="Play" sid="210479950929014" type="Audio">
+                    <param id="0" name="Audio file">Click</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">-10</param>
+                    <param id="1" name="Tag (optional)">&quot;Click&quot;</param>
+                </action>
                 <action id="-10" name="Add to" sid="448297806647214" type="System">
                     <param id="0" name="Variable">Tutorial</param>
                     <param id="1" name="Value">1</param>
@@ -433,6 +448,12 @@
                 </condition>
             </conditions>
             <actions>
+                <action id="0" name="Play" sid="933666942001551" type="Audio">
+                    <param id="0" name="Audio file">Click</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">0</param>
+                    <param id="1" name="Tag (optional)">&quot;Click&quot;</param>
+                </action>
                 <action id="-9" name="Destroy" sid="107398910973891" type="TowerPickerBG" />
                 <action id="-3" name="Create object" sid="135701174111860" type="System">
                     <param id="0" name="Object to create">TowerPickerBG</param>
@@ -528,6 +549,12 @@
                 </condition>
             </conditions>
             <actions>
+                <action id="0" name="Play" sid="888268695658275" type="Audio">
+                    <param id="0" name="Audio file">Click</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">0</param>
+                    <param id="1" name="Tag (optional)">&quot;Click&quot;</param>
+                </action>
                 <action id="-9" name="Destroy" sid="587216989016050" type="TowerPickerBG" />
                 <action id="-15" name="Set visible" sid="401532398219941" type="TowerPickerBGBar">
                     <param id="0" name="Visibility">0</param>
@@ -651,6 +678,12 @@
                 </condition>
             </conditions>
             <actions>
+                <action id="0" name="Play" sid="146286781362812" type="Audio">
+                    <param id="0" name="Audio file">Click</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">0</param>
+                    <param id="1" name="Tag (optional)">&quot;Click&quot;</param>
+                </action>
                 <action id="-9" name="Destroy" sid="559760523025674" type="TowerPickerBG" />
                 <action id="-15" name="Set visible" sid="697047482034119" type="TowerPickerBGBar">
                     <param id="0" name="Visibility">0</param>
@@ -771,6 +804,12 @@
                 </condition>
             </conditions>
             <actions>
+                <action id="0" name="Play" sid="659842373857641" type="Audio">
+                    <param id="0" name="Audio file">Click</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">0</param>
+                    <param id="1" name="Tag (optional)">&quot;Click&quot;</param>
+                </action>
                 <action id="-9" name="Destroy" sid="895479079174517" type="TowerPickerBG" />
                 <action id="-15" name="Set visible" sid="775631666629666" type="TowerPickerBGBar">
                     <param id="0" name="Visibility">0</param>
@@ -882,6 +921,12 @@
                 </condition>
             </conditions>
             <actions>
+                <action id="0" name="Play" sid="967249558597994" type="Audio">
+                    <param id="0" name="Audio file">ClickFail</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">0</param>
+                    <param id="1" name="Tag (optional)">&quot;Click&quot;</param>
+                </action>
                 <action id="4" name="Set font color" sid="637236530922112" type="Resource">
                     <param id="0" name="Color">rgb(255, 0, 0)</param>
                 </action>
@@ -917,6 +962,12 @@
                 </condition>
             </conditions>
             <actions>
+                <action id="0" name="Play" sid="935553085843411" type="Audio">
+                    <param id="0" name="Audio file">ClickFail</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">0</param>
+                    <param id="1" name="Tag (optional)">&quot;Click&quot;</param>
+                </action>
                 <action id="4" name="Set font color" sid="585067550258826" type="Resource">
                     <param id="0" name="Color">rgb(255, 0, 0)</param>
                 </action>
@@ -952,6 +1003,12 @@
                 </condition>
             </conditions>
             <actions>
+                <action id="0" name="Play" sid="340710290965578" type="Audio">
+                    <param id="0" name="Audio file">ClickFail</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">0</param>
+                    <param id="1" name="Tag (optional)">&quot;Click&quot;</param>
+                </action>
                 <action id="4" name="Set font color" sid="339320968297196" type="Resource">
                     <param id="0" name="Color">rgb(255, 0, 0)</param>
                 </action>
@@ -1085,6 +1142,12 @@
                 </condition>
             </conditions>
             <actions>
+                <action id="0" name="Play" sid="810182180924723" type="Audio">
+                    <param id="0" name="Audio file">Click</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">0</param>
+                    <param id="1" name="Tag (optional)">&quot;Click&quot;</param>
+                </action>
                 <action id="-9" name="Destroy" sid="604683221206771" type="TowerPickerBG" />
                 <action id="-15" name="Set visible" sid="935413205473777" type="TowerPickerBGBar">
                     <param id="0" name="Visibility">0</param>
@@ -1127,7 +1190,7 @@
                 <action id="0" name="Play" sid="776267840823687" type="Audio">
                     <param id="0" name="Audio file">FireHit</param>
                     <param id="2" name="Loop">0</param>
-                    <param id="3" name="Volume">0</param>
+                    <param id="3" name="Volume">-5</param>
                     <param id="1" name="Tag (optional)">&quot;FireHit&quot;</param>
                 </action>
             </actions>
@@ -1186,7 +1249,7 @@
                 <action id="0" name="Play" sid="880041692004276" type="Audio">
                     <param id="0" name="Audio file">StoneHit</param>
                     <param id="2" name="Loop">0</param>
-                    <param id="3" name="Volume">0</param>
+                    <param id="3" name="Volume">-5</param>
                     <param id="1" name="Tag (optional)">&quot;StoneHit&quot;</param>
                 </action>
             </actions>
@@ -1245,7 +1308,7 @@
                 <action id="0" name="Play" sid="163715579709902" type="Audio">
                     <param id="0" name="Audio file">ArrowHit</param>
                     <param id="2" name="Loop">0</param>
-                    <param id="3" name="Volume">0</param>
+                    <param id="3" name="Volume">-5</param>
                     <param id="1" name="Tag (optional)">&quot;ArrowHit&quot;</param>
                 </action>
             </actions>
@@ -1323,7 +1386,7 @@
                 <action id="0" name="Play" sid="421039553353209" type="Audio">
                     <param id="0" name="Audio file">FireEject</param>
                     <param id="2" name="Loop">0</param>
-                    <param id="3" name="Volume">0</param>
+                    <param id="3" name="Volume">-5</param>
                     <param id="1" name="Tag (optional)">&quot;FireEject&quot;</param>
                 </action>
             </actions>
@@ -1361,7 +1424,7 @@
                 <action id="0" name="Play" sid="186007509559832" type="Audio">
                     <param id="0" name="Audio file">StoneEject</param>
                     <param id="2" name="Loop">0</param>
-                    <param id="3" name="Volume">0</param>
+                    <param id="3" name="Volume">-5</param>
                     <param id="1" name="Tag (optional)">&quot;StoneEject&quot;</param>
                 </action>
             </actions>
@@ -1399,7 +1462,7 @@
                 <action id="0" name="Play" sid="157445058486868" type="Audio">
                     <param id="0" name="Audio file">ArrowEject</param>
                     <param id="2" name="Loop">0</param>
-                    <param id="3" name="Volume">0</param>
+                    <param id="3" name="Volume">-5</param>
                     <param id="1" name="Tag (optional)">&quot;ArrowEject&quot;</param>
                 </action>
             </actions>
@@ -1589,6 +1652,12 @@
                 </condition>
             </conditions>
             <actions>
+                <action id="0" name="Play" sid="260434457064127" type="Audio">
+                    <param id="0" name="Audio file">Click</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">0</param>
+                    <param id="1" name="Tag (optional)">&quot;Click&quot;</param>
+                </action>
                 <action id="-4" name="Set layer visible" sid="683114331197740" type="System">
                     <param id="0" name="Layer">3</param>
                     <param id="1" name="Visibility">1</param>
@@ -1612,6 +1681,12 @@
                 </condition>
             </conditions>
             <actions>
+                <action id="0" name="Play" sid="294953031314398" type="Audio">
+                    <param id="0" name="Audio file">Click</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">0</param>
+                    <param id="1" name="Tag (optional)">&quot;Click&quot;</param>
+                </action>
                 <action id="-4" name="Set layer visible" sid="633961884009494" type="System">
                     <param id="0" name="Layer">3</param>
                     <param id="1" name="Visibility">0</param>
@@ -1647,6 +1722,12 @@
                 </condition>
             </conditions>
             <actions>
+                <action id="0" name="Play" sid="543858312583200" type="Audio">
+                    <param id="0" name="Audio file">Click</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">0</param>
+                    <param id="1" name="Tag (optional)">&quot;Click&quot;</param>
+                </action>
                 <action id="0" name="Set text" sid="661377821022902" type="MenuText">
                     <param id="0" name="Text">&quot;Kembali ke Menu Utama?&quot;</param>
                 </action>

@@ -1637,6 +1637,12 @@
         <file name="FireHit.ogg" />
         <file name="GUWarriorAttack.m4a" />
         <file name="GUWarriorAttack.ogg" />
+        <file name="Click.m4a" />
+        <file name="Click.ogg" />
+        <file name="ClickFail.m4a" />
+        <file name="ClickFail.ogg" />
+        <file name="MenuBG.m4a" />
+        <file name="MenuBG.ogg" />
     </sounds-folder>
     <music-folder />
     <files-folder>

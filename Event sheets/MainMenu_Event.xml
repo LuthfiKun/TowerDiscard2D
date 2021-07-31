@@ -8,8 +8,20 @@
                 <condition id="-2" name="On start of layout" sid="240582079816860" type="System" />
             </conditions>
             <actions>
+                <action id="4" name="Preload" sid="696470312431363" type="Audio">
+                    <param id="0" name="Audio file">Click</param>
+                </action>
+                <action id="4" name="Preload" sid="863887021452614" type="Audio">
+                    <param id="0" name="Audio file">MenuBG</param>
+                </action>
                 <action id="-13" name="Set time scale" sid="866744417204869" type="System">
                     <param id="0" name="Time scale">0</param>
+                </action>
+                <action id="0" name="Play" sid="757917274245473" type="Audio">
+                    <param id="0" name="Audio file">MenuBG</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">-10</param>
+                    <param id="1" name="Tag (optional)">&quot;MenuBG&quot;</param>
                 </action>
             </actions>
         </event-block>
@@ -46,6 +58,12 @@
             <actions>
                 <action id="-2" name="Go to layout" sid="802032839000113" type="System">
                     <param id="0" name="Layout">LevelSelect</param>
+                </action>
+                <action id="0" name="Play" sid="440396856827904" type="Audio">
+                    <param id="0" name="Audio file">Click</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">0</param>
+                    <param id="1" name="Tag (optional)">&quot;Click&quot;</param>
                 </action>
             </actions>
         </event-block>
