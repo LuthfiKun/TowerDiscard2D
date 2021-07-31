@@ -607,7 +607,7 @@
                         <collisions>Enabled</collisions>
                     </properties>
                     <instance-variables>
-                        <Health>100</Health>
+                        <Health>150</Health>
                         <SpawnTime>3</SpawnTime>
                         <Attack>20</Attack>
                         <OnBattleWith>-1</OnBattleWith>
